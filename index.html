@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>W30 — Re-Entry Haftası (20–26 Tem)</title>
+<style>
+  :root { --ink:#1a1a1a; --muted:#6b7280; --line:#e9edf2; --accent:#e63946;
+          --warm:#2f9e44; --cool:#7048e8; --bg:#fff; --zebra:#f8fafc; }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-text-size-adjust: 100%; }
+  body { font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+         color: var(--ink); background: #f1f3f5; padding: 18px; line-height: 1.4; }
+  .wrap { max-width: 430px; margin: 0 auto; }
+
+  header { border-bottom: 3px solid var(--accent); padding-bottom: 12px; margin-bottom: 14px; }
+  h1 { font-size: 21px; font-weight: 800; letter-spacing: -.4px; }
+  .sub { color: var(--accent); font-size: 13px; font-weight: 600; margin-top: 3px; }
+  .meta { color: var(--muted); font-size: 12px; margin-top: 2px; }
+
+  .card { background: var(--bg); border-radius: 14px; padding: 14px;
+          box-shadow: 0 1px 3px rgba(0,0,0,.06); margin-bottom: 14px; }
+  .ctitle { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+            color: var(--accent); margin-bottom: 10px; }
+
+  /* tabs */
+  .tabs { display: flex; gap: 6px; margin-bottom: 14px; }
+  .tab { flex: 1; text-align: center; padding: 9px 4px; border-radius: 10px; background: #fff;
+         font-size: 12.5px; font-weight: 800; color: var(--muted); cursor: pointer;
+         box-shadow: 0 1px 3px rgba(0,0,0,.06); border: 2px solid transparent; }
+  .tab.on { color: #fff; background: var(--accent); border-color: var(--accent); }
+  .tab small { display: block; font-size: 10px; font-weight: 600; opacity: .8; }
+
+  .day { display: none; }
+  .day.on { display: block; }
+
+  .ex { display: flex; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .ex:last-child { border-bottom: none; padding-bottom: 0; }
+  .num { flex: 0 0 26px; height: 26px; width: 26px; border-radius: 50%; background: var(--accent);
+         color: #fff; font-size: 14px; font-weight: 800; display: flex; align-items: center;
+         justify-content: center; margin-right: 11px; }
+  .num.fresh { background: var(--warm); }
+  .num.key { background: var(--cool); }
+  .body { flex: 1; }
+  .name { font-size: 16px; font-weight: 700; }
+  .sets { color: var(--accent); font-weight: 800; margin-left: 6px; }
+  .note { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  .tag { display:inline-block; font-size:10px; font-weight:800; text-transform:uppercase;
+         letter-spacing:.5px; color:#fff; background:var(--warm); border-radius:5px;
+         padding:1px 6px; margin-left:6px; vertical-align:middle; }
+  .tag.key { background: var(--cool); }
+  .tag.test { background: #f08c00; }
+
+  .cols { display: flex; gap: 12px; }
+  .col { flex: 1; }
+  .col .card { margin-bottom: 0; }
+  .col.warm .ctitle { color: var(--warm); }
+  .col.cool .ctitle { color: var(--cool); }
+  .mini { font-size: 12.5px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+  .mini:last-child { border-bottom: none; padding-bottom: 0; }
+  .mini b { font-weight: 700; display: block; }
+  .mini span { color: var(--muted); }
+
+  .flag { background:#fff5f5; border:1px solid #ffd6d6; border-radius:12px; padding:12px 14px;
+          margin-bottom:14px; font-size:12.5px; color:#7a2727; }
+  .flag b { color: var(--accent); }
+  .info { background:#f3f0ff; border:1px solid #ded4fb; border-radius:12px; padding:12px 14px;
+          margin-bottom:14px; font-size:12.5px; color:#3d2d78; }
+  .info b { color: var(--cool); }
+
+  .off { text-align:center; padding:18px 14px; color:var(--muted); font-size:13px; }
+  .off b { display:block; color:var(--ink); font-size:15px; margin-bottom:4px; }
+
+  footer { text-align: center; color: var(--muted); font-size: 11px; margin-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>🔁 W30 — Re-Entry Haftası</h1>
+    <div class="sub">20–26 Tem · 4 gün · geri dönüş, ısınma modu</div>
+    <div class="meta">Coach: Max · ~3 hafta ara sonrası dönüş · Hepsi <b>RPE 6–7</b> · failure yok</div>
+  </header>
+
+  <div class="info">
+    <b>Bu haftanın işi:</b> dokuyu yeniden yükle, pattern'i tazele, DOMS'u minimumda tut.
+    <b>Hiçbir set failure'a gitmiyor</b> — her sette 2–3 tekrar yedek kalacak.
+    Yakında yeni bir ara geliyor → progression başlatmıyoruz, <b>hazırlık yapıyoruz</b>.
+  </div>
+
+  <div class="tabs">
+    <div class="tab on" data-day="d1">PZT<small>Lower</small></div>
+    <div class="tab" data-day="d2">SAL<small>Upper</small></div>
+    <div class="tab" data-day="d4">PER<small>Hinge</small></div>
+    <div class="tab" data-day="d5">CUM<small>WOD</small></div>
+  </div>
+
+  <!-- ================= PAZARTESİ ================= -->
+  <div class="day on" id="d1">
+    <div class="card">
+      <div class="ctitle">Pzt 20 Tem · Lower + Pull · ~55 dk</div>
+
+      <div class="ex">
+        <div class="num">1</div>
+        <div class="body">
+          <div class="name">Back Squat <span class="sets">4×6</span></div>
+          <div class="note"><b>50 kg</b> · kalça çizgisi diz altına (full depth) · son set 3 tekrar yedek hissettirmeli</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num">2</div>
+        <div class="body">
+          <div class="name">Romanian Deadlift <span class="sets">3×8</span></div>
+          <div class="note"><b>50 kg</b> · bar bacağa yakın, sırt düz, kontrollü iniş · bel yuvarlanırsa set biter</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num key">3</div>
+        <div class="body">
+          <div class="name">Lat Pulldown <span class="sets">4×8</span><span class="tag key">Pull</span></div>
+          <div class="note"><b>50 kg</b> · yukarıda tam açıl, göğse çek, 1 sn kürek sık</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num key">4</div>
+        <div class="body">
+          <div class="name">Scapular Pull <span class="sets">4×6</span><span class="tag key">Pull-up basamağı</span></div>
+          <div class="note">Ölü asılma · kollar <b>DÜZ</b> · sadece omuz aşağı-geri · bükme yok</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num">5</div>
+        <div class="body">
+          <div class="name">Metcon — 3 tur <span class="sets">steady</span></div>
+          <div class="note">250 m row + 15 air squat + 10 push-up · <b>süre tutma</b>, nefes kontrollü kalsın · push-up bozulursa dize geç</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num">6</div>
+        <div class="body">
+          <div class="name">Dead Bug <span class="sets">3×10/taraf</span></div>
+          <div class="note">Bel dostu core · bel yere yapışık kalacak</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SALI ================= -->
+  <div class="day" id="d2">
+    <div class="card">
+      <div class="ctitle">Sal 21 Tem · Upper + Engine · ~55 dk</div>
+
+      <div class="ex">
+        <div class="num">1</div>
+        <div class="body">
+          <div class="name">Strict Press <span class="sets">4×6</span></div>
+          <div class="note"><b>~30 kg</b> · kalça sıkı, geriye yatma yok · bar alın hizasından geçince baş öne</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num">2</div>
+        <div class="body">
+          <div class="name">Bench Press <span class="sets">4×8</span></div>
+          <div class="note"><b>40 kg</b> · kürek sıkışık, bar göğse değer, tam lockout</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num key">3</div>
+        <div class="body">
+          <div class="name">Negative Pull-Up <span class="sets">4×3</span><span class="tag key">En yüksek ROI</span></div>
+          <div class="note">Bara zıpla (çene bar üstü) → <b>3–5 sn</b>'de in · haftalardır yapmadın, bugün geri geliyor</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num">4</div>
+        <div class="body">
+          <div class="name">Single-Arm DB Row <span class="sets">3×10/kol</span></div>
+          <div class="note">En ağır DB · gövde sabit, dirsek cebe doğru</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num fresh">5</div>
+        <div class="body">
+          <div class="name">Steady Engine <span class="sets">12 dk</span><span class="tag">Z2</span></div>
+          <div class="note">Row veya bike · <b>burundan nefes alabileceğin tempo</b> · bu hafta interval YOK — aerobik taban + az DOMS</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num">6</div>
+        <div class="body">
+          <div class="name">Hanging Knee Raise <span class="sets">3×8</span></div>
+          <div class="note">Toes-to-bar yolu · sallanma yok, kontrollü</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PERŞEMBE ================= -->
+  <div class="day" id="d4">
+    <div class="card">
+      <div class="ctitle">Per 23 Tem · Hinge + Full Body · ~55 dk</div>
+
+      <div class="ex">
+        <div class="num">1</div>
+        <div class="body">
+          <div class="name">Deadlift <span class="sets">4×5</span></div>
+          <div class="note"><b>60 kg</b> (program 70'ti → detrained, geri çektik) · düz sırt, brace · sırt yuvarlanırsa seti BIRAK</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num">2</div>
+        <div class="body">
+          <div class="name">Front Squat <span class="sets">3×6</span></div>
+          <div class="note"><b>40 kg</b> · dirsekler yukarıda, front rack sıkı, gövde dik</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num key">3</div>
+        <div class="body">
+          <div class="name">Banded Pull-Up <span class="sets">4×5</span><span class="tag key">Pull</span></div>
+          <div class="note">En ince lastik · <b>tam range</b>, çene bar üstü · lastik yoksa ring row 4×10</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num">4</div>
+        <div class="body">
+          <div class="name">EMOM 9 dk <span class="sets">3 hareket</span></div>
+          <div class="note">dk1: 10 KB swing · dk2: 8 burpee · dk3: 12 walking lunge · her dakika <b>~15 sn dinlenme kalacak</b> şekilde tekrarı kıs</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num">5</div>
+        <div class="body">
+          <div class="name">Plank + Y-T-W <span class="sets">3×40 sn / 3×8</span></div>
+          <div class="note">Kürek prehab (crepitus için) · Y-T-W yüzüstü, hafif/ağırlıksız</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CUMA ================= -->
+  <div class="day" id="d5">
+    <div class="card">
+      <div class="ctitle">Cum 24 Tem · WOD + Baseline Testleri · ~50 dk</div>
+
+      <div class="ex">
+        <div class="num" style="background:#f08c00">1</div>
+        <div class="body">
+          <div class="name">Max Dead-Hang <span class="sets">1 deneme</span><span class="tag test">Test</span></div>
+          <div class="note">Isınmadan sonra, taze · saniyeyi yaz</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num" style="background:#f08c00">2</div>
+        <div class="body">
+          <div class="name">1 Strict Pull-Up denemesi <span class="sets">1 tek</span><span class="tag test">Test</span></div>
+          <div class="note">Tek deneme, zorlama yok · ne kadar yükseldiğini not et (çene barın neresinde kaldı)</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num">3</div>
+        <div class="body">
+          <div class="name">Scaled Cindy <span class="sets">12 dk AMRAP</span></div>
+          <div class="note">3 ring row + 6 push-up + 9 air squat · <b>tur sayısını yaz</b> — bu senin engine tracker'ın</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num" style="background:#f08c00">4</div>
+        <div class="body">
+          <div class="name">Ölçüm Kaydı <span class="sets">—</span><span class="tag test">Test</span></div>
+          <div class="note">Haftalık ölçüm setini al ve Max'e ilet (detay Brain'de)</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num">5</div>
+        <div class="body">
+          <div class="name">Full Mobility Flow <span class="sets">10 dk</span></div>
+          <div class="note">Hafta sonunu hak et · morning-routine akışının uzun hali</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info">
+      <b>Neden bu 4 ölçüm:</b> ara öncesi baseline. Dönüşte aynısını ölçüp
+      <b>gerçek farkı</b> göreceğiz — tahminle değil, rakamla. Arada dead-hang ve
+      pull en hızlı düşen şeyler, o yüzden ara kitinde de onlar var.
+    </div>
+  </div>
+
+  <!-- DİKKAT -->
+  <div class="flag">
+    <b>⚠️ Bu hafta kuralı:</b> ~3 hafta aradan sonra ilk haftada <b>ağır gitme dürtüsü</b> en tehlikeli şey.
+    İlk 2 seansta DOMS normal (repeated-bout etkisi) — sakatlık değil. Ama <b>keskin</b> bel/omuz ağrısı ≠ DOMS
+    → dur ve bildir. Yükler geçen haftanın aynısı; hak edince <b>W32'de</b> artırırız.
+  </div>
+
+  <!-- ISINMA + SOĞUMA -->
+  <div class="cols">
+    <div class="col warm">
+      <div class="card">
+        <div class="ctitle">Isınma · 10 dk</div>
+        <div class="mini"><b>Bike/row kolay</b><span>3 dk</span></div>
+        <div class="mini"><b>Leg swings</b><span>10/yön</span></div>
+        <div class="mini"><b>World's greatest</b><span>5/taraf</span></div>
+        <div class="mini"><b>Band pull-apart</b><span>15</span></div>
+        <div class="mini"><b>Scap pull</b><span>8</span></div>
+        <div class="mini"><b>Ramp-up set</b><span>boş bar ×8 → %70 ×5</span></div>
+      </div>
+    </div>
+    <div class="col cool">
+      <div class="card">
+        <div class="ctitle">Soğuma · 8 dk</div>
+        <div class="mini"><b>Bike/row flush</b><span>3 dk</span></div>
+        <div class="mini"><b>Foam roll</b><span>quad + lat + T-spine</span></div>
+        <div class="mini"><b>Couch stretch</b><span>60 sn/taraf</span></div>
+        <div class="mini"><b>Pigeon</b><span>60 sn/taraf</span></div>
+        <div class="mini"><b>Deep squat hold</b><span>60 sn</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <div class="ctitle">Off günler + sıradaki</div>
+    <div class="mini"><b>Çar 22 · Cmt 25 · Paz 26 — OFF</b><span>Morning routine + 30 dk yürüyüş</span></div>
+    <div class="mini"><b>W31: Pzt 27 + Çar 29</b><span>2 hafif full-body seans</span></div>
+    <div class="mini"><b>Sonrası</b><span>Ara kiti — 20 dk bodyweight, ayrıca yazılacak</span></div>
+    <div class="mini"><b>Beslenme</b><span>Crash yok, kas koru · plan Brain'de</span></div>
+  </div>
+
+  <footer>Max · Brain · W30 · Bitince yükleri + RPE'yi yaz, loglayayım</footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.tab').forEach(function (t) {
+    t.addEventListener('click', function () {
+      document.querySelectorAll('.tab').forEach(function (x) { x.classList.remove('on'); });
+      document.querySelectorAll('.day').forEach(function (d) { d.classList.remove('on'); });
+      t.classList.add('on');
+      document.getElementById(t.dataset.day).classList.add('on');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
