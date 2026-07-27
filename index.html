@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>W30 — Re-Entry Haftası (20–26 Tem)</title>
+<title>W31 — Baseline + Son Stimulus (27 Tem – 2 Ağu)</title>
 <style>
   :root { --ink:#1a1a1a; --muted:#6b7280; --line:#e9edf2; --accent:#e63946;
           --warm:#2f9e44; --cool:#7048e8; --bg:#fff; --zebra:#f8fafc; }
@@ -40,6 +40,7 @@
          justify-content: center; margin-right: 11px; }
   .num.fresh { background: var(--warm); }
   .num.key { background: var(--cool); }
+  .num.test { background: #f08c00; }
   .body { flex: 1; }
   .name { font-size: 16px; font-weight: 700; }
   .sets { color: var(--accent); font-weight: 800; margin-left: 6px; }
@@ -66,9 +67,9 @@
   .info { background:#f3f0ff; border:1px solid #ded4fb; border-radius:12px; padding:12px 14px;
           margin-bottom:14px; font-size:12.5px; color:#3d2d78; }
   .info b { color: var(--cool); }
-
-  .off { text-align:center; padding:18px 14px; color:var(--muted); font-size:13px; }
-  .off b { display:block; color:var(--ink); font-size:15px; margin-bottom:4px; }
+  .test { background:#fff9db; border:1px solid #ffe8a1; border-radius:12px; padding:12px 14px;
+          margin-bottom:14px; font-size:12.5px; color:#7a5b00; }
+  .test b { color:#b8860b; }
 
   footer { text-align: center; color: var(--muted); font-size: 11px; margin-top: 16px; }
 </style>
@@ -77,35 +78,51 @@
 <div class="wrap">
 
   <header>
-    <h1>🔁 W30 — Re-Entry Haftası</h1>
-    <div class="sub">20–26 Tem · 4 gün · geri dönüş, ısınma modu</div>
-    <div class="meta">Coach: Max · ~3 hafta ara sonrası dönüş · Hepsi <b>RPE 6–7</b> · failure yok</div>
+    <h1>📊 W31 — Baseline + Son Stimulus</h1>
+    <div class="sub">27 Tem – 2 Ağu · 3 gün · Pzt / Sal / Per</div>
+    <div class="meta">Coach: Max · Yükler sabit, <b>RPE 6–7</b> · failure yok · yakında ara var</div>
   </header>
 
   <div class="info">
-    <b>Bu haftanın işi:</b> dokuyu yeniden yükle, pattern'i tazele, DOMS'u minimumda tut.
-    <b>Hiçbir set failure'a gitmiyor</b> — her sette 2–3 tekrar yedek kalacak.
-    Yakında yeni bir ara geliyor → progression başlatmıyoruz, <b>hazırlık yapıyoruz</b>.
-    <br><b>Kalan 2 gün:</b> Per (deadlift → <b>hang power clean</b>) · Cum (ölçüm → <b>normal antrenman</b>).
+    <b>Bu haftanın işi:</b> son bir kez uyar + <b>karşılaştırma sayılarını al</b>.
+    Yeni progression başlatmıyoruz (tek istisna: back squat 50 → 52.5). Perşembe kasıtlı olarak
+    <b>DOMS üretmeyen</b> kısa seans. Dönüşte aynı testleri tekrarlayıp gerçek farkı göreceğiz.
   </div>
 
   <div class="tabs">
-    <div class="tab" data-day="d1">PZT<small>✅ Lower</small></div>
-    <div class="tab" data-day="d2">SAL<small>✅ Upper</small></div>
-    <div class="tab on" data-day="d4">PER<small>Clean skill</small></div>
-    <div class="tab" data-day="d5">CUM<small>Push/Pull + WOD</small></div>
+    <div class="tab on" data-day="d1">PZT<small>Test + Lower</small></div>
+    <div class="tab" data-day="d2">SAL<small>Upper + Cindy</small></div>
+    <div class="tab" data-day="d4">PER<small>Kısa full-body</small></div>
   </div>
 
   <!-- ================= PAZARTESİ ================= -->
-  <div class="day" id="d1">
+  <div class="day on" id="d1">
+
+    <div class="test">
+      <b>⏱ ÖNCE TEST, SONRA ANTRENMAN.</b> Isınmadan sonra, <b>taze</b> haldeyken:
+      ① max dead-hang (sn) ② 1 strict pull-up denemesi (kip yok — çene barın neresinde kaldı)
+      ③ haftalık ölçüm kaydı (detay Brain'de). Squat'tan sonra ölçme — sayı düşer, karşılaştırma bozulur.
+    </div>
+
     <div class="card">
-      <div class="ctitle">Pzt 20 Tem · Lower + Pull · ~55 dk</div>
+      <div class="ctitle">Pzt 27 Tem · Baseline + Lower + Pull · ~60 dk</div>
+
+      <div class="ex">
+        <div class="num test">T</div>
+        <div class="body">
+          <div class="name">Baseline Testleri <span class="sets">3 ölçüm</span><span class="tag test">Taze yap</span></div>
+          <div class="note"><b>Max dead-hang:</b> tam asıl, omuz aktif (kulaktan uzak), bırakana kadar → sn yaz
+          <br><b>1 strict pull-up denemesi:</b> tek deneme, sallanma yok → çene nerede kaldı
+          <br><b>Ölçüm kaydı</b> (detay Brain'de)</div>
+        </div>
+      </div>
 
       <div class="ex">
         <div class="num">1</div>
         <div class="body">
           <div class="name">Back Squat <span class="sets">4×6</span></div>
-          <div class="note"><b>50 kg</b> · kalça çizgisi diz altına (full depth) · son set 3 tekrar yedek hissettirmeli</div>
+          <div class="note"><b>52.5 kg</b> · 50'de ısın, iyi hissedersen 52.5'e çık · kalça çizgisi diz altına (full depth)
+          · RPE 7'yi geçerse 50'de kal, sorun değil</div>
         </div>
       </div>
 
@@ -113,62 +130,7 @@
         <div class="num">2</div>
         <div class="body">
           <div class="name">Romanian Deadlift <span class="sets">3×8</span></div>
-          <div class="note"><b>50 kg</b> · bar bacağa yakın, sırt düz, kontrollü iniş · bel yuvarlanırsa set biter</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num key">3</div>
-        <div class="body">
-          <div class="name">Lat Pulldown <span class="sets">4×8</span><span class="tag key">Pull</span></div>
-          <div class="note"><b>50 kg</b> · yukarıda tam açıl, göğse çek, 1 sn kürek sık</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num key">4</div>
-        <div class="body">
-          <div class="name">Scapular Pull <span class="sets">4×6</span><span class="tag key">Pull-up basamağı</span></div>
-          <div class="note">Ölü asılma · kollar <b>DÜZ</b> · sadece omuz aşağı-geri · bükme yok</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num">5</div>
-        <div class="body">
-          <div class="name">Metcon — 3 tur <span class="sets">steady</span></div>
-          <div class="note">250 m row + 15 air squat + 10 push-up · <b>süre tutma</b>, nefes kontrollü kalsın · push-up bozulursa dize geç</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num">6</div>
-        <div class="body">
-          <div class="name">Dead Bug <span class="sets">3×10/taraf</span></div>
-          <div class="note">Bel dostu core · bel yere yapışık kalacak</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ================= SALI ================= -->
-  <div class="day" id="d2">
-    <div class="card">
-      <div class="ctitle">Sal 21 Tem · Upper + Engine · ~55 dk</div>
-
-      <div class="ex">
-        <div class="num">1</div>
-        <div class="body">
-          <div class="name">Strict Press <span class="sets">4×6</span></div>
-          <div class="note"><b>~30 kg</b> · kalça sıkı, geriye yatma yok · bar alın hizasından geçince baş öne</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num">2</div>
-        <div class="body">
-          <div class="name">Bench Press <span class="sets">4×8</span></div>
-          <div class="note"><b>40 kg</b> · kürek sıkışık, bar göğse değer, tam lockout</div>
+          <div class="note"><b>50 kg</b> · bar bacağa değsin, sırt düz, hamstring gerilsin · bel yuvarlanırsa set biter</div>
         </div>
       </div>
 
@@ -176,182 +138,179 @@
         <div class="num key">3</div>
         <div class="body">
           <div class="name">Negative Pull-Up <span class="sets">4×3</span><span class="tag key">En yüksek ROI</span></div>
-          <div class="note">Bara zıpla (çene bar üstü) → <b>3–5 sn</b>'de in · haftalardır yapmadın, bugün geri geliyor</div>
+          <div class="note">Bara zıpla (çene bar üstü) → <b>5 sn</b>'de in · iniş 3 sn'nin altına düşerse set biter
+          · pulldown ile süper set</div>
         </div>
       </div>
 
       <div class="ex">
-        <div class="num">4</div>
+        <div class="num key">4</div>
         <div class="body">
-          <div class="name">Single-Arm DB Row <span class="sets">3×10/kol</span></div>
-          <div class="note">En ağır DB · gövde sabit, dirsek cebe doğru</div>
+          <div class="name">Lat Pulldown <span class="sets">4×8</span><span class="tag key">Pull</span></div>
+          <div class="note"><b>50 kg</b> · yukarıda tam stretch → göğse çek → altta <b>1 sn kürek sık</b></div>
         </div>
       </div>
 
       <div class="ex">
-        <div class="num fresh">5</div>
+        <div class="num">5</div>
         <div class="body">
-          <div class="name">Steady Engine <span class="sets">12 dk</span><span class="tag">Z2</span></div>
-          <div class="note">Row veya bike · <b>burundan nefes alabileceğin tempo</b> · bu hafta interval YOK — aerobik taban + az DOMS</div>
+          <div class="name">Metcon — 3 tur <span class="sets">süre tut</span></div>
+          <div class="note">250 m row + 15 air squat + 10 push-up · steady, konuşabilir tempo · push-up formu bozulursa dize geç</div>
         </div>
       </div>
 
       <div class="ex">
         <div class="num">6</div>
         <div class="body">
-          <div class="name">Hanging Knee Raise <span class="sets">3×8</span></div>
-          <div class="note">Toes-to-bar yolu · sallanma yok, kontrollü</div>
+          <div class="name">Dead Bug <span class="sets">3×10/taraf</span></div>
+          <div class="note">Bel dostu core · bel yere yapışık · bel kalkıyorsa bacağı daha az uzat</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ================= PERŞEMBE ================= -->
-  <div class="day on" id="d4">
+  <!-- ================= SALI ================= -->
+  <div class="day" id="d2">
+
+    <div class="test">
+      <b>🎯 Bugünün asıl testi: Scaled Cindy.</b> Geçen hafta Cuma yapılmadı → engine baseline'ı
+      bugün alıyoruz. <b>Tur sayısı + artık tekrar</b> yazılacak; dönüşte aynı WOD tekrar edilecek.
+    </div>
+
     <div class="card">
-      <div class="ctitle">Per 23 Tem · Clean Skill + Full Body · ~55 dk</div>
+      <div class="ctitle">Sal 28 Tem · Upper + Engine · ~55 dk</div>
 
       <div class="ex">
-        <div class="num fresh">1</div>
+        <div class="num">1</div>
         <div class="body">
-          <div class="name">Hang Power Clean <span class="sets">5×3</span><span class="tag">Skill · TAZE YAP</span></div>
-          <div class="note"><b>35–40 kg</b> · diz üstü hang · setler arası <b>2 dk</b> ·
-          <b>ağırlık değil hız</b> · teknik bozulursa 30 kg'a in, yukarı çıkma
-          <br>① bar diz üstü, kalça geride, omuz bardan hafif önde
-          ② bar uyluğa yakın, <b>kollar ip</b> — kolla çekme
-          ③ kalça+diz+bilek tam açılım (zıpla + shrug)
-          ④ <b>dirsekler hızlı</b>, yandan dolan
-          ⑤ çeyrek squat'ta yakala, dirsekler yüksek → dik dur
-          <br><i>Isınma basamağı: boş bar 5 muscle clean → 5 hang high pull → 3 hang power clean → 30 kg ×3</i></div>
+          <div class="name">Strict Press <span class="sets">4×6</span></div>
+          <div class="note"><b>30 kg</b> · kalça sıkı, geriye yatma (layback) yok · bar çeneyi geçince baş öne</div>
         </div>
       </div>
 
       <div class="ex">
         <div class="num">2</div>
         <div class="body">
-          <div class="name">Front Squat <span class="sets">3×6</span></div>
-          <div class="note"><b>40 kg</b> · dirsekler yukarıda, front rack sıkı, gövde dik</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num">2b</div>
-        <div class="body">
-          <div class="name">Romanian Deadlift <span class="sets">3×8</span></div>
-          <div class="note"><b>50 kg</b> · deadlift'in yerine hafif hinge · bar bacağa yakın, sırt düz, kontrollü iniş · bel yuvarlanırsa set biter</div>
+          <div class="name">Bench Press <span class="sets">4×8</span></div>
+          <div class="note"><b>40 kg</b> · kürek kemikleri cepte, bar göğüs altına, tam lockout</div>
         </div>
       </div>
 
       <div class="ex">
         <div class="num key">3</div>
         <div class="body">
-          <div class="name">Banded Pull-Up <span class="sets">4×5</span><span class="tag key">Pull</span></div>
-          <div class="note">En ince lastik · <b>tam range</b>, çene bar üstü · lastik yoksa ring row 4×10</div>
+          <div class="name">Single-Arm DB Row <span class="sets">3×10/kol</span><span class="tag key">Pull</span></div>
+          <div class="note">En ağır DB · gövde sabit (dönme yok), dirsek cebe doğru</div>
         </div>
       </div>
 
       <div class="ex">
-        <div class="num">4</div>
+        <div class="num fresh">4</div>
         <div class="body">
-          <div class="name">EMOM 9 dk <span class="sets">3 hareket</span></div>
-          <div class="note">dk1: 10 KB swing · dk2: 8 burpee · dk3: 12 walking lunge · her dakika <b>~15 sn dinlenme kalacak</b> şekilde tekrarı kıs</div>
+          <div class="name">Scaled Cindy <span class="sets">15 dk AMRAP</span><span class="tag test">Baseline</span></div>
+          <div class="note">3 ring row + 6 push-up + 9 air squat · <b>steady başla</b>, son 3 dk hızlan
+          · tur sayısını yaz · alternatif: 4 tur 300 m row + 12 KB swing + 10 push-up + 12 air squat</div>
         </div>
       </div>
 
       <div class="ex">
         <div class="num">5</div>
         <div class="body">
-          <div class="name">Plank + Y-T-W <span class="sets">3×40 sn / 3×8</span></div>
-          <div class="note">Kürek prehab · Y-T-W yüzüstü, hafif/ağırlıksız · vakit darsa bunu kes</div>
+          <div class="name">Hanging Knee Raise <span class="sets">3×8</span></div>
+          <div class="note">Toes-to-bar yolu · sallanma yok, dizler göbek hizasına</div>
         </div>
       </div>
     </div>
-
-    <div class="info">
-      <b>Neden deadlift değil clean:</b> hang power clean aylardır yapılmadı ve her box WOD'unda var.
-      Uzun aradan sonra ağır çekmek yerine <b>hızlı dirsek + yakın bar</b> çalışmak daha kârlı;
-      posterior chain'i hafif RDL kapatıyor. Dirsekler yavaşlayıp bar "ters curl" gibi geliyorsa
-      yük fazladır → 5 kg in.
-    </div>
   </div>
 
-  <!-- ================= CUMA ================= -->
-  <div class="day" id="d5">
+  <!-- ================= PERŞEMBE ================= -->
+  <div class="day" id="d4">
+
     <div class="info">
-      <b>GÜNCELLENDİ:</b> Cuma artık <b>ölçüm günü değil</b>, normal antrenman.
-      Ölçümler <b>Pazartesi</b>'ye taşındı — taze günde ölçmek daha temiz veri.
+      <b>Kural: ter var, DOMS yok.</b> Ağır yük yok, failure yok, tempo rahat.
+      Bu seansın işi <b>kalça/bel açmak + pattern'i taze tutmak</b> — asıl kazanç sondaki mobility.
     </div>
 
     <div class="card">
-      <div class="ctitle">Cum 24 Tem · Push/Pull + WOD · ~55 dk</div>
+      <div class="ctitle">Per 30 Tem · Kısa Full-Body · ~35 dk · RPE 6</div>
 
       <div class="ex">
         <div class="num">1</div>
         <div class="body">
-          <div class="name">Strict Press <span class="sets">3×6</span></div>
-          <div class="note"><b>30 kg</b> · kalça sıkı, geriye yatma yok · dün clean + RDL vardı, bugün hafif kalsın</div>
+          <div class="name">Goblet Squat <span class="sets">3×12</span></div>
+          <div class="note">Orta DB · dirsekler diz içine, göğüs yukarı, kontrollü iniş</div>
         </div>
       </div>
 
       <div class="ex">
-        <div class="num key">2</div>
+        <div class="num">2</div>
         <div class="body">
-          <div class="name">Lat Pulldown <span class="sets">4×8</span><span class="tag key">Pull</span></div>
-          <div class="note"><b>50 kg</b> · tam stretch → göğse çek → 1 sn kürek sık</div>
+          <div class="name">DB Romanian Deadlift <span class="sets">3×12</span></div>
+          <div class="note">Orta DB · kalça geri, bel nötr, hamstring gerilsin</div>
         </div>
       </div>
 
       <div class="ex">
-        <div class="num key">3</div>
+        <div class="num">3</div>
         <div class="body">
-          <div class="name">Negative Pull-Up <span class="sets">3×3</span><span class="tag key">En yüksek ROI</span></div>
-          <div class="note">Çene bar üstünden <b>3–5 sn</b> kontrollü iniş · iniş kısalırsa set biter</div>
+          <div class="name">Push-Up <span class="sets">3×(max−2)</span></div>
+          <div class="note">Vücut tek çizgi, kalça düşmesin · <b>failure'a gitme</b>, 2 tekrar yedek bırak</div>
         </div>
       </div>
 
       <div class="ex">
-        <div class="num">4</div>
+        <div class="num key">4</div>
         <div class="body">
-          <div class="name">Scaled Cindy <span class="sets">15 dk AMRAP</span></div>
-          <div class="note">3 ring row + 6 push-up + 9 air squat · steady tempo · <b>tur sayısını yaz</b> — engine tracker'ın
-          · alternatif: 4 tur 300 m row + 12 KB swing + 10 push-up + 12 air squat</div>
+          <div class="name">Lat Pulldown / Ring Row <span class="sets">3×12</span><span class="tag key">Pull</span></div>
+          <div class="note">Hafif-orta yük · kontrollü tempo, sonda kürek sıkma</div>
         </div>
       </div>
 
       <div class="ex">
-        <div class="num">5</div>
+        <div class="num key">5</div>
         <div class="body">
-          <div class="name">Full Mobility Flow <span class="sets">10 dk</span></div>
-          <div class="note">Hafta sonunu hak et · morning-routine akışının uzun hali</div>
+          <div class="name">Dead Hang <span class="sets">3×20–30 sn</span><span class="tag key">Koruma</span></div>
+          <div class="note">Grip + omuz · ara döneminde en hızlı kaybedilen şey pull — bu yüzden burada</div>
         </div>
       </div>
-    </div>
 
-    <div class="info">
-      <b>Pazartesi — ölçüm günü:</b> max dead-hang (sn) · 1 strict pull-up denemesi ·
-      haftalık ölçüm seti (detay Brain'de). Ara öncesi baseline; dönüşte aynısını ölçüp
-      <b>gerçek farkı</b> rakamla göreceğiz.
+      <div class="ex">
+        <div class="num fresh">6</div>
+        <div class="body">
+          <div class="name">Kolay Row/Bike <span class="sets">8 dk</span><span class="tag">Z2</span></div>
+          <div class="note">Burundan nefes alabileceğin tempo · terle, yorulma</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="num">7</div>
+        <div class="body">
+          <div class="name">Uzun Mobility <span class="sets">10 dk</span></div>
+          <div class="note">Couch stretch 60 sn/taraf · pigeon 60 sn/taraf · supine twist 45 sn/taraf
+          · derin squat 90 sn · 90/90 kalça geçişi ×10</div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- DİKKAT -->
   <div class="flag">
-    <b>⚠️ Bu hafta kuralı:</b> ~3 hafta aradan sonra ilk haftada <b>ağır gitme dürtüsü</b> en tehlikeli şey.
-    İlk 2 seansta DOMS normal (repeated-bout etkisi) — sakatlık değil. Ama <b>keskin</b> bel/omuz ağrısı ≠ DOMS
-    → dur ve bildir. Yükler geçen haftanın aynısı; hak edince <b>W32'de</b> artırırız.
+    <b>⚠️ Bu hafta kuralı:</b> önümüzde bir ara var → <b>yükü kovalamanın sıfır getirisi</b> var.
+    Bu hafta kazandığımız tek şey <b>temiz baseline sayıları</b> (dead hang · pull-up denemesi · Cindy turu).
+    Her sette 2–3 tekrar yedek kalsın. Keskin bel/omuz ağrısı ≠ DOMS → dur ve bildir.
   </div>
 
   <!-- ISINMA + SOĞUMA -->
   <div class="cols">
     <div class="col warm">
       <div class="card">
-        <div class="ctitle">Isınma · 10 dk</div>
+        <div class="ctitle">Isınma · 8–10 dk</div>
         <div class="mini"><b>Bike/row kolay</b><span>3 dk</span></div>
         <div class="mini"><b>Leg swings</b><span>10/yön</span></div>
         <div class="mini"><b>World's greatest</b><span>5/taraf</span></div>
         <div class="mini"><b>Band pull-apart</b><span>15</span></div>
         <div class="mini"><b>Scap pull</b><span>8</span></div>
-        <div class="mini"><b>Ramp-up set</b><span>boş bar ×8 → %70 ×5</span></div>
+        <div class="mini"><b>Ramp-up set</b><span>boş bar ×8 → 40 kg ×5</span></div>
       </div>
     </div>
     <div class="col cool">
@@ -359,7 +318,7 @@
         <div class="ctitle">Soğuma · 8 dk</div>
         <div class="mini"><b>Bike/row flush</b><span>3 dk</span></div>
         <div class="mini"><b>Foam roll</b><span>quad + lat + T-spine</span></div>
-        <div class="mini"><b>Couch stretch</b><span>60 sn/taraf</span></div>
+        <div class="mini"><b>Couch stretch</b><span>45–60 sn/taraf</span></div>
         <div class="mini"><b>Pigeon</b><span>60 sn/taraf</span></div>
         <div class="mini"><b>Deep squat hold</b><span>60 sn</span></div>
       </div>
@@ -368,13 +327,13 @@
 
   <div class="card" style="margin-top:14px">
     <div class="ctitle">Off günler + sıradaki</div>
-    <div class="mini"><b>Çar 22 · Cmt 25 · Paz 26 — OFF</b><span>Morning routine + 30 dk yürüyüş</span></div>
-    <div class="mini"><b>Gelecek hafta: Pzt + Çar</b><span>Pzt ölçüm + hafif full-body · Çar hafif full-body</span></div>
-    <div class="mini"><b>Sonrası</b><span>Ara kiti — 20 dk bodyweight, ayrıca yazılacak</span></div>
-    <div class="mini"><b>Beslenme</b><span>Crash yok, kas koru · plan Brain'de</span></div>
+    <div class="mini"><b>Çar 29 · Cum 31 · hafta sonu — OFF</b><span>Morning routine + 30 dk yürüyüş</span></div>
+    <div class="mini"><b>Ara dönemi</b><span>20 dk bodyweight kit × 3/hafta — push-up · dead hang/row · air squat · hinge · plank</span></div>
+    <div class="mini"><b>Dönüşte</b><span>Aynı 3 test tekrar → sonra yük artışı + Block 2</span></div>
+    <div class="mini"><b>Beslenme</b><span>Crash yok, protein öncelik · plan Brain'de</span></div>
   </div>
 
-  <footer>Max · Brain · W30 · Bitince yükleri + RPE'yi yaz, loglayayım</footer>
+  <footer>Max · Brain · W31 · Bitince yükleri + RPE + test sayılarını yaz, loglayayım</footer>
 
 </div>
 
