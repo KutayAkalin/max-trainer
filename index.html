@@ -2,537 +2,306 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bu Hafta — W36 · Re-Entry · Sıfır Impact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#111827">
+<title>Bu Hafta — W38 · Bilek Bloğu 1/4</title>
 <style>
-  :root { --ink:#1a1a1a; --muted:#6b7280; --line:#e9edf2; --accent:#e63946;
-          --warm:#2f9e44; --cool:#7048e8; --bg:#fff; --zebra:#f8fafc; }
-  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-text-size-adjust: 100%; }
-  body { font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
-         color: var(--ink); background: #f1f3f5; padding: 18px; line-height: 1.4; }
-  .wrap { max-width: 430px; margin: 0 auto; }
+  :root {
+    --bg:#f3f4f6; --card:#fff; --ink:#111827; --muted:#6b7280; --line:#e5e7eb; --soft:#f9fafb;
+    --red:#dc2626; --shadow:0 1px 2px rgba(0,0,0,.05), 0 6px 18px rgba(0,0,0,.05);
+    --hero1:#111827; --hero2:#312e81;
+  }
+  .pzt { --acc:#6366f1; --acc-ink:#3730a3; --acc-soft:#eef0ff; }
+  .sal { --acc:#f59e0b; --acc-ink:#92400e; --acc-soft:#fff5dd; }
+  .per { --acc:#0d9488; --acc-ink:#115e59; --acc-soft:#e0f5f2; }
+  .cum { --acc:#e11d48; --acc-ink:#9f1239; --acc-soft:#ffe4e9; }
+  .gun { --acc:#111827; --acc-ink:#111827; --acc-soft:#f3f4f6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0b0d12; --card:#151924; --ink:#f3f4f6; --muted:#9aa3b2; --line:#262c3a; --soft:#1b202c;
+            --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35); --hero1:#1f2937; --hero2:#3730a3; }
+    .pzt { --acc-soft:#1a1c3a; --acc-ink:#c7d2fe; }
+    .sal { --acc-soft:#2a2110; --acc-ink:#fcd34d; }
+    .per { --acc-soft:#0e2b28; --acc-ink:#99f6e4; }
+    .cum { --acc-soft:#3a1020; --acc-ink:#fda4af; }
+    .gun { --acc:#e5e7eb; --acc-ink:#e5e7eb; --acc-soft:#1b202c; }
+  }
+  * { box-sizing:border-box; margin:0; padding:0; -webkit-text-size-adjust:100%; }
+  body { font-family:-apple-system,"SF Pro Text","Segoe UI",Roboto,Inter,sans-serif; color:var(--ink); background:var(--bg);
+         padding:14px 14px calc(24px + env(safe-area-inset-bottom)); line-height:1.45; }
+  .wrap { max-width:440px; margin:0 auto; }
 
-  header { border-bottom: 3px solid var(--accent); padding-bottom: 12px; margin-bottom: 14px; }
-  h1 { font-size: 21px; font-weight: 800; letter-spacing: -.4px; }
-  .sub { color: var(--accent); font-size: 13px; font-weight: 600; margin-top: 3px; }
-  .meta { color: var(--muted); font-size: 12px; margin-top: 2px; }
+  .hero { background:linear-gradient(135deg,var(--hero1),var(--hero2)); color:#fff; border-radius:18px; padding:16px 16px 14px; margin-bottom:12px; box-shadow:var(--shadow); }
+  .hero h1 { font-size:21px; font-weight:800; letter-spacing:-.4px; }
+  .hero .p { font-size:13px; opacity:.85; margin-top:3px; }
+  .hero .m { display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+  .hero .m span { font-size:11.5px; font-weight:700; background:rgba(255,255,255,.14); border-radius:99px; padding:3px 9px; }
 
-  .card { background: var(--bg); border-radius: 14px; padding: 14px;
-          box-shadow: 0 1px 3px rgba(0,0,0,.06); margin-bottom: 14px; }
-  .ctitle { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
-            color: var(--accent); margin-bottom: 10px; }
+  .tabs { display:flex; gap:5px; margin-bottom:12px; position:sticky; top:8px; z-index:5; }
+  .tab { flex:1; border:0; border-radius:12px; padding:9px 2px; background:var(--card); color:var(--muted);
+         font:inherit; font-size:13px; font-weight:800; cursor:pointer; box-shadow:var(--shadow); }
+  .tab small { display:block; font-size:9.5px; font-weight:600; opacity:.75; }
+  .tab.on { background:var(--acc); color:#fff; }
+  .tab.sal.on { color:#1f1300; }
+  .tab.gun.on { color:var(--bg); }
 
-  /* tabs */
-  .tabs { display: flex; gap: 6px; margin-bottom: 14px; }
-  .tab { flex: 1; text-align: center; padding: 9px 4px; border-radius: 10px; background: #fff;
-         font-size: 12.5px; font-weight: 800; color: var(--muted); cursor: pointer;
-         box-shadow: 0 1px 3px rgba(0,0,0,.06); border: 2px solid transparent; }
-  .tab.on { color: #fff; background: var(--accent); border-color: var(--accent); }
-  .tab small { display: block; font-size: 10px; font-weight: 600; opacity: .8; }
+  .pane { display:none; } .pane.on { display:block; }
+  .card { background:var(--card); border-radius:16px; padding:12px 14px; box-shadow:var(--shadow); margin-bottom:12px; }
+  .hint { font-size:12.5px; color:var(--muted); margin:0 2px 10px; }
+  .hint b { color:var(--ink); }
 
-  .day { display: none; }
-  .day.on { display: block; }
+  .progress { height:5px; background:var(--line); border-radius:99px; overflow:hidden; margin:2px 0 6px; }
+  .bar { height:100%; width:0; border-radius:99px; transition:width .25s; background:var(--acc); }
+  .pmeta { display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--muted); margin-bottom:4px; }
+  .reset { border:0; background:var(--soft); color:var(--muted); font:inherit; font-size:11.5px; font-weight:700; padding:4px 10px; border-radius:99px; cursor:pointer; }
 
-  .ex { display: flex; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--line); }
-  .ex:last-child { border-bottom: none; padding-bottom: 0; }
-  .num { flex: 0 0 26px; height: 26px; width: 26px; border-radius: 50%; background: var(--accent);
-         color: #fff; font-size: 14px; font-weight: 800; display: flex; align-items: center;
-         justify-content: center; margin-right: 11px; }
-  .num.fresh { background: var(--warm); }
-  .num.key { background: var(--cool); }
-  .num.test { background: #f08c00; }
-  .body { flex: 1; }
-  .name { font-size: 16px; font-weight: 700; }
-  .sets { color: var(--accent); font-weight: 800; margin-left: 6px; }
-  .note { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
-  .tag { display:inline-block; font-size:10px; font-weight:800; text-transform:uppercase;
-         letter-spacing:.5px; color:#fff; background:var(--warm); border-radius:5px;
-         padding:1px 6px; margin-left:6px; vertical-align:middle; }
-  .tag.key { background: var(--cool); }
-  .tag.test { background: #f08c00; }
-  .tag.safe { background: #0c8599; }
+  .sec { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--acc-ink); margin:12px 0 2px; }
+  .sec:first-of-type { margin-top:6px; }
 
-  .cols { display: flex; gap: 12px; }
-  .col { flex: 1; }
-  .col .card { margin-bottom: 0; }
-  .col.warm .ctitle { color: var(--warm); }
-  .col.cool .ctitle { color: var(--cool); }
-  .mini { font-size: 12.5px; padding: 6px 0; border-bottom: 1px solid var(--line); }
-  .mini:last-child { border-bottom: none; padding-bottom: 0; }
-  .mini b { font-weight: 700; display: block; }
-  .mini span { color: var(--muted); }
+  .ex { display:flex; gap:11px; align-items:center; padding:10px 0; border-bottom:1px solid var(--line); cursor:pointer; -webkit-tap-highlight-color:transparent; }
+  .ex:last-child { border-bottom:0; }
+  .ex input { position:absolute; opacity:0; width:0; height:0; }
+  .chk { flex:0 0 28px; height:28px; width:28px; border-radius:50%; border:2px solid var(--acc); display:flex; align-items:center; justify-content:center;
+         font-size:12px; font-weight:800; color:var(--acc-ink); background:var(--card); }
+  .ex.w .chk, .ex.s .chk { border-color:var(--line); color:var(--muted); font-size:13px; }
+  .ex.done .chk { color:#fff; background:var(--acc); border-color:var(--acc); }
+  .ex .b { flex:1; min-width:0; }
+  .ex .n { font-size:15.5px; font-weight:750; letter-spacing:-.2px; }
+  .ex.w .n, .ex.s .n { font-size:14px; font-weight:650; }
+  .ex .c { font-size:12.5px; color:var(--muted); margin-top:1px; }
+  .ex .dose { flex:0 0 auto; font-size:12.5px; font-weight:800; padding:3px 9px; border-radius:99px; background:var(--acc-soft); color:var(--acc-ink); white-space:nowrap; }
+  .ex.w .dose, .ex.s .dose { background:var(--soft); color:var(--muted); }
+  .ex.done .n, .ex.done .c { opacity:.4; text-decoration:line-through; }
 
-  .flag { background:#fff5f5; border:1px solid #ffd6d6; border-radius:12px; padding:12px 14px;
-          margin-bottom:14px; font-size:12.5px; color:#7a2727; }
-  .flag b { color: var(--accent); }
-  .info { background:#f3f0ff; border:1px solid #ded4fb; border-radius:12px; padding:12px 14px;
-          margin-bottom:14px; font-size:12.5px; color:#3d2d78; }
-  .info b { color: var(--cool); }
-  .test { background:#fff9db; border:1px solid #ffe8a1; border-radius:12px; padding:12px 14px;
-          margin-bottom:14px; font-size:12.5px; color:#7a5b00; }
-  .test b { color:#b8860b; }
-
-  footer { text-align: center; color: var(--muted); font-size: 11px; margin-top: 16px; }
+  .kv { display:flex; gap:12px; padding:9px 0; border-bottom:1px solid var(--line); font-size:13px; }
+  .kv:last-child { border-bottom:0; }
+  .kv b { flex:0 0 72px; color:var(--acc-ink); font-weight:800; }
+  .log { font-size:12.5px; color:var(--muted); }
+  .log b { color:var(--ink); }
+  footer { text-align:center; color:var(--muted); font-size:11px; margin-top:16px; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <header>
-    <h1>🔄 Bu Hafta — Re-Entry · Sıfır Impact</h1>
-    <div class="sub">W36 · 3 gün · Sal / Per / Cum · + Günlük rutin</div>
-    <div class="meta">Coach: Max · Yükler <b>~%80</b> · RPE 6–7 · failure yok · progression YOK</div>
-  </header>
-
-  <div class="info">
-    <b>Bu haftanın işi:</b> uzun aradan sonra vücudu yeniden uyandırmak — <b>üst vücut tam gaz</b>,
-    alt vücut <b>dondurulmuş yükle</b> (Salı iyi geçti → aynı yük korunuyor, artış yok) + makine desteği.
-    Sıçrama, koşu, tek ayak denge işi yok.
-    Aradan sonra en hızlı kaybedilen şey <b>pulling strength</b>, o yüzden pull üç günün <b>üçünde de</b> var.
-    Yük artışı bu hafta başlamıyor: önce hareket kalitesi ve ağrısız aralık.
+  <div class="hero">
+    <h1>Bilek Bloğu · Hafta 1/4</h1>
+    <div class="p">W38 · Bilek dışarıda, kalan her şey tam gaz. Pull-up projesi bu ay hız kazanıyor.</div>
+    <div class="m"><span>4 gün</span><span>Pzt · Sal · Per · Cum</span><span>~50–55 dk</span><span>RPE 7</span><span>Sıfır impact</span></div>
   </div>
 
-  <div class="tabs">
-    <div class="tab" data-day="d1">SAL ✅<small>Yapıldı</small></div>
-    <div class="tab" data-day="d2">PER ✅<small>Yapıldı</small></div>
-    <div class="tab on" data-day="d3">CUM<small>Squat + WOD</small></div>
-    <div class="tab" data-day="d4">GÜNLÜK<small>Sabah · Akşam</small></div>
-  </div>
+  <nav class="tabs">
+    <button class="tab pzt" data-tab="pzt">PZT<small>Pull</small></button>
+    <button class="tab sal" data-tab="sal">SAL<small>Push</small></button>
+    <button class="tab per" data-tab="per">PER<small>WOD</small></button>
+    <button class="tab cum" data-tab="cum">CUM<small>Kuvvet</small></button>
+    <button class="tab gun" data-tab="gun">GÜN<small>Rutin</small></button>
+  </nav>
 
-  <!-- ================= SALI ================= -->
-  <div class="day" id="d1">
-
-    <div class="test">
-      <b>✅ Salı yapıldı — ama bu kartla değil.</b> Eski full-body kart (back squat · RDL · strict press ·
-      pulldown · bench · ring row · Z2) biraz daha ağır yüklerle çalışıldı ve <b>iyi tolere edildi</b>.
-      Karar: alt vücut programda kalıyor, <b>yükler donduruldu</b> — Salı'nın üstüne <b>+0 kg</b>.
-      Aşağıdaki plan referans olarak duruyor.
-    </div>
-
+  <!-- ================= PZT ================= -->
+  <section class="pane pzt" id="pzt">
+    <p class="hint"><b>Pull #1</b> · ~55 dk · RPE 7 · negatifler ısınmadan hemen sonra, taze</p>
     <div class="card">
-      <div class="ctitle">Sal · Pull + Ankle-Neutral Legs · ~55 dk · RPE 6</div>
+      <div class="pmeta"><span id="pzt-count">0/0</span><button class="reset" data-pane="pzt">Sıfırla</button></div>
+      <div class="progress"><div class="bar" id="pzt-bar"></div></div>
 
-      <div class="ex">
-        <div class="num key">1</div>
-        <div class="body">
-          <div class="name">Lat Pulldown <span class="sets">4×8</span><span class="tag key">Pull</span></div>
-          <div class="note"><b>42.5 kg</b> · yukarıda tam stretch → göğse çek → altta <b>1 sn kürek sık</b>
-          · dead hang ile süper set</div>
-        </div>
-      </div>
+      <div class="sec">Isınma · 8 dk</div>
+      <label class="ex w"><input type="checkbox" data-id="pzt-w1"><span class="chk">•</span><span class="b"><span class="n">Arms-only bike</span></span><span class="dose">3 dk</span></label>
+      <label class="ex w"><input type="checkbox" data-id="pzt-w2"><span class="chk">•</span><span class="b"><span class="n">Cat-cow + band pull-apart</span></span><span class="dose">8 + 15</span></label>
+      <label class="ex w"><input type="checkbox" data-id="pzt-w3"><span class="chk">•</span><span class="b"><span class="n">Scap pull + wall slide</span><span class="c">dead hang'de kürek aşağı-yukarı</span></span><span class="dose">8 + 8</span></label>
+      <label class="ex w"><input type="checkbox" data-id="pzt-w4"><span class="chk">•</span><span class="b"><span class="n">Dead bug + pulldown hafif</span></span><span class="dose">6/taraf · 2 set</span></label>
 
-      <div class="ex">
-        <div class="num key">2</div>
-        <div class="body">
-          <div class="name">Dead Hang <span class="sets">4×20–30 sn</span><span class="tag key">Pull</span></div>
-          <div class="note">Omuz aktif, kulaktan uzak · <b>alçak bardan çık, zıplama ve sert iniş yok</b></div>
-        </div>
-      </div>
+      <div class="sec">Ana</div>
+      <label class="ex"><input type="checkbox" data-id="pzt-1"><span class="chk">1</span><span class="b"><span class="n">Negative pull-up</span><span class="c">assisted makinede, en düşük assist · çene bar üstü → <b>5 sn iniş</b> · 3 sn altı = set biter</span></span><span class="dose">4×3</span></label>
+      <label class="ex"><input type="checkbox" data-id="pzt-2"><span class="chk">2</span><span class="b"><span class="n">Lat pulldown</span><span class="c">50 kg · RPE ≤8, 4. set düşerse 47.5 · tam stretch, omuz silkme yok · dead hang ile süperset</span></span><span class="dose">4×8</span></label>
+      <label class="ex"><input type="checkbox" data-id="pzt-3"><span class="chk">3</span><span class="b"><span class="n">Dead hang</span><span class="c">omuz paketli · kutudan sağlam ayakla çık/in · 90 sn dinlen</span></span><span class="dose">4×25–30 sn</span></label>
+      <label class="ex"><input type="checkbox" data-id="pzt-4"><span class="chk">4</span><span class="b"><span class="n">Chest-supported row</span><span class="c">göğüs desteğe yapışık · kulak–omuz mesafesi sabit</span></span><span class="dose">4×10</span></label>
+      <label class="ex"><input type="checkbox" data-id="pzt-5"><span class="chk">5</span><span class="b"><span class="n">Seated DB shoulder press</span><span class="c">12–14 kg/el · sırt destekli, kaburga kapalı</span></span><span class="dose">4×8</span></label>
+      <label class="ex"><input type="checkbox" data-id="pzt-6"><span class="chk">6</span><span class="b"><span class="n">Heavy DB shrug</span><span class="c">en ağır DB · düz yukarı, tepede 2 sn</span></span><span class="dose">3×12</span></label>
+      <label class="ex"><input type="checkbox" data-id="pzt-7"><span class="chk">7</span><span class="b"><span class="n">Seated leg curl</span><span class="c">hafif-orta · pad bileğe/desteğe basıyorsa atla</span></span><span class="dose">3×12</span></label>
+      <label class="ex"><input type="checkbox" data-id="pzt-8"><span class="chk">8</span><span class="b"><span class="n">Hip thrust (bench)</span><span class="c">bodyweight · topuktan it, tepede 1 sn · bilek sabit, ağrı = set biter</span></span><span class="dose">3×15</span></label>
+      <label class="ex"><input type="checkbox" data-id="pzt-9"><span class="chk">9</span><span class="b"><span class="n">Dead bug + side plank</span><span class="c">bel yere yapışık</span></span><span class="dose">3×10/t · 3×30 sn/t</span></label>
+      <label class="ex"><input type="checkbox" data-id="pzt-10"><span class="chk">10</span><span class="b"><span class="n">Arms-only bike intervals</span><span class="c">30 sn hızlı / 30 sn yavaş · bacaklar pasif</span></span><span class="dose">8 tur</span></label>
 
-      <div class="ex">
-        <div class="num">3</div>
-        <div class="body">
-          <div class="name">Bench Press <span class="sets">4×8</span></div>
-          <div class="note"><b>35 kg</b> · kürek kemikleri cepte, bar göğüs altına, dirsek ~45°
-          · RPE 6, 2–3 tekrar yedek kalsın</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num key">4</div>
-        <div class="body">
-          <div class="name">Chest-Supported / Seated Row <span class="sets">4×10</span><span class="tag key">Pull</span></div>
-          <div class="note">Göğüs desteğe yapışık, gövde sallanmaz · çekişi kürekten başlat, kolla bitir</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num">5</div>
-        <div class="body">
-          <div class="name">Face Pull <span class="sets">3×15</span></div>
-          <div class="note">Hafif · dirsekler yüksek, kürekler geriye · omuz/scapula prehab</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num" style="background:#0c8599">6</div>
-        <div class="body">
-          <div class="name">Leg Press <span class="sets">3×12</span><span class="tag safe">Makine</span></div>
-          <div class="note">Ayaklar platformda <b>yukarıda ve geniş</b>, diz 90°'yi geçmesin · hafif-orta, RPE 6
-          · denge yok, impact yok</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num" style="background:#0c8599">7</div>
-        <div class="body">
-          <div class="name">Seated / Lying Leg Curl <span class="sets">3×12</span><span class="tag safe">Makine</span></div>
-          <div class="note">Hamstring · iniş 3 sn kontrollü</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num fresh">8</div>
-        <div class="body">
-          <div class="name">Box Squat — topuk plate üstünde <span class="sets">3×10</span><span class="tag">bodyweight</span></div>
-          <div class="note">Topuk altına 2.5 kg plate · kutuya <b>yavaş</b> otur–kalk, iki ayak eşit bassın
-          · <b>ağrı hissedersen set biter</b> — bu bir test, yarış değil</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num">9</div>
-        <div class="body">
-          <div class="name">Hanging Knee Raise <span class="sets">3×8</span></div>
-          <div class="note">Sallanma yok, dizler göbek hizasına · toes-to-bar yolu</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num fresh">10</div>
-        <div class="body">
-          <div class="name">Z2 Engine <span class="sets">8 dk</span><span class="tag">Opsiyonel</span></div>
-          <div class="note">Bike, kolay, RPE 5, burundan nefes · <b>rahatsızlık varsa atla</b> — bu hafta motor öncelik değil</div>
-        </div>
-      </div>
+      <div class="sec">Soğuma · 6 dk</div>
+      <label class="ex s"><input type="checkbox" data-id="pzt-s1"><span class="chk">↓</span><span class="b"><span class="n">Arms-bike kolay</span></span><span class="dose">2 dk</span></label>
+      <label class="ex s"><input type="checkbox" data-id="pzt-s2"><span class="chk">↓</span><span class="b"><span class="n">Lat + T-spine roll</span></span><span class="dose">1'er dk</span></label>
+      <label class="ex s"><input type="checkbox" data-id="pzt-s3"><span class="chk">↓</span><span class="b"><span class="n">Göğüs/kapı + couch</span></span><span class="dose">45 sn · 60 sn/t</span></label>
     </div>
+    <div class="card log"><b>Kayıt:</b> negatif iniş sn · pulldown kg + RPE · row · press kg · shrug kg · bilek hissi</div>
+  </section>
 
-    <div class="info">
-      <b>Vakit daralırsa kesme sırası:</b> ① Z2 ② face pull ③ leg press set sayısı.
-      <b>Pulldown · dead hang · box squat kesilmez.</b>
-    </div>
-  </div>
-
-  <!-- ================= PERŞEMBE ================= -->
-  <div class="day" id="d2">
-
-    <div class="test">
-      <b>✅ Perşembe yapıldı — farklı içerikle:</b> front squat 3×8 hafif · deadlift 3×8 60 kg · push press 3×8 27.5 kg ·
-      DB row 3×8 14 kg · <b>lat pulldown 3×8 50 kg</b> · bike 6 dk. Pull tatil öncesi seviyeye döndü.
-      Salı + Perşembe iki yüklü alt vücut üst üste geldi → <b>Cuma alt vücut yok</b>. Aşağıdaki plan referans.
-    </div>
-
-    <div class="info">
-      <b>Neden oturarak omuz press?</b> Ayakta barbell press'te alt bacak stabilizasyona katılır.
-      Bu hafta başının üstünde ağırlıkla dengesiz bir zeminde durmuyoruz — <b>sırt destekli, oturarak</b>.
-      Barbell versiyonu ilerideki blokta geri gelecek.
-    </div>
-
+  <!-- ================= SAL ================= -->
+  <section class="pane sal" id="sal">
+    <p class="hint"><b>Push + core + Z2</b> · ~50 dk · RPE 7 · bench'te bacakla itme yok</p>
     <div class="card">
-      <div class="ctitle">Per · Push + Glute/Hamstring + Core · ~50 dk · RPE 6</div>
+      <div class="pmeta"><span id="sal-count">0/0</span><button class="reset" data-pane="sal">Sıfırla</button></div>
+      <div class="progress"><div class="bar" id="sal-bar"></div></div>
 
-      <div class="ex">
-        <div class="num key">0</div>
-        <div class="body">
-          <div class="name">Negative Pull-Up — kutulu <span class="sets">3×2</span><span class="tag key">En yüksek ROI</span></div>
-          <div class="note">Isınmadan hemen sonra, <b>taze</b> · bara bench/kutu çek, <b>iki ayakla</b> çık,
-          çene bar üstü → ayakları kaldır → <b>5 sn iniş</b> → ayakları kutuya koy.
-          <b>Zıplama ve bırakma yok.</b> İniş 3 sn'nin altına düşerse set biter · doz bu hafta bilerek düşük
-          (eccentric = en çok DOMS yapan iş)</div>
-        </div>
-      </div>
+      <div class="sec">Isınma · 8 dk</div>
+      <label class="ex w"><input type="checkbox" data-id="sal-w1"><span class="chk">•</span><span class="b"><span class="n">Arms-only bike</span></span><span class="dose">3 dk</span></label>
+      <label class="ex w"><input type="checkbox" data-id="sal-w2"><span class="chk">•</span><span class="b"><span class="n">Band pull-apart + scap push-up</span></span><span class="dose">15 + 10</span></label>
+      <label class="ex w"><input type="checkbox" data-id="sal-w3"><span class="chk">•</span><span class="b"><span class="n">Wall slide + dead bug</span></span><span class="dose">8 · 6/taraf</span></label>
+      <label class="ex w"><input type="checkbox" data-id="sal-w4"><span class="chk">•</span><span class="b"><span class="n">Bench hafif</span></span><span class="dose">2 set</span></label>
 
-      <div class="ex">
-        <div class="num">1</div>
-        <div class="body">
-          <div class="name">Seated DB Shoulder Press <span class="sets">4×8</span></div>
-          <div class="note"><b>12–14 kg/el</b> · sırt desteğe yapışık, kaburga kapalı, layback yok</div>
-        </div>
-      </div>
+      <div class="sec">Ana</div>
+      <label class="ex"><input type="checkbox" data-id="sal-1"><span class="chk">1</span><span class="b"><span class="n">Bench press</span><span class="c"><b>37.5 kg</b> · kürek cepte, dirsek 45° · ayaklar sadece yerde, itme yok · 2 dk dinlen</span></span><span class="dose">4×8</span></label>
+      <label class="ex"><input type="checkbox" data-id="sal-2"><span class="chk">2</span><span class="b"><span class="n">Seated DB shoulder press</span><span class="c">12–14 kg/el · sırt destekli, layback yok</span></span><span class="dose">4×8</span></label>
+      <label class="ex"><input type="checkbox" data-id="sal-3"><span class="chk">3</span><span class="b"><span class="n">Face pull</span><span class="c">hafif · dirsek yüksek, kürek geriye</span></span><span class="dose">3×15</span></label>
+      <label class="ex"><input type="checkbox" data-id="sal-4"><span class="chk">4</span><span class="b"><span class="n">Assisted dip (makine)</span><span class="c">assist RPE 7 · gövde hafif öne, dirsek 90°</span></span><span class="dose">3×8–10</span></label>
+      <label class="ex"><input type="checkbox" data-id="sal-5"><span class="chk">5</span><span class="b"><span class="n">Straight-arm pulldown</span><span class="c">kol düz, lat'tan başlat · hafif-orta</span></span><span class="dose">3×12</span></label>
+      <label class="ex"><input type="checkbox" data-id="sal-6"><span class="chk">6</span><span class="b"><span class="n">Pallof press + plank</span><span class="c">hafif kablo · gövde dönmez</span></span><span class="dose">3×10/t · 3×40 sn</span></label>
+      <label class="ex"><input type="checkbox" data-id="sal-7"><span class="chk">7</span><span class="b"><span class="n">Ski erg Z2 — diz üstü</span><span class="c">RPE 5 · kalçadan menteşe, bel nötr, <b>crunch yok</b> · metreyi yaz</span></span><span class="dose">10 dk</span></label>
 
-      <div class="ex">
-        <div class="num key">2</div>
-        <div class="body">
-          <div class="name">Single-Arm DB Row <span class="sets">4×10/kol</span><span class="tag key">Pull</span></div>
-          <div class="note">En ağır DB · dirsek cebe doğru, gövde dönmesin · push-up ile süper set</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num">3</div>
-        <div class="body">
-          <div class="name">Push-Up <span class="sets">3×(max−2)</span></div>
-          <div class="note">Vücut tek çizgi, kalça düşmesin · form bozulursa eğik push-up'a geç</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num key">4</div>
-        <div class="body">
-          <div class="name">Straight-Arm Pulldown <span class="sets">3×12</span><span class="tag key">Pull</span></div>
-          <div class="note">Kollar düz, hareketi lat'tan başlat · hafif-orta yük, tempo kontrollü</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num fresh">5</div>
-        <div class="body">
-          <div class="name">Glute Bridge / Hip Thrust <span class="sets">3×15</span><span class="tag">bodyweight</span></div>
-          <div class="note">Bench'te sırt, topuktan it, tepede <b>1 sn kalça sık</b> · yük yok, sıkışma var</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num" style="background:#0c8599">6</div>
-        <div class="body">
-          <div class="name">Seated / Lying Leg Curl <span class="sets">3×12</span><span class="tag safe">Makine</span></div>
-          <div class="note">Orta yük · 3 sn kontrollü iniş</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num" style="background:#0c8599">7</div>
-        <div class="body">
-          <div class="name">Leg Press — hafif, yüksek tekrar <span class="sets">2×15</span><span class="tag safe">Makine</span></div>
-          <div class="note">Pump işi · ağır değil, kan akışı için</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num">8</div>
-        <div class="body">
-          <div class="name">Dead Bug + Plank <span class="sets">3×10/taraf · 3×40 sn</span></div>
-          <div class="note">Bel dostu core · dead bug'da bel yere yapışık kalacak</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num fresh">9</div>
-        <div class="body">
-          <div class="name">Arms-Only Bike <span class="sets">6 dk</span><span class="tag">Motor</span></div>
-          <div class="note">Sadece kollarla çevir, bacaklar pasif · RPE 5, kesintisiz</div>
-        </div>
-      </div>
+      <div class="sec">Soğuma · 6 dk</div>
+      <label class="ex s"><input type="checkbox" data-id="sal-s1"><span class="chk">↓</span><span class="b"><span class="n">Göğüs/kapı gerdirme</span></span><span class="dose">45 sn/t</span></label>
+      <label class="ex s"><input type="checkbox" data-id="sal-s2"><span class="chk">↓</span><span class="b"><span class="n">Lat + T-spine roll</span></span><span class="dose">1'er dk</span></label>
+      <label class="ex s"><input type="checkbox" data-id="sal-s3"><span class="chk">↓</span><span class="b"><span class="n">Couch stretch</span></span><span class="dose">60 sn/t</span></label>
     </div>
-  </div>
+    <div class="card log"><b>Kayıt:</b> bench kg + RPE · press kg · dip assist kg · ski metre/10 dk · bilek hissi</div>
+  </section>
 
-  <!-- ================= CUMA ================= -->
-  <div class="day on" id="d3">
-
-    <div class="test">
-      <b>🎯 Bugün alt vücut YOK.</b> Salı + Perşembe iki yüklü alt vücut seansı üst üste geldi; bileğe 48 saat kuralı.
-      Bugün saf üst vücut: <b>negatif pull-up + pull + WOD + shrug + mobility</b>. Alt vücut bir sonraki hafta, ortopedi sonrası.
-    </div>
-
+  <!-- ================= PER ================= -->
+  <section class="pane per" id="per">
+    <p class="hint"><b>Pull #2 + üst vücut WOD</b> · ~55 dk · RPE 7 · WOD tur sayısı = bu ayın motor ölçüsü</p>
     <div class="card">
-      <div class="ctitle">Cum · Pull + Upper WOD + Mobility · ~50 dk · RPE 7</div>
+      <div class="pmeta"><span id="per-count">0/0</span><button class="reset" data-pane="per">Sıfırla</button></div>
+      <div class="progress"><div class="bar" id="per-bar"></div></div>
 
-      <div class="ex">
-        <div class="num key">0</div>
-        <div class="body">
-          <div class="name">Negative Pull-Up — kutulu <span class="sets">3×2</span><span class="tag key">En yüksek ROI</span></div>
-          <div class="note">Isınmadan hemen sonra, <b>taze</b> · kutuya çık, çene bar üstü → ayakları kaldır → <b>5 sn iniş</b> → ayaklar kutuya.
-          <b>Zıplama ve bırakma yok.</b> İniş 3 sn'nin altına düşerse set biter</div>
-        </div>
-      </div>
+      <div class="sec">Isınma · 8 dk</div>
+      <label class="ex w"><input type="checkbox" data-id="per-w1"><span class="chk">•</span><span class="b"><span class="n">Arms-only bike</span></span><span class="dose">3 dk</span></label>
+      <label class="ex w"><input type="checkbox" data-id="per-w2"><span class="chk">•</span><span class="b"><span class="n">Cat-cow + band pull-apart + scap pull</span></span><span class="dose">8 · 15 · 8</span></label>
+      <label class="ex w"><input type="checkbox" data-id="per-w3"><span class="chk">•</span><span class="b"><span class="n">Ring row + push-up + dead bug</span><span class="c">WOD provası, yavaş</span></span><span class="dose">5 · 5 · 6/t</span></label>
 
-      <div class="ex">
-        <div class="num key">1</div>
-        <div class="body">
-          <div class="name">Lat Pulldown <span class="sets">3×8</span><span class="tag key">Pull</span></div>
-          <div class="note"><b>47.5 kg</b> (Perşembe 50 rahat geldiyse 50) · RPE 7 · omuz silkme yok · dead hang ile <b>süper set</b>: pulldown → hemen dead hang → 90 sn dinlen</div>
-        </div>
-      </div>
+      <div class="sec">Ana</div>
+      <label class="ex"><input type="checkbox" data-id="per-1"><span class="chk">1</span><span class="b"><span class="n">Assisted pull-up (makine)</span><span class="c">5. tekrar RPE 8 olacak assist · altta tam açıl, çene bar üstü · 90 sn</span></span><span class="dose">4×5</span></label>
+      <label class="ex"><input type="checkbox" data-id="per-2"><span class="chk">2</span><span class="b"><span class="n">Single-arm DB row</span><span class="c">en ağır DB · dirsek cebe, gövde sabit</span></span><span class="dose">4×10/kol</span></label>
+      <label class="ex"><input type="checkbox" data-id="per-3"><span class="chk">3</span><span class="b"><span class="n">Dead hang</span><span class="c">kutudan sağlam ayakla çık/in</span></span><span class="dose">4×25–30 sn</span></label>
+      <label class="ex"><input type="checkbox" data-id="per-4"><span class="chk">4</span><span class="b"><span class="n">WOD · 12 dk AMRAP</span><span class="c"><b>5 ring row · 8 push-up · 10 hanging knee raise · 150 m ski (diz üstü)</b> · steady, son 2 dk sprint yok · knee raise sallanmadan · grip pes ederse → 20 plank shoulder tap · <b>tur + artık tekrarı yaz</b></span></span><span class="dose">tur say</span></label>
+      <label class="ex"><input type="checkbox" data-id="per-5"><span class="chk">5</span><span class="b"><span class="n">Leg extension</span><span class="c">hafif-orta · 2 sn iniş</span></span><span class="dose">3×12</span></label>
+      <label class="ex"><input type="checkbox" data-id="per-6"><span class="chk">6</span><span class="b"><span class="n">Seated leg curl</span><span class="c">hafif-orta · pad desteğe basıyorsa atla</span></span><span class="dose">3×12</span></label>
+      <label class="ex"><input type="checkbox" data-id="per-7"><span class="chk">7</span><span class="b"><span class="n">Side plank + hollow</span><span class="c">hollow 20 sn'yi geçme, bel yerde</span></span><span class="dose">3×30 sn/t · 3×20 sn</span></label>
 
-      <div class="ex">
-        <div class="num key">2</div>
-        <div class="body">
-          <div class="name">Dead Hang <span class="sets">3×25–30 sn</span><span class="tag key">Pull</span></div>
-          <div class="note">Omuz paketli, grip sıkı · kontrollü in</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num fresh">3</div>
-        <div class="body">
-          <div class="name">WOD — 12 dk AMRAP <span class="sets">tur say</span><span class="tag test">Baseline</span></div>
-          <div class="note"><b>A — rope varsa:</b> 5 ring row · 8 push-up · 10 hanging knee raise · 30 sn battle rope<br>
-          <b>B — rope yoksa:</b> 5 ring row · 8 push-up · 10 hanging knee raise (üçlü, tur arası dinlenme yok) → WOD bitince <b>arms-only bike 6 dk</b> RPE 6<br>
-          Steady başla, <b>son 2 dk sprint yok</b> · ring row'da ayaklar sabit · knee raise: kutudan çık, <b>sallanma yok</b>, dizler göbek hizasına, bel nötr
-          · grip pes ederse knee raise → 20 plank shoulder tap · <b>A/B + tur + artık tekrarı yaz</b></div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num">4</div>
-        <div class="body">
-          <div class="name">Heavy DB Shrug <span class="sets">3×12</span></div>
-          <div class="note">En ağır DB · düz yukarı, döndürme yok · <b>tepede 2 sn</b> · 60 sn dinlenme · kürek için yükleme</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num">5</div>
-        <div class="body">
-          <div class="name">Side Plank + Hollow Hold <span class="sets">3×30 sn/taraf · 3×20 sn</span></div>
-          <div class="note">Dirsek omuz altında, gövde düz · hollow'da bel yerde, 20 sn'yi geçme</div>
-        </div>
-      </div>
-
-      <div class="ex">
-        <div class="num cool" style="background:#7048e8">6</div>
-        <div class="body">
-          <div class="name">Uzun Mobility <span class="sets">10 dk</span></div>
-          <div class="note">Couch stretch 60 sn/taraf · pigeon 60 sn/taraf · <b>baldır esnetme 45 sn/taraf (iki bacak)</b>
-          · open book 8/taraf (dizler sabit) · lat + T-spine foam roll 1'er dk · <b>sol hamstring statik germe yok</b></div>
-        </div>
-      </div>
+      <div class="sec">Soğuma · 6 dk</div>
+      <label class="ex s"><input type="checkbox" data-id="per-s1"><span class="chk">↓</span><span class="b"><span class="n">Lat + T-spine roll</span></span><span class="dose">1'er dk</span></label>
+      <label class="ex s"><input type="checkbox" data-id="per-s2"><span class="chk">↓</span><span class="b"><span class="n">Pigeon + couch</span></span><span class="dose">60 sn/t</span></label>
+      <label class="ex s"><input type="checkbox" data-id="per-s3"><span class="chk">↓</span><span class="b"><span class="n">Baldır esnetme — sağlam bacak</span></span><span class="dose">45 sn</span></label>
     </div>
-  </div>
+    <div class="card log"><b>Kayıt:</b> assist kg · DB row kg · dead hang sn · <b>WOD tur + tekrar</b> · bilek hissi</div>
+  </section>
 
-  <!-- ================= GÜNLÜK RUTİN ================= -->
-  <div class="day" id="d4">
-
-    <div class="info">
-      <b>Her gün — antrenman olsun olmasın.</b> Sabah bel 10 dk · iş başı 45 dk kuralı · akşam kürek 7 dk.
-      Bel için sır germek değil: <b>nötr omurga dayanıklılığı + kalça + yürüyüş</b>. Kürek için: <b>duyarsızlaştır → T-spine'ı aç → zayıf halkayı çalıştır.</b>
-    </div>
-
+  <!-- ================= CUM ================= -->
+  <section class="pane cum" id="cum">
+    <p class="hint"><b>Üst kuvvet + mobility</b> · ~50 dk · RPE 7 · bench 40 (Salı 37.5 RPE ≤8 ise, değilse 37.5)</p>
     <div class="card">
-      <div class="ctitle" style="color:#d97706">🌅 Sabah · Bel · ~10 dk · kalktıktan ≥30 dk sonra</div>
+      <div class="pmeta"><span id="cum-count">0/0</span><button class="reset" data-pane="cum">Sıfırla</button></div>
+      <div class="progress"><div class="bar" id="cum-bar"></div></div>
 
-      <div class="ex"><div class="num" style="background:#f59e0b">1</div><div class="body">
-        <div class="name">Ayakta dolaş <span class="sets" style="color:#d97706">3–5 dk</span></div>
-        <div class="note">Önce dikleş, sonra yere in · ilk yarım saat öne eğilme yok</div></div></div>
+      <div class="sec">Isınma · 8 dk</div>
+      <label class="ex w"><input type="checkbox" data-id="cum-w1"><span class="chk">•</span><span class="b"><span class="n">Arms-only bike</span></span><span class="dose">3 dk</span></label>
+      <label class="ex w"><input type="checkbox" data-id="cum-w2"><span class="chk">•</span><span class="b"><span class="n">Cat-cow + band pull-apart + scap pull</span></span><span class="dose">8 · 15 · 8</span></label>
+      <label class="ex w"><input type="checkbox" data-id="cum-w3"><span class="chk">•</span><span class="b"><span class="n">Wall slide + dead bug + bench hafif</span></span><span class="dose">8 · 6/t · 2 set</span></label>
 
-      <div class="ex"><div class="num" style="background:#f59e0b">2</div><div class="body">
-        <div class="name">Cat-cow <span class="sets" style="color:#d97706">8</span></div>
-        <div class="note">Küçük ROM, nefesle</div></div></div>
-
-      <div class="ex"><div class="num" style="background:#f59e0b">3</div><div class="body">
-        <div class="name">Prone press-up <span class="sets" style="color:#d97706">10</span></div>
-        <div class="note">Yüzüstü, eller omuz altında · <b>kalça yerde</b>, bel gevşek · tepede 1–2 sn</div></div></div>
-
-      <div class="ex"><div class="num" style="background:#f59e0b">4</div><div class="body">
-        <div class="name">McGill curl-up <span class="sets" style="color:#d97706">5 × 10 sn</span></div>
-        <div class="note">Bir diz bükük · <b>eller bel boşluğunda</b> · baş+omuz 2–3 cm · çene çekilmez</div></div></div>
-
-      <div class="ex"><div class="num" style="background:#f59e0b">5</div><div class="body">
-        <div class="name">Side plank <span class="sets" style="color:#d97706">5 × 10 sn / taraf</span></div>
-        <div class="note">Dizden başla · dirsek omuz altında · gövde tek çizgi</div></div></div>
-
-      <div class="ex"><div class="num" style="background:#f59e0b">6</div><div class="body">
-        <div class="name">Bird-dog <span class="sets" style="color:#d97706">6 × 10 sn / taraf</span></div>
-        <div class="note">Tutuş, hızlı tekrar değil · <b>bel dönmez</b> · arada yeri süpür</div></div></div>
-
-      <div class="ex"><div class="num" style="background:#f59e0b">7</div><div class="body">
-        <div class="name">Glute bridge <span class="sets" style="color:#d97706">12</span></div>
-        <div class="note">Topuktan it · tepede 2 sn</div></div></div>
-
-      <div class="ex"><div class="num" style="background:#f59e0b">8</div><div class="body">
-        <div class="name">Couch stretch <span class="sets" style="color:#d97706">60 sn / taraf</span></div>
-        <div class="note">Kalça sıkılı, bel nötr</div></div></div>
-
-      <div class="ex"><div class="num" style="background:#f59e0b">9</div><div class="body">
-        <div class="name">Standing extension <span class="sets" style="color:#d97706">10</span></div>
-        <div class="note">Eller belde, geriye · dik bitir</div></div></div>
+      <div class="sec">Ana</div>
+      <label class="ex"><input type="checkbox" data-id="cum-1"><span class="chk">1</span><span class="b"><span class="n">Negative pull-up</span><span class="c">assisted makinede, en düşük assist · <b>5 sn iniş</b> · 3 sn altı = set biter</span></span><span class="dose">4×3</span></label>
+      <label class="ex"><input type="checkbox" data-id="cum-2"><span class="chk">2</span><span class="b"><span class="n">Bench press</span><span class="c"><b>40 kg</b> · bacakla itme yok · 2 dk dinlen</span></span><span class="dose">4×8</span></label>
+      <label class="ex"><input type="checkbox" data-id="cum-3"><span class="chk">3</span><span class="b"><span class="n">Lat pulldown</span><span class="c">50–52.5 kg · omuz silkme yok</span></span><span class="dose">3×8</span></label>
+      <label class="ex"><input type="checkbox" data-id="cum-4"><span class="chk">4</span><span class="b"><span class="n">Seated DB shoulder press</span><span class="c">12–14 kg/el · sırt destekli</span></span><span class="dose">3×8</span></label>
+      <label class="ex"><input type="checkbox" data-id="cum-5"><span class="chk">5</span><span class="b"><span class="n">Heavy DB shrug</span><span class="c">en ağır DB · tepede 2 sn</span></span><span class="dose">3×12</span></label>
+      <label class="ex"><input type="checkbox" data-id="cum-6"><span class="chk">6</span><span class="b"><span class="n">Hip thrust (bench)</span><span class="c">bw → hafif DB kucakta · bilek sabit, ağrı = set biter</span></span><span class="dose">3×15</span></label>
+      <label class="ex"><input type="checkbox" data-id="cum-7"><span class="chk">7</span><span class="b"><span class="n">Abductor makine</span><span class="c">orta · kalça yanı</span></span><span class="dose">2×15</span></label>
+      <label class="ex"><input type="checkbox" data-id="cum-8"><span class="chk">8</span><span class="b"><span class="n">EMOM 10 dk</span><span class="c">tek dk: ski erg diz üstü 40 sn · çift dk: battle rope 30 sn (yoksa arms-bike sprint) · bel nötr, crunch yok</span></span><span class="dose">10 dk</span></label>
+      <label class="ex"><input type="checkbox" data-id="cum-9"><span class="chk">9</span><span class="b"><span class="n">Uzun mobility</span><span class="c">couch + pigeon 60 sn/t · open book 8/t · lat + T-spine roll · göğüs 45 sn/t</span></span><span class="dose">10 dk</span></label>
     </div>
-    <div class="info" style="padding:9px 14px"><b>Acelen varsa:</b> 3 → 4 → 5 → 6 → 9 (5 dk)</div>
+    <div class="card log"><b>Kayıt:</b> negatif iniş sn · bench kg + RPE · pulldown kg · shrug kg · bilek hissi</div>
+  </section>
 
+  <!-- ================= GÜNLÜK ================= -->
+  <section class="pane gun" id="gun">
+    <p class="hint"><b>Her gün</b> — antrenman olsun olmasın · Çar / Cmt / Paz: sadece bu + rahat yürüyüş</p>
     <div class="card">
-      <div class="ctitle" style="color:#0c8599">💻 İş başı · gün boyu</div>
-      <div class="mini"><b>Her 45 dk kalk</b><span>10 standing extension · 5 chin tuck · 10 omuz çevirme (geriye) · 1 dk yürü</span></div>
-      <div class="mini"><b>Laptop</b><span>Sadece yükseltici + harici klavye · monitör üstü göz hizasında</span></div>
-      <div class="mini"><b>Yürüyüş</b><span>2–3 × 10–15 dk (öğle + akşam)</span></div>
-      <div class="mini"><b>Uzun yol günü</b><span>Önce 10 press-up · bel rulosu · <b>en geç 60 dk'da dur</b> → 2 dk yürü + 10 standing extension · o gün alt vücut antrenmanı yok</span></div>
+      <div class="pmeta"><span id="gun-count">0/0</span><button class="reset" data-pane="gun">Sıfırla</button></div>
+      <div class="progress"><div class="bar" id="gun-bar"></div></div>
+
+      <div class="sec">🌅 Sabah · Bel · ~10 dk · kalktıktan ≥30 dk sonra</div>
+      <label class="ex"><input type="checkbox" data-id="gun-a1"><span class="chk">1</span><span class="b"><span class="n">Ayakta dolaş</span><span class="c">önce dikleş, sonra yere in</span></span><span class="dose">3–5 dk</span></label>
+      <label class="ex"><input type="checkbox" data-id="gun-a2"><span class="chk">2</span><span class="b"><span class="n">Cat-cow</span><span class="c">küçük ROM, nefesle</span></span><span class="dose">8</span></label>
+      <label class="ex"><input type="checkbox" data-id="gun-a3"><span class="chk">3</span><span class="b"><span class="n">Prone press-up</span><span class="c">kalça yerde, bel gevşek</span></span><span class="dose">10</span></label>
+      <label class="ex"><input type="checkbox" data-id="gun-a4"><span class="chk">4</span><span class="b"><span class="n">McGill curl-up</span><span class="c">eller bel boşluğunda, baş 2–3 cm</span></span><span class="dose">5 × 10 sn</span></label>
+      <label class="ex"><input type="checkbox" data-id="gun-a5"><span class="chk">5</span><span class="b"><span class="n">Side plank</span><span class="c">dizden, dirsek omuz altında</span></span><span class="dose">5 × 10 sn/t</span></label>
+      <label class="ex"><input type="checkbox" data-id="gun-a6"><span class="chk">6</span><span class="b"><span class="n">Bird-dog</span><span class="c">tutuş, bel dönmez</span></span><span class="dose">6 × 10 sn/t</span></label>
+      <label class="ex"><input type="checkbox" data-id="gun-a7"><span class="chk">7</span><span class="b"><span class="n">Glute bridge</span><span class="c">tepede 2 sn</span></span><span class="dose">12</span></label>
+      <label class="ex"><input type="checkbox" data-id="gun-a8"><span class="chk">8</span><span class="b"><span class="n">Couch stretch</span><span class="c">kalça sıkılı, bel nötr</span></span><span class="dose">60 sn/t</span></label>
+      <label class="ex"><input type="checkbox" data-id="gun-a9"><span class="chk">9</span><span class="b"><span class="n">Standing extension</span><span class="c">eller belde, dik bitir</span></span><span class="dose">10</span></label>
+
+      <div class="sec">💻 İş başı · gün boyu</div>
+      <div class="kv"><b>Her 45 dk</b><span>Kalk → 10 standing extension · 5 chin tuck · 10 omuz çevirme · 1 dk yürü</span></div>
+      <div class="kv"><b>Laptop</b><span>Sadece yükseltici + harici klavye · monitör üstü göz hizasında</span></div>
+      <div class="kv"><b>Yürüyüş</b><span>2–3 × 10 dk, destekle, ağrısız tempoda · otururken ayak yukarıda</span></div>
+
+      <div class="sec">🌙 Akşam · Kürek · ~7 dk · masadan kalkınca</div>
+      <label class="ex"><input type="checkbox" data-id="gun-p1"><span class="chk">1</span><span class="b"><span class="n">90/90 breathing</span><span class="c">burun 4 sn karına, ağız 8 sn ver</span></span><span class="dose">2 dk</span></label>
+      <label class="ex"><input type="checkbox" data-id="gun-p2"><span class="chk">2</span><span class="b"><span class="n">Top duvarda · kürek içi</span><span class="c">omurga üstüne değil, kolu kaldır-indir</span></span><span class="dose">60–90 sn/t</span></label>
+      <label class="ex"><input type="checkbox" data-id="gun-p3"><span class="chk">3</span><span class="b"><span class="n">Roller T-spine extension</span><span class="c">kalça yerde, 2 seviye</span></span><span class="dose">8–10</span></label>
+      <label class="ex"><input type="checkbox" data-id="gun-p4"><span class="chk">4</span><span class="b"><span class="n">Open book</span><span class="c">dizler sabit, göğüs döner</span></span><span class="dose">8/t</span></label>
+      <label class="ex"><input type="checkbox" data-id="gun-p5"><span class="chk">5</span><span class="b"><span class="n">Levator stretch</span><span class="c">sandalyeyi tut, koltuk altına bak</span></span><span class="dose">30 sn/t</span></label>
+      <label class="ex"><input type="checkbox" data-id="gun-p6"><span class="chk">6</span><span class="b"><span class="n">Chin tuck</span><span class="c">çift çene, ense uzasın</span></span><span class="dose">10 × 5 sn</span></label>
+      <label class="ex"><input type="checkbox" data-id="gun-p7"><span class="chk">7</span><span class="b"><span class="n">Serratus wall slide</span><span class="c">duvarı it, yukarı kaydır</span></span><span class="dose">10</span></label>
+      <label class="ex"><input type="checkbox" data-id="gun-p8"><span class="chk">8</span><span class="b"><span class="n">Prone Y-T-W</span><span class="c">ağırlıksız, tepede 2 sn</span></span><span class="dose">2 × 6</span></label>
     </div>
+    <p class="hint">Acelen varsa — sabah: 3 → 4 → 5 → 6 → 9 · akşam: 2 → 3 → 8</p>
+  </section>
 
-    <div class="card">
-      <div class="ctitle" style="color:#7048e8">🌙 Akşam · Kürek · ~7 dk · masadan kalkınca</div>
-
-      <div class="ex"><div class="num" style="background:#7048e8">1</div><div class="body">
-        <div class="name">90/90 breathing <span class="sets" style="color:#7048e8">2 dk</span></div>
-        <div class="note">Sırtüstü, bacaklar sandalyede · burundan 4 sn karına, ağızdan 8 sn ver · üst trapez gevşek</div></div></div>
-
-      <div class="ex"><div class="num" style="background:#7048e8">2</div><div class="body">
-        <div class="name">Top duvarda · rhomboid <span class="sets" style="color:#7048e8">60–90 sn / taraf</span></div>
-        <div class="note">Kürek–omurga arası, <b>omurga üstüne değil</b> · top sabit, kolu yavaş kaldır-indir</div></div></div>
-
-      <div class="ex"><div class="num" style="background:#7048e8">3</div><div class="body">
-        <div class="name">Roller T-spine extension <span class="sets" style="color:#7048e8">8–10</span></div>
-        <div class="note">Eller ense arkasında · <b>kalça yerde</b> · nefes vererek geriye aç · 2 seviye</div></div></div>
-
-      <div class="ex"><div class="num" style="background:#7048e8">4</div><div class="body">
-        <div class="name">Open book <span class="sets" style="color:#7048e8">8 / taraf</span></div>
-        <div class="note">Yan yat, dizler 90° sabit · üst kol açılır, gözler eli takip eder</div></div></div>
-
-      <div class="ex"><div class="num" style="background:#7048e8">5</div><div class="body">
-        <div class="name">Levator stretch <span class="sets" style="color:#7048e8">30 sn / taraf</span></div>
-        <div class="note">Sandalyeyi tut (omuz aşağı) · başı 45° çevir, koltuk altına bak · hafif</div></div></div>
-
-      <div class="ex"><div class="num" style="background:#7048e8">6</div><div class="body">
-        <div class="name">Chin tuck <span class="sets" style="color:#7048e8">10 × 5 sn</span></div>
-        <div class="note">Çift çene, ense uzasın</div></div></div>
-
-      <div class="ex"><div class="num" style="background:#7048e8">7</div><div class="body">
-        <div class="name">Serratus wall slide <span class="sets" style="color:#7048e8">10</span></div>
-        <div class="note">Ön kollar duvarda · duvarı <b>it</b> · yukarı kaydır · omuz kulağa gitmez</div></div></div>
-
-      <div class="ex"><div class="num" style="background:#7048e8">8</div><div class="body">
-        <div class="name">Prone Y-T-W <span class="sets" style="color:#7048e8">2 × 6 her harf</span></div>
-        <div class="note">Ağırlıksız · başparmak tavana · tepede 2 sn</div></div></div>
-    </div>
-    <div class="info" style="padding:9px 14px"><b>Acelen varsa:</b> 2 → 3 → 8 (4 dk)</div>
+  <!-- ================= KURALLAR ================= -->
+  <div class="card gun">
+    <div class="sec" style="margin-top:0">Bu ayın kuralları</div>
+    <div class="kv"><b>Yok</b><span>Koşu · ip · burpee · box jump · bara zıplama/bırakma · yüklü squat / deadlift / lunge / step-up · leg press · rower · calf raise · tek ayak denge · GHD / back extension · sit-up / crunch</span></div>
+    <div class="kv"><b>Var</b><span>Tüm üst vücut tam yük · pull-up projesi tam doz · leg curl / extension / hip thrust / abductor hafif · ski erg <b>diz üstü</b> · arms-bike · battle rope</span></div>
+    <div class="kv"><b>Destek</b><span>Salonda hep takılı · bara/kutuya sağlam ayak önce · ayakta barbell press yerine oturarak</span></div>
+    <div class="kv"><b>Ağrı</b><span>Herhangi bir harekette ağrı = o set biter. Şişlik veya ertesi sabah artış → haber ver</span></div>
+    <div class="kv"><b>Sıradaki</b><span>4 hafta bu blok → destek çıkınca 2 hafta bodyweight bilek geri-yükleme → sonra yüklü bacak, <b>impact en son</b></span></div>
   </div>
 
-  <!-- DİKKAT -->
-  <div class="flag">
-    <b>⚠️ Bu bloğun kuralları:</b> sıfır impact — <b>koşu · ip · burpee · box jump · mountain climber yok</b>.
-    Lunge / split squat / tek ayak denge işleri yok. Calf raise yok.
-    <b>Back extension &amp; GHD yok</b> (ayak tutucu pad baskı yapıyor). Yerden deadlift yok — RDL yeter.
-    <b>Sit-up / GHD sit-up / crunch yok</b> (kalıcı) → dead bug / plank. Row ve pulldown'da omuz silkme yok.
-    <b>Back squat serbest ama yük dondurulmuş: +0 kg.</b>
-    <br>Herhangi bir harekette <b>ağrı</b> → o set biter. Keskin ağrı ≠ DOMS.
-    <b>Şişlik, ertesi sabah artan ağrı veya set içinde 4/10 üstü ağrı</b> → alt vücut yükü kapanır, haber ver.
-  </div>
-
-  <!-- ISINMA + SOĞUMA -->
-  <div class="cols">
-    <div class="col warm">
-      <div class="card">
-        <div class="ctitle">Isınma · 8 dk</div>
-        <div class="mini"><b>Bike kolay</b><span>3 dk (rahatsızsa kol/omuz sirkülasyonu)</span></div>
-        <div class="mini"><b>Cat-cow</b><span>10 yavaş</span></div>
-        <div class="mini"><b>Band pull-apart</b><span>15</span></div>
-        <div class="mini"><b>Scap push-up + wall slide</b><span>10 + 8</span></div>
-        <div class="mini"><b>Dead bug</b><span>6/taraf</span></div>
-        <div class="mini"><b>Ankle alphabet</b><span>havada, yüksüz, ağrısız aralık</span></div>
-      </div>
-    </div>
-    <div class="col cool">
-      <div class="card">
-        <div class="ctitle">Soğuma · 8 dk</div>
-        <div class="mini"><b>Kolay bike</b><span>3 dk</span></div>
-        <div class="mini"><b>Göğüs/kapı gerdirme</b><span>45 sn/taraf</span></div>
-        <div class="mini"><b>Baldır esnetme</b><span>45 sn/taraf — iki bacak</span></div>
-        <div class="mini"><b>Pigeon + couch</b><span>60 sn/taraf</span></div>
-        <div class="mini"><b>Lat + T-spine foam roll</b><span>1'er dk</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card" style="margin-top:14px">
-    <div class="ctitle">Off günler + sıradaki</div>
-    <div class="mini"><b>Çar / Cmt / Paz — OFF</b><span>Sabah bel + akşam kürek rutini + rahat yürüyüş</span></div>
-    <div class="mini"><b>Her gün</b><span>Sabah bel (10 dk) · akşam kürek (7 dk) · 45 dk masa kuralı · ankle alphabet + kalça/baldır esnetme</span></div>
-    <div class="mini"><b>Kayıt</b><span>Her seans sonrası yük + RPE + his (detay Brain'de)</span></div>
-    <div class="mini"><b>Sıradaki blok</b><span>Ortopedi temizse: <b>yük artışı W37'de başlar</b> (squat +2.5, bench 40'a dönüş). Yerden deadlift yerine RDL. <b>Impact en son</b> (ip/koşu sıranın sonu)</span></div>
-  </div>
-
-  <footer>Max · Brain · canlı kart (current-week) · W36 · Bitince yükleri + RPE + tur sayısını yaz, loglayayım</footer>
-
+  <footer>Max · Brain · canlı kart (current-week) · W38 · tikler bu cihazda, her gün sıfırlanır</footer>
 </div>
 
 <script>
-  document.querySelectorAll('.tab').forEach(function (t) {
-    t.addEventListener('click', function () {
-      document.querySelectorAll('.tab').forEach(function (x) { x.classList.remove('on'); });
-      document.querySelectorAll('.day').forEach(function (d) { d.classList.remove('on'); });
-      t.classList.add('on');
-      document.getElementById(t.dataset.day).classList.add('on');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+(function () {
+  var panes = ['pzt', 'sal', 'per', 'cum', 'gun'];
+  var tabs = document.querySelectorAll('.tab');
+  function show(name) {
+    tabs.forEach(function (x) { x.classList.toggle('on', x.dataset.tab === name); });
+    document.querySelectorAll('.pane').forEach(function (p) { p.classList.toggle('on', p.id === name); });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  tabs.forEach(function (t) { t.addEventListener('click', function () { show(t.dataset.tab); }); });
+  var wd = new Date().getDay();
+  show({ 1: 'pzt', 2: 'sal', 4: 'per', 5: 'cum' }[wd] || 'gun');
+
+  var key = 'w38-' + new Date().toISOString().slice(0, 10), state = {};
+  try { state = JSON.parse(localStorage.getItem(key) || '{}'); } catch (e) {}
+  function save() { try { localStorage.setItem(key, JSON.stringify(state)); } catch (e) {} }
+  function setRow(cb, on) { cb.checked = on; cb.closest('.ex').classList.toggle('done', on); state[cb.dataset.id] = on; }
+  function update() {
+    panes.forEach(function (p) {
+      var rows = document.querySelectorAll('#' + p + ' .ex'), done = 0;
+      rows.forEach(function (r) { if (r.classList.contains('done')) done++; });
+      document.getElementById(p + '-bar').style.width = (rows.length ? 100 * done / rows.length : 0) + '%';
+      document.getElementById(p + '-count').textContent = done + '/' + rows.length + (rows.length && done === rows.length ? ' ✓ bitti' : '');
+    });
+  }
+  document.querySelectorAll('.ex input').forEach(function (cb) {
+    if (state[cb.dataset.id]) setRow(cb, true);
+    cb.addEventListener('change', function () { setRow(cb, cb.checked); save(); update(); });
+  });
+  document.querySelectorAll('.reset').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('#' + b.dataset.pane + ' .ex input').forEach(function (cb) { setRow(cb, false); delete state[cb.dataset.id]; });
+      save(); update();
     });
   });
+  try { for (var i = localStorage.length - 1; i >= 0; i--) { var k = localStorage.key(i); if (k && (k.indexOf('w38-') === 0 || k.indexOf('rutin-20') === 0) && k !== key) localStorage.removeItem(k); } } catch (e) {}
+  update();
+})();
 </script>
 </body>
 </html>
