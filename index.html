@@ -64,9 +64,9 @@
   .ex.w .chk, .ex.s .chk { border-color:var(--line); color:var(--muted); font-size:13px; }
   .ex.done .chk { color:#fff; background:var(--acc); border-color:var(--acc); }
   .ex .b { flex:1; min-width:0; }
-  .ex .n { font-size:15.5px; font-weight:750; letter-spacing:-.2px; }
+  .ex .n { display:block; font-size:15.5px; font-weight:750; letter-spacing:-.2px; }
   .ex.w .n, .ex.s .n { font-size:14px; font-weight:650; }
-  .ex .c { font-size:12.5px; color:var(--muted); margin-top:1px; }
+  .ex .c { display:block; font-size:12.5px; color:var(--muted); margin-top:2px; }
   .ex .dose { flex:0 0 auto; font-size:12.5px; font-weight:800; padding:3px 9px; border-radius:99px; background:var(--acc-soft); color:var(--acc-ink); white-space:nowrap; }
   .ex.w .dose, .ex.s .dose { background:var(--soft); color:var(--muted); }
   .ex.done .n, .ex.done .c { opacity:.4; text-decoration:line-through; }
@@ -233,12 +233,14 @@
       <div class="progress"><div class="bar" id="ye-bar"></div></div>
 
       <div class="sec">🍽 Bugün</div>
-      <label class="ex"><input type="checkbox" data-id="ye-1"><span class="chk">1</span><span class="b"><span class="n">Kahvaltı — protein önce</span><span class="c">yumurta (3) · beyaz peynir · süzme yoğurt · 2 dilim ekmek · sebze</span></span><span class="dose">öğün 1</span></label>
+      <label class="ex"><input type="checkbox" data-id="ye-0a"><span class="chk">☀</span><span class="b"><span class="n">Kalkınca su + sade kahve</span><span class="c">500 ml su (limon serbest) · kahve şekersiz-sütsüz · kreatin · kahve 16:00'dan sonra yok</span></span><span class="dose">500 ml</span></label>
+      <label class="ex"><input type="checkbox" data-id="ye-0b"><span class="chk">💧</span><span class="b"><span class="n">Yemek öncesi su</span><span class="c">her öğünden 20–30 dk önce 500 ml → daha az yersin</span></span><span class="dose">×3</span></label>
+      <label class="ex"><input type="checkbox" data-id="ye-1"><span class="chk">1</span><span class="b"><span class="n">Kahvaltı — protein önce</span><span class="c">yumurta (3) · beyaz peynir · süzme yoğurt · sebze · ekmek <b>en son</b> · yavaş, 20 dk</span></span><span class="dose">öğün 1</span></label>
       <label class="ex"><input type="checkbox" data-id="ye-2"><span class="chk">→</span><span class="b"><span class="n">10 dk hareket</span><span class="c">dışarı yürüyüş veya 🏠 ev devresi</span></span><span class="dose">10 dk</span></label>
       <label class="ex"><input type="checkbox" data-id="ye-3"><span class="chk">2</span><span class="b"><span class="n">Whey</span><span class="c">antrenman günü: antrenman öncesi + muz · off günü: akşam sütle</span></span><span class="dose">1 scoop</span></label>
       <label class="ex"><input type="checkbox" data-id="ye-4"><span class="chk">3</span><span class="b"><span class="n">Atıştırma — protein</span><span class="c">Magerquark veya süzme yoğurt + meyve + ceviz/fındık · meyve tek başına değil</span></span><span class="dose">250 g</span></label>
       <label class="ex"><input type="checkbox" data-id="ye-5"><span class="chk">→</span><span class="b"><span class="n">10 dk hareket</span></span><span class="dose">10 dk</span></label>
-      <label class="ex"><input type="checkbox" data-id="ye-6"><span class="chk">4</span><span class="b"><span class="n">Akşam — protein + sebze</span><span class="c">tavuk / köfte / balık · bol sebze veya salata · bulgur / pilav / baklagil · ayran</span></span><span class="dose">öğün 3</span></label>
+      <label class="ex"><input type="checkbox" data-id="ye-6"><span class="chk">4</span><span class="b"><span class="n">Akşam — protein + sebze</span><span class="c">sıra: <b>salata → tavuk / köfte / balık → bulgur / pilav</b> · ayran · yavaş, çatalı bırak</span></span><span class="dose">öğün 3</span></label>
       <label class="ex"><input type="checkbox" data-id="ye-7"><span class="chk">→</span><span class="b"><span class="n">10 dk hareket</span></span><span class="dose">10 dk</span></label>
       <label class="ex"><input type="checkbox" data-id="ye-8"><span class="chk">5</span><span class="b"><span class="n">Bitter çikolata</span><span class="c">%85 · akşam · bütçe, yasak değil</span></span><span class="dose">20 g</span></label>
       <label class="ex"><input type="checkbox" data-id="ye-9"><span class="chk">6</span><span class="b"><span class="n">Log</span><span class="c">app'e en az 2 öğün · kötü günü de yaz</span></span><span class="dose">≥2 öğün</span></label>
@@ -263,6 +265,13 @@
       <div class="kv"><b>Tatlı / sigara</b><span>Dalga 5–10 dk sürer → 10 dk hareket, sakız, çay, soda-su</span></div>
       <div class="kv"><b>İşlenmiş</b><span>Evde bulundurma · cips → leblebi/patlamış mısır · gofret → bitter · hazır → 10 dk menemen</span></div>
       <div class="kv"><b>Meyve</b><span>Tek başına 1 saat sonra acıktırır → yanına yoğurt/quark</span></div>
+    </div>
+
+    <div class="card">
+      <div class="sec" style="margin-top:0">🧪 "Yağ yakıcı" yöntemler — kanıt</div>
+      <div class="kv"><b>Yap</b><span>Uyku 7–9 sa · yemek öncesi su · yavaş ye · sebze önce, karb son · sade kahve (antrenman −45 dk) · günde 2–3 sa ayakta çalış</span></div>
+      <div class="kv"><b>Fark etmez</b><span>Limonlu ılık su (hidrasyon için iyi, yağ yakmaz) · elma sirkesi · aç kardiyo · sabah soğuk duş · tarçın / zencefil · yeşil çay (~1 kg / 3 ay)</span></div>
+      <div class="kv"><b>Yapma</b><span><b>Antrenman sonrası buz / soğuk duş</b> (kas büyümesini keser) · yağ yakıcı / detoks çayı · sauna ile kilo · yağlı "bulletproof" kahve · aşırı açlık</span></div>
     </div>
 
     <div class="card">
