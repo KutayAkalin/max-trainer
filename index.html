@@ -64,7 +64,9 @@ button{font:inherit;color:inherit;touch-action:manipulation}
 .cnt{font-family:var(--num);font-weight:800;font-size:15px;font-variant-numeric:tabular-nums;min-width:3.2em;text-align:right}
 .reset{-webkit-appearance:none;appearance:none;border:0;background:none;color:var(--ink2);font-size:13px;min-height:44px;padding:0 2px 0 6px;
   cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-.how{font-size:13px;color:var(--ink2)}
+.how{font-size:13px;color:var(--ink2);display:flex;align-items:center;justify-content:space-between;gap:10px}
+.snd{-webkit-appearance:none;appearance:none;border:0;background:none;color:var(--red);font-size:13px;font-weight:700;min-height:44px;padding:0 2px 0 8px;
+  cursor:pointer;text-decoration:underline;text-underline-offset:3px;white-space:nowrap;flex:none}
 
 /* bölümler ve alanlar */
 .sec{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:22px 0 2px}
@@ -215,7 +217,7 @@ div.side{cursor:default}
     <div class="facts"><div class="fact"><b>~55</b><span>dk</span></div><div class="fact"><b>7–8</b><span>RPE</span></div></div>
   </div>
   <div class="prog"><div class="track"><div class="fill" id="pzt-bar"></div></div><span class="cnt" id="pzt-cnt">0/0</span><button class="reset" type="button" data-reset="pzt">Sıfırla</button></div>
-  <p class="how">Sola dokun: bitti. Sağdaki sayılara dokun: dinlenme sayacı.</p>
+  <p class="how"><span>Sola dokun: bitti. Sağa dokun: dinlenme başlar.</span><button class="snd" type="button">Sesi dene</button></p>
 
   <div class="z1">
     <div class="sec"><h3>Isınma</h3><span>7 dk, CF alanında</span></div>
@@ -229,11 +231,11 @@ div.side{cursor:default}
     <div class="zone"><h3>CF alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
     <div class="ex" data-id="pzt-a1">
       <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A1</span></span><span class="txt"><span class="nm">Negative pull-up</span><span class="cue">Kutudan, pronated. 5 sn altına düşerse set biter.</span></span></button>
-      <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">6<small>sn</small></span><span class="sr">4×3</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>90 sn</span></button>
+      <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">6<small>sn iniş</small></span><span class="sr">4×3</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 90 sn</span></button>
     </div>
     <div class="ex" data-id="pzt-a2">
       <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A2</span></span><span class="txt"><span class="nm">Flexed-arm hang</span><span class="cue">Çene bar üstünde, kürek aşağı-geri. İlk kez, tuttuğun saniyeyi yaz.</span></span></button>
-      <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">10<small>sn</small></span><span class="sr">3 set</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>60 sn</span></button>
+      <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">10<small>sn tut</small></span><span class="sr">3 set</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
     </div>
   </div>
 
@@ -243,7 +245,7 @@ div.side{cursor:default}
     <div class="zone"><h3>Makina alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
     <div class="ex" data-id="pzt-b0">
       <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B0</span></span><span class="txt"><span class="nm">Kablo face pull</span><span class="cue">Makina ısınması. Dirsek yüksek.</span></span></button>
-      <button class="side" type="button" data-rest="30" aria-label="30 saniye dinlenme sayacını başlat"><span class="load word">hafif</span><span class="sr">2×15</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>30 sn</span></button>
+      <button class="side" type="button" data-rest="30" aria-label="30 saniye dinlenme sayacını başlat"><span class="load word">hafif</span><span class="sr">2×15</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 30 sn</span></button>
     </div>
     <div class="pair">
       <p class="pair-tag">Süperset: B1'den sonra dinlenmeden B2.</p>
@@ -253,7 +255,7 @@ div.side{cursor:default}
       </div>
       <div class="ex" data-id="pzt-b2">
         <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B2</span></span><span class="txt"><span class="nm">Lat pulldown</span><span class="cue">4. sette 45'e inme, 50'de kaç çıkarsa o.</span></span></button>
-        <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">50<small>kg</small></span><span class="sr">4×8</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>90 sn</span></button>
+        <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">50<small>kg</small></span><span class="sr">4×8</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 90 sn</span></button>
       </div>
     </div>
     <div class="pair">
@@ -264,7 +266,7 @@ div.side{cursor:default}
       </div>
       <div class="ex" data-id="pzt-c2">
         <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>C2</span></span><span class="txt"><span class="nm">Leg extension</span><span class="cue">2 sn iniş, bilek gevşek.</span></span></button>
-        <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">50<small>kg</small></span><span class="sr">3×12</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>60 sn</span></button>
+        <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">50<small>kg</small></span><span class="sr">3×12</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
       </div>
     </div>
     <div class="ex" data-id="pzt-d">
@@ -304,7 +306,7 @@ div.side{cursor:default}
     <div class="facts"><div class="fact"><b>~55</b><span>dk</span></div><div class="fact"><b>6</b><span>RPE</span></div></div>
   </div>
   <div class="prog"><div class="track"><div class="fill" id="car-bar"></div></div><span class="cnt" id="car-cnt">0/0</span><button class="reset" type="button" data-reset="car">Sıfırla</button></div>
-  <p class="how">Sola dokun: bitti. Sağdaki sayılara dokun: dinlenme sayacı.</p>
+  <p class="how"><span>Sola dokun: bitti. Sağa dokun: dinlenme başlar.</span><button class="snd" type="button">Sesi dene</button></p>
 
   <div class="z1">
     <div class="sec"><h3>Isınma</h3><span>5 dk, CF alanında</span></div>
@@ -317,11 +319,11 @@ div.side{cursor:default}
     <div class="zone"><h3>CF alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
     <div class="ex" data-id="car-a1">
       <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A1</span></span><span class="txt"><span class="nm">Foot-assisted pull-up</span><span class="cue">Önce kollar, ayak sadece takılınca. 3 sn iniş.</span></span></button>
-      <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">4×5</span><span class="sr">bw + ayak</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>90 sn</span></button>
+      <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">4×5</span><span class="sr">bw + ayak</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 90 sn</span></button>
     </div>
     <div class="ex" data-id="car-a2">
       <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A2</span></span><span class="txt"><span class="nm">Ring row</span><span class="cue">Göğüs halkalara, omuz silkme yok.</span></span></button>
-      <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">3×10</span><span class="sr">bw</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>60 sn</span></button>
+      <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">3×10</span><span class="sr">bw</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
     </div>
     <div class="ex" data-id="car-a3">
       <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A3</span></span><span class="txt"><span class="nm">Ski erg Z2</span><span class="cue">Diz üstü, konuşabileceğin tempo. Metreyi yaz.</span></span></button>
@@ -341,7 +343,7 @@ div.side{cursor:default}
       </div>
       <div class="ex" data-id="car-b2">
         <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B2</span></span><span class="txt"><span class="nm">Leg extension</span><span class="cue">2 sn iniş.</span></span></button>
-        <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">40<small>kg</small></span><span class="sr">3×15</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>60 sn</span></button>
+        <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">40<small>kg</small></span><span class="sr">3×15</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
       </div>
     </div>
     <div class="pair">
@@ -352,7 +354,7 @@ div.side{cursor:default}
       </div>
       <div class="ex" data-id="car-c2">
         <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>C2</span></span><span class="txt"><span class="nm">Abductor</span><span class="cue">Tepede 1 sn. Yükü kayda yaz.</span></span></button>
-        <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load word">orta</span><span class="sr">3×15</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>60 sn</span></button>
+        <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load word">orta</span><span class="sr">3×15</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
       </div>
     </div>
     <div class="pair">
@@ -363,7 +365,7 @@ div.side{cursor:default}
       </div>
       <div class="ex" data-id="car-d2">
         <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>D2</span></span><span class="txt"><span class="nm">Kablo Pallof press</span><span class="cue">Gövde dönmez.</span></span></button>
-        <button class="side" type="button" data-rest="45" aria-label="45 saniye dinlenme sayacını başlat"><span class="load word">hafif</span><span class="sr">3×10/taraf</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>45 sn</span></button>
+        <button class="side" type="button" data-rest="45" aria-label="45 saniye dinlenme sayacını başlat"><span class="load word">hafif</span><span class="sr">3×10/taraf</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 45 sn</span></button>
       </div>
     </div>
 
@@ -399,7 +401,7 @@ div.side{cursor:default}
     <div class="facts"><div class="fact"><b>~55</b><span>dk</span></div><div class="fact"><b>7</b><span>RPE</span></div></div>
   </div>
   <div class="prog"><div class="track"><div class="fill" id="cum-bar"></div></div><span class="cnt" id="cum-cnt">0/0</span><button class="reset" type="button" data-reset="cum">Sıfırla</button></div>
-  <p class="how">Sola dokun: bitti. Sağdaki sayılara dokun: dinlenme sayacı.</p>
+  <p class="how"><span>Sola dokun: bitti. Sağa dokun: dinlenme başlar.</span><button class="snd" type="button">Sesi dene</button></p>
 
   <div class="z1">
     <div class="sec"><h3>Isınma</h3><span>7 dk, CF alanında</span></div>
@@ -413,11 +415,11 @@ div.side{cursor:default}
     <div class="zone"><h3>CF alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
     <div class="ex" data-id="cum-a1">
       <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A1</span></span><span class="txt"><span class="nm">Foot-assisted pull-up</span><span class="cue">Taze yapılır. Çene bar üstüne, 3 sn iniş.</span></span></button>
-      <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">3×5</span><span class="sr">bw + ayak</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>90 sn</span></button>
+      <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">3×5</span><span class="sr">bw + ayak</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 90 sn</span></button>
     </div>
     <div class="ex" data-id="cum-a2">
-      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A2</span></span><span class="txt"><span class="nm">Negative pull-up</span><span class="cue">Kutudan. Yorgunken de olur, 5 sn taban.</span></span></button>
-      <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">6<small>sn</small></span><span class="sr">2×3</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>90 sn</span></button>
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A2</span></span><span class="txt"><span class="nm">Negative pull-up</span><span class="cue">Kutudan. İniş 5 sn altına düşerse set biter.</span></span></button>
+      <button class="side" type="button" data-rest="120" aria-label="2 dakika dinlenme sayacını başlat"><span class="load">6<small>sn iniş</small></span><span class="sr">2×3</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 2 dk</span></button>
     </div>
 
     <div class="ex wod" data-id="cum-wod">
@@ -429,7 +431,7 @@ div.side{cursor:default}
         <li><b>3. dk</b><span>30 sn battle rope, ayaklar sabit</span></li>
       </ol>
       <button class="go" type="button" data-int="emom">EMOM'u başlat</button>
-      <p class="wod-rule">10 sn hazırlık sayar, her dakika başında bip çalar. Bir dakikada 15 sn dinlenme kalmıyorsa o istasyonun tekrarını düşür.</p>
+      <p class="wod-rule">10 sn hazırlık sayar, her dakika başında bip, bitince zil çalar. Bir dakikada 15 sn dinlenme kalmıyorsa o istasyonun tekrarını düşür.</p>
     </div>
   </div>
 
@@ -445,7 +447,7 @@ div.side{cursor:default}
       </div>
       <div class="ex" data-id="cum-b2">
         <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B2</span></span><span class="txt"><span class="nm">Glute bridge</span><span class="cue">Yerde, DB kalçada. Tepede 2 sn.</span></span></button>
-        <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">20<small>kg</small></span><span class="sr">3×15</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>60 sn</span></button>
+        <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">20<small>kg</small></span><span class="sr">3×15</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
       </div>
     </div>
     <div class="pair">
@@ -456,7 +458,7 @@ div.side{cursor:default}
       </div>
       <div class="ex" data-id="cum-c2">
         <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>C2</span></span><span class="txt"><span class="nm">Copenhagen plank</span><span class="cue">Dizden. Destek dizde, ayak boşta.</span></span></button>
-        <button class="side" type="button" data-rest="30" aria-label="30 saniye dinlenme sayacını başlat"><span class="load">20<small>sn</small></span><span class="sr">2 set/taraf</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>30 sn</span></button>
+        <button class="side" type="button" data-rest="30" aria-label="30 saniye dinlenme sayacını başlat"><span class="load">20<small>sn tut</small></span><span class="sr">2 set/taraf</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 30 sn</span></button>
       </div>
     </div>
 
@@ -472,7 +474,7 @@ div.side{cursor:default}
     <p>Doldur, Kopyala'ya bas, Max'e yapıştır.</p>
     <div class="fields">
       <label class="f sel wide"><span>Foot-assist seviyesi</span><select name="fa" data-k="Foot-assist"><option value="">seç</option><option>tam ayak</option><option>parmak ucu</option><option>topuk kalkık parmak ucu</option></select></label>
-      <label class="f"><span>Negatif iniş</span><input name="neg" data-k="Negatif iniş" data-unit="sn" inputmode="decimal" placeholder="sn"></label>
+      <label class="f"><span>Negatif, 6 sn tutan</span><input name="neg" data-k="Negatif 6 sn tutan" data-unit="/6" inputmode="numeric" placeholder="0–6"></label>
       <label class="f"><span>Bench</span><input name="bench" data-k="Bench" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
       <label class="f wide"><span>EMOM</span><input name="emom" data-k="EMOM" placeholder="düşürdüğün tekrar ya da not"></label>
       <label class="f"><span>Bilek</span><input name="bilek" data-k="Bilek" data-unit="/10" inputmode="numeric" placeholder="0–10"></label>
@@ -588,7 +590,7 @@ div.side{cursor:default}
 
 </main>
 
-<footer class="wrap foot">Tikler bu telefonda saklanır ve her gün sıfırlanır. Kayıt alanları hafta boyunca durur. Max ile Brain, W40.</footer>
+<footer class="wrap foot">Tikler bu telefonda saklanır ve her gün sıfırlanır. Kayıt alanları hafta boyunca durur. iPhone sessiz moddaysa zil hoparlörden çalmaz, kulaklıkta çalar. Max ile Brain, W40.</footer>
 
 <div class="tbar" id="tbar" hidden role="timer">
   <div class="wrap tbar-in">
@@ -703,6 +705,35 @@ div.side{cursor:default}
       }
     } catch (e) {}
   }
+  /* boks zili: metal çubuğun kısmi frekansları (1 : 2.76 : 5.40 : 8.93), temelde hafif detune = zil titreşimi.
+     n vuruş, 0.3 sn arayla: dinlenme sonu 2 (ding-ding), aralık/EMOM tamamen bitince 3. */
+  var BELL = [[1, 0.32, 1.8], [1.004, 0.24, 1.8], [2.76, 0.16, 0.9], [5.4, 0.09, 0.45], [8.93, 0.04, 0.25]];
+  function bell(n) {
+    if (!ac) return;
+    try {
+      var t = ac.currentTime + 0.03;
+      for (var k = 0; k < n; k++) {
+        var s = t + k * 0.3;
+        BELL.forEach(function (p) {
+          var o = ac.createOscillator(), g = ac.createGain();
+          o.type = 'sine'; o.frequency.setValueAtTime(920 * p[0], s);
+          g.gain.setValueAtTime(0.0001, s);
+          g.gain.exponentialRampToValueAtTime(p[1], s + 0.005);
+          g.gain.exponentialRampToValueAtTime(0.0001, s + p[2]);
+          o.connect(g); g.connect(ac.destination); o.start(s); o.stop(s + p[2] + 0.05);
+        });
+      }
+    } catch (e) {}
+  }
+  function ring(n) {
+    audio();
+    if (!ac) return;
+    if (ac.state === 'suspended') {
+      var r = ac.resume();
+      if (r && r.then) { r.then(function () { bell(n); }, function () {}); return; }
+    }
+    bell(n);
+  }
   function buzz(p) { try { if (navigator.vibrate) navigator.vibrate(p); } catch (e) {} }
   function wake(on) {
     try {
@@ -723,11 +754,11 @@ div.side{cursor:default}
     if (job && job.onStop) job.onStop();
     job = null; bar.hidden = true; bar.classList.remove('ready'); document.body.classList.remove('has-bar'); wake(false);
   }
-  function finish(label, sub) {
+  function finish(label, sub, strikes) {
     clearInterval(iv); iv = null;
     var j = job;
     tL.textContent = label; tS.textContent = sub; tT.textContent = '0:00'; bar.classList.add('ready');
-    beep(3, 988); buzz([220, 120, 220]); wake(false);
+    bell(strikes || 2); buzz([220, 120, 220]); wake(false);
     if (j && j.onDone) j.onDone();
     clearTimeout(hideT); hideT = setTimeout(function () { if (job === j) end(); }, 6000);
   }
@@ -748,7 +779,7 @@ div.side{cursor:default}
       return;
     }
     var t = el - lead, ix = Math.floor(t / job.seg);
-    if (ix >= job.count) { finish('Bitti', job.title + ' tamam.'); return; }
+    if (ix >= job.count) { finish('Bitti', job.title + ' tamam.', 3); return; }
     if (ix !== job.last) { job.last = ix; beep(ix === 0 ? 2 : 1, 988); buzz(150); if (job.onSeg) job.onSeg(ix); }
     var info = job.info(ix);
     tL.textContent = info.l; tS.textContent = info.s; tT.textContent = fmt(job.seg - (t - ix * job.seg));
@@ -762,8 +793,11 @@ div.side{cursor:default}
   }
   document.getElementById('t-x').addEventListener('click', end);
   document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === 'visible' && iv) { wake(true); tick(); }
+    if (document.visibilityState !== 'visible') return;
+    if (ac && ac.state !== 'running') { try { ac.resume(); } catch (e) {} }
+    if (iv) { wake(true); tick(); }
   });
+  all('.snd').forEach(function (b) { b.addEventListener('click', function () { ring(2); }); });
 
   all('[data-rest]').forEach(function (b) {
     b.addEventListener('click', function () {
