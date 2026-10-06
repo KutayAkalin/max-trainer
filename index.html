@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#F5F6F3" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1B2420" media="(prefers-color-scheme: dark)">
-<title>W40 | Blok 3/4</title>
+<title>W41 | Blok 4/4</title>
 <style>
 /* Tasarım: box'taki tahta. Açık mod = whiteboard + marker, koyu mod = kara tahta + tebeşir.
    Renk anlam taşır: mavi = CF alanı, yeşil = makina alanı, kırmızı = süre ve WOD, siyah = geri kalan.
@@ -142,6 +142,17 @@ div.side{cursor:default}
 .wodset h4{font-family:var(--num);font-size:28px;font-weight:800;line-height:1.05;letter-spacing:-.01em;color:var(--red)}
 .wodset .wod-rule{margin:4px 0 8px}
 .wodset .wod-rule:last-child{margin:10px 0 0}
+/* AMRAP (W41 retest): ileri sayan saat, büyük "Tur bitti" düğmesi, tur splitleri */
+.lap{grid-column:1/-1;-webkit-appearance:none;appearance:none;border:2px solid var(--red);border-radius:12px;background:transparent;color:var(--red);
+  font-family:var(--num);font-weight:800;font-size:22px;min-height:64px;cursor:pointer}
+.lap:active{background:var(--redwash)}
+.splits{grid-column:1/-1;list-style:none;margin-top:6px}
+.splits li{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:9px 2px;border-bottom:1px solid var(--rule);font-size:15px}
+.splits li b{font-family:var(--num);font-weight:800;font-size:20px;font-variant-numeric:tabular-nums}
+.splits li.key{color:var(--red)}
+.splits li.key span{font-weight:700}
+.undo{grid-column:1/-1;justify-self:start;-webkit-appearance:none;appearance:none;border:0;background:none;color:var(--ink2);font-size:13px;min-height:44px;
+  padding:0 2px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 
 /* kayıt */
 .log{margin:28px 0 6px;padding:16px 14px;border:2px solid var(--ink);border-radius:16px}
@@ -196,17 +207,17 @@ div.side{cursor:default}
 
 <header class="top">
   <div class="wrap top-in">
-    <div class="wk">W40</div>
-    <p class="top-note"><b>Blok 3/4</b><br>Güç, Hacim, WOD. Araya en az bir gün.</p>
+    <div class="wk">W41</div>
+    <p class="top-note"><b>Blok 4/4</b><br>Güç, Hacim, WOD. Araya en az bir gün.</p>
   </div>
 </header>
 
 <div class="tabbar">
   <div class="wrap">
     <nav class="tabs" role="tablist" aria-label="Günler">
-      <button class="tab" type="button" role="tab" data-tab="pzt" aria-controls="pzt" aria-selected="false"><b>Pzt</b><small>Güç</small></button>
-      <button class="tab" type="button" role="tab" data-tab="car" aria-controls="car" aria-selected="false"><b>Çar</b><small>Hacim</small></button>
-      <button class="tab" type="button" role="tab" data-tab="cum" aria-controls="cum" aria-selected="false"><b>Cum</b><small>WOD</small></button>
+      <button class="tab" type="button" role="tab" data-tab="sal" aria-controls="sal" aria-selected="false"><b>Sal</b><small>Güç</small></button>
+      <button class="tab" type="button" role="tab" data-tab="per" aria-controls="per" aria-selected="false"><b>Per</b><small>Hacim</small></button>
+      <button class="tab" type="button" role="tab" data-tab="cmt" aria-controls="cmt" aria-selected="false"><b>Cmt</b><small>WOD</small></button>
       <button class="tab" type="button" role="tab" data-tab="gun" aria-controls="gun" aria-selected="false"><b>Gün</b><small>Rutin</small></button>
       <button class="tab" type="button" role="tab" data-tab="ye" aria-controls="ye" aria-selected="false"><b>Ye</b><small>Beslenme</small></button>
     </nav>
@@ -215,32 +226,36 @@ div.side{cursor:default}
 
 <main class="wrap">
 
-<!-- ================= PZT · GÜÇ ================= -->
-<section class="pane" id="pzt" role="tabpanel" aria-label="Pazartesi, Güç">
+<!-- ================= SAL · GÜÇ ================= -->
+<section class="pane" id="sal" role="tabpanel" aria-label="Salı, Güç">
   <div class="day">
-    <div><h2>Güç</h2><p class="lead">Ağır gün. Pull-up işi taze, bench ile pulldown süperset.</p></div>
-    <div class="facts"><div class="fact"><b>~55</b><span>dk</span></div><div class="fact"><b>7–8</b><span>RPE</span></div></div>
+    <div><h2>Güç</h2><p class="lead">Ağır gün. Pull-up işi taze, makinelerde düz set.</p></div>
+    <div class="facts"><div class="fact"><b>~65</b><span>dk</span></div><div class="fact"><b>7–8</b><span>RPE</span></div></div>
   </div>
-  <div class="prog"><div class="track"><div class="fill" id="pzt-bar"></div></div><span class="cnt" id="pzt-cnt">0/0</span><button class="reset" type="button" data-reset="pzt">Sıfırla</button></div>
+  <div class="prog"><div class="track"><div class="fill" id="sal-bar"></div></div><span class="cnt" id="sal-cnt">0/0</span><button class="reset" type="button" data-reset="sal">Sıfırla</button></div>
   <p class="how"><span>Sola dokun: bitti. Sağa dokun: dinlenme başlar.</span><button class="snd" type="button">Sesi dene</button></p>
 
   <div class="z1">
     <div class="sec"><h3>Isınma</h3><span>7 dk, CF alanında</span></div>
-    <div class="ex line" data-id="pzt-w1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Ski erg, diz üstü</span></span><span class="dose">3 dk</span></button></div>
-    <div class="ex line" data-id="pzt-w2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Cat-cow, küçük hareket</span></span><span class="dose">8</span></button></div>
-    <div class="ex line" data-id="pzt-w3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Scap push-up</span></span><span class="dose">10</span></button></div>
-    <div class="ex line" data-id="pzt-w4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Wall slide</span></span><span class="dose">8</span></button></div>
-    <div class="ex line" data-id="pzt-w5"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Prone Y-T-W</span></span><span class="dose">2×6</span></button></div>
-    <div class="ex line" data-id="pzt-w6"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Dead bug</span></span><span class="dose">6/taraf</span></button></div>
+    <div class="ex line" data-id="sal-i1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Ski erg, diz üstü</span></span><span class="dose">3 dk</span></button></div>
+    <div class="ex line" data-id="sal-i2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Cat-cow, küçük hareket</span></span><span class="dose">8</span></button></div>
+    <div class="ex line" data-id="sal-i3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Scap push-up</span></span><span class="dose">10</span></button></div>
+    <div class="ex line" data-id="sal-i4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Wall slide</span></span><span class="dose">8</span></button></div>
+    <div class="ex line" data-id="sal-i5"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Prone Y-T-W</span></span><span class="dose">2×6</span></button></div>
+    <div class="ex line" data-id="sal-i6"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Dead bug</span></span><span class="dose">6/taraf</span></button></div>
 
     <div class="zone"><h3>CF alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
-    <div class="ex" data-id="pzt-a1">
+    <div class="ex" data-id="sal-a1">
       <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A1</span></span><span class="txt"><span class="nm">Negative pull-up</span><span class="cue">Kutudan, pronated. 5 sn altına düşerse set biter.</span></span></button>
-      <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">6<small>sn iniş</small></span><span class="sr">4×3</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 90 sn</span></button>
+      <button class="side" type="button" data-rest="120" aria-label="2 dakika dinlenme sayacını başlat"><span class="load">6<small>sn iniş</small></span><span class="sr">4×3</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 2 dk</span></button>
     </div>
-    <div class="ex" data-id="pzt-a2">
-      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A2</span></span><span class="txt"><span class="nm">Flexed-arm hang</span><span class="cue">Çene bar üstünde, kürek aşağı-geri. İlk kez, tuttuğun saniyeyi yaz.</span></span></button>
-      <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">10<small>sn tut</small></span><span class="sr">3 set</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
+    <div class="ex" data-id="sal-a2">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A2</span></span><span class="txt"><span class="nm">Flexed-arm hang, max</span><span class="cue">Negatiflerden sonra. Çene bar altına inince dur, saniyeyi yaz.</span></span></button>
+      <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load word">max</span><span class="sr">1 set</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
+    </div>
+    <div class="ex" data-id="sal-a3">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A3</span></span><span class="txt"><span class="nm">Flexed-arm hang</span><span class="cue">Çene bar üstünde, kürek aşağı-geri.</span></span></button>
+      <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">10<small>sn tut</small></span><span class="sr">2 set</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
     </div>
   </div>
 
@@ -248,52 +263,44 @@ div.side{cursor:default}
 
   <div class="z2">
     <div class="zone"><h3>Makina alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
-    <div class="ex" data-id="pzt-b0">
-      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B0</span></span><span class="txt"><span class="nm">Kablo face pull</span><span class="cue">Makina ısınması. Dirsek yüksek.</span></span></button>
-      <button class="side" type="button" data-rest="30" aria-label="30 saniye dinlenme sayacını başlat"><span class="load word">hafif</span><span class="sr">2×15</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 30 sn</span></button>
+    <p class="note">Kalabalık: her makinede setleri bitir, sonra diğerine geç. Dinlenmeyi kısaltma.</p>
+    <div class="ex" data-id="sal-b">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B</span></span><span class="txt"><span class="nm">Bench press</span><span class="cue">Isınma bar×10, 30×5, 37.5×3. 8 temiz değilse set biter.</span></span></button>
+      <button class="side" type="button" data-rest="120" aria-label="2 dakika dinlenme sayacını başlat"><span class="load">45<small>kg</small></span><span class="sr">4×8</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 2 dk</span></button>
     </div>
-    <div class="pair">
-      <p class="pair-tag">Süperset: B1'den sonra dinlenmeden B2.</p>
-      <div class="ex" data-id="pzt-b1">
-        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B1</span></span><span class="txt"><span class="nm">Bench press</span><span class="cue">8 temiz çıkmazsa seti orada bitir, yükü düşürme.</span></span></button>
-        <div class="side"><span class="load">42.5<small>kg</small></span><span class="sr">4×8</span><span class="nx">sonra B2</span></div>
-      </div>
-      <div class="ex" data-id="pzt-b2">
-        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B2</span></span><span class="txt"><span class="nm">Lat pulldown</span><span class="cue">4. sette 45'e inme, 50'de kaç çıkarsa o.</span></span></button>
-        <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">50<small>kg</small></span><span class="sr">4×8</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 90 sn</span></button>
-      </div>
+    <div class="ex" data-id="sal-c">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>C</span></span><span class="txt"><span class="nm">Lat pulldown</span><span class="cue">Omuz kulağa kalkmaz. 4. set 8 olursa haftaya 52.5.</span></span></button>
+      <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">50<small>kg</small></span><span class="sr">4×8</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 90 sn</span></button>
     </div>
-    <div class="pair">
-      <p class="pair-tag">Süperset: C1'den sonra dinlenmeden C2.</p>
-      <div class="ex" data-id="pzt-c1">
-        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>C1</span></span><span class="txt"><span class="nm">Glute bridge</span><span class="cue">Yerde, DB kalçada. Topuktan it, tepede 2 sn.</span></span></button>
-        <div class="side"><span class="load">20<small>kg</small></span><span class="sr">4×10</span><span class="nx">sonra C2</span></div>
-      </div>
-      <div class="ex" data-id="pzt-c2">
-        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>C2</span></span><span class="txt"><span class="nm">Leg extension</span><span class="cue">2 sn iniş, bilek gevşek.</span></span></button>
-        <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">50<small>kg</small></span><span class="sr">3×12</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
-      </div>
+    <div class="ex" data-id="sal-d">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>D</span></span><span class="txt"><span class="nm">RDL</span><span class="cue">Bar bacağa yakın, bel düz. Pelvis kıvrılınca iniş biter.</span></span></button>
+      <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">50<small>kg</small></span><span class="sr">4×8</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 90 sn</span></button>
     </div>
-    <div class="ex" data-id="pzt-d">
-      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>D</span></span><span class="txt"><span class="nm">Arms-only bike</span><span class="cue">30 sn hızlı, 30 sn yavaş. Bacaklar pasif.</span></span></button>
+    <div class="ex" data-id="sal-e">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>E</span></span><span class="txt"><span class="nm">Leg extension</span><span class="cue">2 sn iniş, bilek gevşek.</span></span></button>
+      <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">50<small>kg</small></span><span class="sr">3×12</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
+    </div>
+    <div class="ex" data-id="sal-f">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>F</span></span><span class="txt"><span class="nm">Bike, kol ve ayak</span><span class="cue">Oturarak. Pedala ayak ortasıyla bas.</span></span></button>
       <button class="side" type="button" data-int="bike" aria-label="6 turluk 30/30 sayacını başlat"><span class="load">30/30</span><span class="sr">6 tur</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>sayaç</span></button>
     </div>
 
     <div class="sec"><h3>Soğuma</h3><span>5 dk</span></div>
-    <div class="ex line" data-id="pzt-s1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Roller T-spine extension</span></span><span class="dose">8</span></button></div>
-    <div class="ex line" data-id="pzt-s2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Open book</span></span><span class="dose">8/taraf</span></button></div>
-    <div class="ex line" data-id="pzt-s3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Göğüs, kapıda</span></span><span class="dose">45 sn/taraf</span></button></div>
-    <div class="ex line" data-id="pzt-s4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Couch stretch</span></span><span class="dose">60 sn/taraf</span></button></div>
+    <div class="ex line" data-id="sal-s1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Roller T-spine extension</span></span><span class="dose">8</span></button></div>
+    <div class="ex line" data-id="sal-s2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Open book</span></span><span class="dose">8/taraf</span></button></div>
+    <div class="ex line" data-id="sal-s3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Göğüs, kapıda</span></span><span class="dose">45 sn/taraf</span></button></div>
+    <div class="ex line" data-id="sal-s4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Couch stretch</span></span><span class="dose">60 sn/taraf</span></button></div>
   </div>
 
-  <form class="log" data-log="pzt" data-title="W40 Pzt (Güç)">
+  <form class="log" data-log="sal" data-title="W41 Sal (Güç)">
     <h3>Kayıt</h3>
     <p>Doldur, Kopyala'ya bas, Max'e yapıştır.</p>
     <div class="fields">
-      <label class="f"><span>Negatif iniş</span><input name="neg" data-k="Negatif iniş" data-unit="sn" inputmode="decimal" placeholder="sn"></label>
-      <label class="f"><span>Hang</span><input name="hang" data-k="Flexed-arm hang" data-unit="sn" inputmode="decimal" placeholder="sn"></label>
-      <label class="f"><span>Bench 42.5 tekrarlar</span><input name="bench" data-k="Bench 42.5 tekrarlar" placeholder="8/8/8/8"></label>
-      <label class="f"><span>Pulldown 50, 4. set</span><input name="pd" data-k="Pulldown 50, 4. set" data-unit="tekrar" inputmode="numeric" placeholder="tekrar"></label>
+      <label class="f"><span>Negatif, 6 sn tutan</span><input name="neg" data-k="Negatif 6 sn tutan" data-unit="/12" inputmode="numeric" placeholder="0–12"></label>
+      <label class="f"><span>Hang, 1. set</span><input name="hang" data-k="Hang 1. set" data-unit="sn" inputmode="decimal" placeholder="sn"></label>
+      <label class="f"><span>Bench 45 tekrarlar</span><input name="bench" data-k="Bench 45 tekrarlar" placeholder="8/8/8/8"></label>
+      <label class="f"><span>Pulldown 50 tekrarlar</span><input name="pd" data-k="Pulldown 50 tekrarlar" placeholder="8/8/8/8"></label>
+      <label class="f"><span>RDL 50 tekrarlar</span><input name="rdl" data-k="RDL 50 tekrarlar" placeholder="8/8/8/8"></label>
       <label class="f"><span>Bilek</span><input name="bilek" data-k="Bilek" data-unit="/10" inputmode="numeric" placeholder="0–10"></label>
       <label class="f sel"><span>Şişlik</span><select name="sis" data-k="Şişlik"><option value="">seç</option><option>yok</option><option>var</option></select></label>
       <label class="f wide"><span>Not</span><input name="not" data-k="Not" placeholder="kısa not"></label>
@@ -304,30 +311,30 @@ div.side{cursor:default}
   </form>
 </section>
 
-<!-- ================= ÇAR · HACİM ================= -->
-<section class="pane" id="car" role="tabpanel" aria-label="Çarşamba, Hacim">
+<!-- ================= PER · HACİM ================= -->
+<section class="pane" id="per" role="tabpanel" aria-label="Perşembe, Hacim">
   <div class="day">
     <div><h2>Hacim</h2><p class="lead">Hafif gün. Makinelerde düz set, en sonda ski ile bitir.</p></div>
-    <div class="facts"><div class="fact"><b>~60</b><span>dk</span></div><div class="fact"><b>6</b><span>RPE</span></div></div>
+    <div class="facts"><div class="fact"><b>~65</b><span>dk</span></div><div class="fact"><b>6</b><span>RPE</span></div></div>
   </div>
-  <div class="prog"><div class="track"><div class="fill" id="car-bar"></div></div><span class="cnt" id="car-cnt">0/0</span><button class="reset" type="button" data-reset="car">Sıfırla</button></div>
+  <div class="prog"><div class="track"><div class="fill" id="per-bar"></div></div><span class="cnt" id="per-cnt">0/0</span><button class="reset" type="button" data-reset="per">Sıfırla</button></div>
   <p class="how"><span>Sola dokun: bitti. Sağa dokun: dinlenme başlar.</span><button class="snd" type="button">Sesi dene</button></p>
 
   <div class="z1">
     <div class="sec"><h3>Isınma</h3><span>5 dk, CF alanında</span></div>
-    <div class="ex line" data-id="car-w1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Ski erg, diz üstü</span></span><span class="dose">2 dk</span></button></div>
-    <div class="ex line" data-id="car-w2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Scap push-up</span></span><span class="dose">10</span></button></div>
-    <div class="ex line" data-id="car-w3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Scap pull</span></span><span class="dose">8</span></button></div>
-    <div class="ex line" data-id="car-w4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Ring row</span></span><span class="dose">5</span></button></div>
-    <div class="ex line" data-id="car-w5"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Dead bug</span></span><span class="dose">6/taraf</span></button></div>
+    <div class="ex line" data-id="per-i1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Ski erg, diz üstü</span></span><span class="dose">2 dk</span></button></div>
+    <div class="ex line" data-id="per-i2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Scap push-up</span></span><span class="dose">10</span></button></div>
+    <div class="ex line" data-id="per-i3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Scap pull</span></span><span class="dose">8</span></button></div>
+    <div class="ex line" data-id="per-i4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Ring row</span></span><span class="dose">5</span></button></div>
+    <div class="ex line" data-id="per-i5"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Dead bug</span></span><span class="dose">6/taraf</span></button></div>
 
     <div class="zone"><h3>CF alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
-    <div class="ex" data-id="car-a1">
-      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A1</span></span><span class="txt"><span class="nm">Foot-assisted pull-up</span><span class="cue">Önce kollar, ayak sadece takılınca. 3 sn iniş.</span></span></button>
+    <div class="ex" data-id="per-a1">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A1</span></span><span class="txt"><span class="nm">Foot-assisted pull-up</span><span class="cue">1. sette parmak ucu dene. Temiz değilse tam ayak.</span></span></button>
       <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">4×5</span><span class="sr">bw + ayak</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 90 sn</span></button>
     </div>
-    <div class="ex" data-id="car-a2">
-      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A2</span></span><span class="txt"><span class="nm">Ring row</span><span class="cue">Göğüs halkalara, omuz silkme yok.</span></span></button>
+    <div class="ex" data-id="per-a2">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A2</span></span><span class="txt"><span class="nm">Ring row</span><span class="cue">Göğüs halkalara, omuz kulağa kalkmaz.</span></span></button>
       <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">3×10</span><span class="sr">bw</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
     </div>
   </div>
@@ -336,30 +343,30 @@ div.side{cursor:default}
 
   <div class="z2">
     <div class="zone"><h3>Makina alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
-    <p class="note">Kalabalık: her makinede setleri bitir, sonra diğerine geç.</p>
-    <div class="ex" data-id="car-b">
-      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B</span></span><span class="txt"><span class="nm">Seated DB shoulder press</span><span class="cue">Sırt destekli, kaburga kapalı.</span></span></button>
-      <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">12<small>kg/el</small></span><span class="sr">3×12</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
+    <p class="note">Kalabalık: her makinede setleri bitir, sonra diğerine geç. Dinlenmeyi kısaltma.</p>
+    <div class="ex" data-id="per-b">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B</span></span><span class="txt"><span class="nm">Seated DB shoulder press</span><span class="cue">Bench doluysa ayakta bar strict press, 37.5 kg × 10.</span></span></button>
+      <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">12<small>kg/el</small></span><span class="sr">3×12</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 90 sn</span></button>
     </div>
-    <div class="ex" data-id="car-c">
+    <div class="ex" data-id="per-c">
       <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>C</span></span><span class="txt"><span class="nm">Leg extension</span><span class="cue">2 sn iniş.</span></span></button>
-      <button class="side" type="button" data-rest="45" aria-label="45 saniye dinlenme sayacını başlat"><span class="load">40<small>kg</small></span><span class="sr">3×15</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 45 sn</span></button>
+      <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">40<small>kg</small></span><span class="sr">3×15</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
     </div>
-    <div class="ex" data-id="car-d">
+    <div class="ex" data-id="per-d">
       <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>D</span></span><span class="txt"><span class="nm">Leg curl</span><span class="cue">Tahmini yük. İlk sette ayarla, kayda yaz.</span></span></button>
-      <button class="side" type="button" data-rest="45" aria-label="45 saniye dinlenme sayacını başlat"><span class="load">35<small>kg</small></span><span class="sr">3×12</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 45 sn</span></button>
+      <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">35<small>kg</small></span><span class="sr">3×12</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
     </div>
-    <div class="ex" data-id="car-e">
+    <div class="ex" data-id="per-e">
       <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>E</span></span><span class="txt"><span class="nm">Abductor</span><span class="cue">Tepede 1 sn. Yükü kayda yaz.</span></span></button>
-      <button class="side" type="button" data-rest="45" aria-label="45 saniye dinlenme sayacını başlat"><span class="load word">orta</span><span class="sr">3×15</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 45 sn</span></button>
+      <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load word">orta</span><span class="sr">2×15</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
     </div>
     <div class="pair">
       <p class="pair-tag">Süperset, aynı kablo: F1'den sonra dinlenmeden F2.</p>
-      <div class="ex" data-id="car-f1">
+      <div class="ex" data-id="per-f1">
         <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>F1</span></span><span class="txt"><span class="nm">Kablo face pull</span><span class="cue">İp yüksekte, dirsek yüksek.</span></span></button>
         <div class="side"><span class="load word">hafif</span><span class="sr">3×15</span><span class="nx">sonra F2</span></div>
       </div>
-      <div class="ex" data-id="car-f2">
+      <div class="ex" data-id="per-f2">
         <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>F2</span></span><span class="txt"><span class="nm">Kablo Pallof press</span><span class="cue">Tutamak göğüs hizasında, gövde dönmez.</span></span></button>
         <button class="side" type="button" data-rest="45" aria-label="45 saniye dinlenme sayacını başlat"><span class="load word">hafif</span><span class="sr">3×10/taraf</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 45 sn</span></button>
       </div>
@@ -370,23 +377,25 @@ div.side{cursor:default}
 
   <div class="z1">
     <div class="zone"><h3>CF alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
-    <div class="ex" data-id="car-g">
+    <div class="ex" data-id="per-g">
       <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>G</span></span><span class="txt"><span class="nm">Ski erg Z2</span><span class="cue">Diz üstü, konuşabileceğin tempo. Doluysa bike.</span></span></button>
       <button class="side" type="button" data-rest="600" data-label="Ski erg Z2" data-done="Bitti. Metreyi kayda yaz." aria-label="10 dakikalık sayacı başlat"><span class="load">10<small>dk</small></span><span class="sr">RPE 5</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>sayaç</span></button>
     </div>
 
     <div class="sec"><h3>Soğuma</h3><span>5 dk</span></div>
-    <div class="ex line" data-id="car-s1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Couch stretch</span></span><span class="dose">60 sn/taraf</span></button></div>
-    <div class="ex line" data-id="car-s2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Pigeon</span></span><span class="dose">60 sn/taraf</span></button></div>
-    <div class="ex line" data-id="car-s3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Duvarda top, kürek altı</span></span><span class="dose">60 sn/taraf</span></button></div>
+    <div class="ex line" data-id="per-s1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Couch stretch</span></span><span class="dose">60 sn/taraf</span></button></div>
+    <div class="ex line" data-id="per-s2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Pigeon</span></span><span class="dose">60 sn/taraf</span></button></div>
+    <div class="ex line" data-id="per-s3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Duvarda top, kürek altı</span></span><span class="dose">60 sn/taraf</span></button></div>
   </div>
 
-  <form class="log" data-log="car" data-title="W40 Çar (Hacim)">
+  <form class="log" data-log="per" data-title="W41 Per (Hacim)">
     <h3>Kayıt</h3>
     <p>Doldur, Kopyala'ya bas, Max'e yapıştır.</p>
     <div class="fields">
       <label class="f sel wide"><span>Foot-assist seviyesi</span><select name="fa" data-k="Foot-assist"><option value="">seç</option><option>tam ayak</option><option>parmak ucu</option><option>topuk kalkık parmak ucu</option></select></label>
-      <label class="f"><span>DB press</span><input name="dbp" data-k="DB press" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
+      <label class="f sel"><span>Press</span><select name="pt" data-k="Press"><option value="">seç</option><option>seated DB</option><option>ayakta bar</option></select></label>
+      <label class="f"><span>Press yük</span><input name="pkg" data-k="Press yük" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
+      <label class="f"><span>Press tekrarlar</span><input name="prep" data-k="Press tekrarlar" placeholder="12/12/12"></label>
       <label class="f"><span>Leg curl</span><input name="curl" data-k="Leg curl" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
       <label class="f"><span>Abductor</span><input name="abd" data-k="Abductor" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
       <label class="f"><span>Ski erg</span><input name="ski" data-k="Ski erg Z2" data-unit="m" inputmode="numeric" placeholder="metre"></label>
@@ -400,96 +409,99 @@ div.side{cursor:default}
   </form>
 </section>
 
-<!-- ================= CUM · WOD ================= -->
-<section class="pane" id="cum" role="tabpanel" aria-label="Cuma, WOD">
+<!-- ================= CMT · WOD + RETEST ================= -->
+<section class="pane" id="cmt" role="tabpanel" aria-label="Cumartesi, WOD">
   <div class="day">
-    <div><h2>WOD</h2><p class="lead">Orta gün. Foot-assisted, negatif, sonra 3 istasyon.</p></div>
-    <div class="facts"><div class="fact"><b>~55</b><span>dk</span></div><div class="fact"><b>7</b><span>RPE</span></div></div>
+    <div><h2>WOD</h2><p class="lead">Retest günü. W39'daki ön blok, sonra aynı AMRAP 12.</p></div>
+    <div class="facts"><div class="fact"><b>~60</b><span>dk</span></div><div class="fact"><b>7–8</b><span>RPE</span></div></div>
   </div>
-  <div class="prog"><div class="track"><div class="fill" id="cum-bar"></div></div><span class="cnt" id="cum-cnt">0/0</span><button class="reset" type="button" data-reset="cum">Sıfırla</button></div>
+  <div class="prog"><div class="track"><div class="fill" id="cmt-bar"></div></div><span class="cnt" id="cmt-cnt">0/0</span><button class="reset" type="button" data-reset="cmt">Sıfırla</button></div>
   <p class="how"><span>Sola dokun: bitti. Sağa dokun: dinlenme başlar.</span><button class="snd" type="button">Sesi dene</button></p>
 
   <div class="z1">
     <div class="sec"><h3>Isınma</h3><span>7 dk, CF alanında</span></div>
-    <div class="ex line" data-id="cum-w1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Ski erg, diz üstü</span></span><span class="dose">3 dk</span></button></div>
-    <div class="ex line" data-id="cum-w2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Scap push-up</span></span><span class="dose">10</span></button></div>
-    <div class="ex line" data-id="cum-w3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Scap pull</span></span><span class="dose">8</span></button></div>
-    <div class="ex line" data-id="cum-w4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Ring row</span></span><span class="dose">5</span></button></div>
-    <div class="ex line" data-id="cum-w5"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Push-up</span></span><span class="dose">5</span></button></div>
-    <div class="ex line" data-id="cum-w6"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Dead bug</span></span><span class="dose">6/taraf</span></button></div>
+    <div class="ex line" data-id="cmt-i1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Ski erg, diz üstü</span></span><span class="dose">3 dk</span></button></div>
+    <div class="ex line" data-id="cmt-i2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Scap push-up</span></span><span class="dose">10</span></button></div>
+    <div class="ex line" data-id="cmt-i3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Scap pull</span></span><span class="dose">8</span></button></div>
+    <div class="ex line" data-id="cmt-i4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Ring row</span></span><span class="dose">5</span></button></div>
+    <div class="ex line" data-id="cmt-i5"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Push-up</span></span><span class="dose">5</span></button></div>
+    <div class="ex line" data-id="cmt-i6"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Dead bug</span></span><span class="dose">6/taraf</span></button></div>
 
     <div class="zone"><h3>CF alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
-    <div class="ex" data-id="cum-a1">
-      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A1</span></span><span class="txt"><span class="nm">Foot-assisted pull-up</span><span class="cue">Taze yapılır. Çene bar üstüne, 3 sn iniş.</span></span></button>
-      <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">3×5</span><span class="sr">bw + ayak</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 90 sn</span></button>
+    <div class="ex" data-id="cmt-a1">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A1</span></span><span class="txt"><span class="nm">Foot-assisted pull-up</span><span class="cue">Perşembeki destekle. Taze, 3 sn iniş.</span></span></button>
+      <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">4×5</span><span class="sr">bw + ayak</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 90 sn</span></button>
     </div>
-    <div class="ex" data-id="cum-a2">
-      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A2</span></span><span class="txt"><span class="nm">Negative pull-up</span><span class="cue">Kutudan. İniş 5 sn altına düşerse set biter.</span></span></button>
-      <button class="side" type="button" data-rest="120" aria-label="2 dakika dinlenme sayacını başlat"><span class="load">6<small>sn iniş</small></span><span class="sr">2×3</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 2 dk</span></button>
+    <div class="ex" data-id="cmt-a2">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A2</span></span><span class="txt"><span class="nm">Ring row</span><span class="cue">Bitince 2–3 dk dinlen, istasyonlara bak.</span></span></button>
+      <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">4×10</span><span class="sr">bw</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 90 sn</span></button>
     </div>
 
-    <div class="wodset">
-      <h4>WOD, 3 istasyon</h4>
-      <p class="wod-rule">Her istasyonda 4 dk, kendi sayacıyla. Aradaki yürüyüş dinlenme, saat durur.</p>
-      <div class="ex" data-id="cum-w1">
-        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>W1</span></span><span class="txt"><span class="nm">Push-up ve ring row</span><span class="cue">Her dakika 6 push-up, 6 ring row. Halkalarda.</span></span></button>
-        <button class="side" type="button" data-int="w1" aria-label="W1, 4 dakikalık EMOM sayacını başlat"><span class="load">6+6</span><span class="sr">EMOM 4</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>sayaç</span></button>
-      </div>
-      <div class="ex" data-id="cum-w2">
-        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>W2</span></span><span class="txt"><span class="nm">Ski erg, diz üstü</span><span class="cue">Her dakika 100 m. 15 sn dinlenme kalmazsa 80 m.</span></span></button>
-        <button class="side" type="button" data-int="w2" aria-label="W2, 4 dakikalık EMOM sayacını başlat"><span class="load">100<small>m</small></span><span class="sr">EMOM 4</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>sayaç</span></button>
-      </div>
-      <div class="ex" data-id="cum-w3">
-        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>W3</span></span><span class="txt"><span class="nm">Battle rope</span><span class="cue">30 sn iş, 30 sn dinlen. Ayaklar sabit.</span></span></button>
-        <button class="side" type="button" data-int="w3" aria-label="W3, 4 turluk 30/30 sayacını başlat"><span class="load">30/30</span><span class="sr">4 tur</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>sayaç</span></button>
-      </div>
-      <p class="wod-rule">İstasyon doluysa sırayı değiştir. Her sayaç 10 sn hazırlık sayar, blok bitince zil çalar.</p>
+    <div class="ex wod" data-id="cmt-wod">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>W</span></span><span class="txt"><span class="nm">AMRAP 12</span><span class="cue">Retest. W39'daki gibi sabit tempo.</span></span></button>
+      <div class="side"><span class="load">12<small>dk</small></span><span class="sr">max tur</span></div>
+      <ol class="st">
+        <li><b>5</b><span>Ring row</span></li>
+        <li><b>8</b><span>Push-up</span></li>
+        <li><b>10</b><span>Hanging knee raise, kutudan çık ve in</span></li>
+        <li><b>150 m</b><span>Ski erg, diz üstü</span></li>
+      </ol>
+      <button class="go" type="button" id="am-go">AMRAP'ı başlat</button>
+      <button class="lap" type="button" id="am-lap" hidden>Tur bitti</button>
+      <ol class="splits" id="am-splits" aria-live="polite"></ol>
+      <button class="undo" type="button" id="am-undo" hidden>Son turu sil</button>
+      <p class="wod-rule">Telefonu ski'nin yanına koy. Başlat'a bas, halkalara yürü: saat 30 sn sonra başlar. Her tur ski'de biter, 150 m bitince "Tur bitti".</p>
+      <p class="wod-rule">Hedef: 4. tur 10:00'dan önce. Geçişte yürü, koşma. Ski ya da halkalar kapılırsa test sayılmaz.</p>
     </div>
   </div>
 
-  <div class="move"><svg aria-hidden="true"><use href="#i-a"/></svg><div><b>Tek geçiş</b><span>Havlu, su ve telefon yanında. Makina alanına geç, geri dönme.</span></div></div>
+  <div class="move"><svg aria-hidden="true"><use href="#i-a"/></svg><div><b>Tek geçiş</b><span>Önce 3 dk yürüyerek toparlan, sonra makina alanına geç.</span></div></div>
 
   <div class="z2">
     <div class="zone"><h3>Makina alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
-    <p class="note">Kalabalık: her makinede setleri bitir, sonra diğerine geç.</p>
+    <p class="note">Kalabalık: her makinede setleri bitir, sonra diğerine geç. Dinlenmeyi kısaltma.</p>
     <div class="pair">
       <p class="pair-tag">Süperset, aynı yerde: DB'yi baştan bench'in yanına getir.</p>
-      <div class="ex" data-id="cum-b1">
-        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B1</span></span><span class="txt"><span class="nm">Bench press</span><span class="cue">Hafif hacim seti. Ağır bench Pazartesi'ydi.</span></span></button>
-        <div class="side"><span class="load">35<small>kg</small></span><span class="sr">3×10</span><span class="nx">sonra B2</span></div>
+      <div class="ex" data-id="cmt-b1">
+        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B1</span></span><span class="txt"><span class="nm">Bench press</span><span class="cue">Hafif hacim seti. Ağır bench Salı'ydı.</span></span></button>
+        <div class="side"><span class="load">37.5<small>kg</small></span><span class="sr">3×10</span><span class="nx">sonra B2</span></div>
       </div>
-      <div class="ex" data-id="cum-b2">
+      <div class="ex" data-id="cmt-b2">
         <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B2</span></span><span class="txt"><span class="nm">Glute bridge</span><span class="cue">Bench'in dibinde, yerde. Tepede 2 sn.</span></span></button>
-        <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">20<small>kg</small></span><span class="sr">3×15</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
+        <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">22.5<small>kg</small></span><span class="sr">3×15</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
       </div>
     </div>
-    <div class="ex" data-id="cum-c">
+    <div class="ex" data-id="cmt-c">
       <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>C</span></span><span class="txt"><span class="nm">Copenhagen plank</span><span class="cue">Aynı bench'te, dizden. Ayak boşta.</span></span></button>
       <button class="side" type="button" data-rest="30" aria-label="30 saniye dinlenme sayacını başlat"><span class="load">20<small>sn tut</small></span><span class="sr">2 set/taraf</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 30 sn</span></button>
     </div>
-    <div class="ex" data-id="cum-d">
+    <div class="ex" data-id="cmt-d">
       <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>D</span></span><span class="txt"><span class="nm">Leg extension</span><span class="cue">Düz set. 2 sn iniş.</span></span></button>
-      <button class="side" type="button" data-rest="45" aria-label="45 saniye dinlenme sayacını başlat"><span class="load">45<small>kg</small></span><span class="sr">3×12</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 45 sn</span></button>
+      <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">45<small>kg</small></span><span class="sr">3×12</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
     </div>
 
     <div class="sec"><h3>Soğuma</h3><span>6 dk</span></div>
-    <div class="ex line" data-id="cum-s1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Couch ve pigeon</span></span><span class="dose">60 sn/taraf</span></button></div>
-    <div class="ex line" data-id="cum-s2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Open book</span></span><span class="dose">8/taraf</span></button></div>
-    <div class="ex line" data-id="cum-s3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Lat ve T-spine roll</span></span><span class="dose">1 dk</span></button></div>
-    <div class="ex line" data-id="cum-s4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Göğüs, kapıda</span></span><span class="dose">45 sn/taraf</span></button></div>
+    <div class="ex line" data-id="cmt-s1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Couch ve pigeon</span></span><span class="dose">60 sn/taraf</span></button></div>
+    <div class="ex line" data-id="cmt-s2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Open book</span></span><span class="dose">8/taraf</span></button></div>
+    <div class="ex line" data-id="cmt-s3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Lat ve T-spine roll</span></span><span class="dose">1 dk</span></button></div>
+    <div class="ex line" data-id="cmt-s4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Göğüs, kapıda</span></span><span class="dose">45 sn/taraf</span></button></div>
   </div>
 
-  <form class="log" data-log="cum" data-title="W40 Cum (WOD)">
+  <form class="log" data-log="cmt" data-title="W41 Cmt (WOD retest)">
     <h3>Kayıt</h3>
-    <p>Doldur, Kopyala'ya bas, Max'e yapıştır.</p>
+    <p>4. tur saati ve tur sayısı AMRAP'tan kendiliğinden gelir. Gerisini doldur, Kopyala'ya bas.</p>
     <div class="fields">
       <label class="f sel wide"><span>Foot-assist seviyesi</span><select name="fa" data-k="Foot-assist"><option value="">seç</option><option>tam ayak</option><option>parmak ucu</option><option>topuk kalkık parmak ucu</option></select></label>
-      <label class="f"><span>Negatif, 6 sn tutan</span><input name="neg" data-k="Negatif 6 sn tutan" data-unit="/6" inputmode="numeric" placeholder="0–6"></label>
+      <label class="f"><span>4. tur saati</span><input name="t4" data-k="4. tur saati" placeholder="dk:sn"></label>
+      <label class="f"><span>Tamamlanan tur</span><input name="tur" data-k="Tamamlanan tur" inputmode="numeric" placeholder="tur"></label>
+      <label class="f"><span>Son turda tekrar</span><input name="tek" data-k="Son turda tekrar" inputmode="numeric" placeholder="tekrar"></label>
+      <label class="f sel"><span>Kolaylaştırma</span><select name="olc" data-k="Kolaylaştırma"><option value="">seç</option><option>yok</option><option>var</option></select></label>
       <label class="f"><span>Bench</span><input name="bench" data-k="Bench" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
-      <label class="f wide"><span>WOD</span><input name="wod" data-k="WOD" placeholder="düşürdüğün tekrar ya da not"></label>
+      <label class="f"><span>Glute bridge</span><input name="gb" data-k="Glute bridge" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
       <label class="f"><span>Bilek</span><input name="bilek" data-k="Bilek" data-unit="/10" inputmode="numeric" placeholder="0–10"></label>
       <label class="f sel"><span>Şişlik</span><select name="sis" data-k="Şişlik"><option value="">seç</option><option>yok</option><option>var</option></select></label>
-      <label class="f wide"><span>Not</span><input name="not" data-k="Not" placeholder="kısa not"></label>
+      <label class="f wide"><span>Not</span><input name="not" data-k="Not" placeholder="kolaylaştırdıysan ne, kısa not"></label>
+      <input type="hidden" name="splits" data-k="Tur splitleri">
     </div>
     <button class="copy" type="button">Kopyala</button>
     <p class="copied" hidden>Kopyalandı. Max'e yapıştır.</p>
@@ -500,7 +512,7 @@ div.side{cursor:default}
 <!-- ================= GÜNLÜK ================= -->
 <section class="pane" id="gun" role="tabpanel" aria-label="Günlük rutin">
   <div class="day">
-    <div><h2>Günlük</h2><p class="lead">Antrenman olsun olmasın her gün. Sal, Per ve hafta sonu sadece bu ve yürüyüşler.</p></div>
+    <div><h2>Günlük</h2><p class="lead">Antrenman olsun olmasın her gün. Pzt, Çar, Cum ve Pazar sadece bu ve yürüyüşler.</p></div>
     <div class="facts"><div class="fact"><b>~10</b><span>dk sabah</span></div><div class="fact"><b>~7</b><span>dk akşam</span></div></div>
   </div>
   <div class="prog"><div class="track"><div class="fill" id="gun-bar"></div></div><span class="cnt" id="gun-cnt">0/0</span><button class="reset" type="button" data-reset="gun">Sıfırla</button></div>
@@ -534,13 +546,13 @@ div.side{cursor:default}
 
   <details class="more">
     <summary><span>Bu ayın kuralları</span></summary>
-    <div class="kv"><b>Yok</b><span>Koşu, ip, burpee, box jump, bara zıplama ya da bardan bırakma. Squat, lunge, step-up, leg press, calf raise, yerden deadlift. Rower, dışarıda bisiklet, tek ayak denge, GHD, back extension, sit-up, crunch.</span></div>
-    <div class="kv"><b>Var</b><span>Tüm üst vücut tam yük. Pull-up projesi kutu ve ayak desteğiyle. RDL 50 kg'da sabit. Leg curl, leg extension, glute bridge. Ski erg diz üstü, salon bisikleti oturarak, battle rope, yürüyüş.</span></div>
-    <div class="kv"><b>Alan</b><span>Önce CF alanı, sonra makina alanı. Süperset sadece aynı istasyonda, makineden makineye gidip gelme yok.</span></div>
-    <div class="kv"><b>Destek</b><span>Salonda hep takılı. Bara ve kutuya önce sağlam ayak. Press ayakta değil, oturarak.</span></div>
+    <div class="kv"><b>Yok</b><span>Koşu, ip, burpee, box jump, bara zıplama ya da bardan bırakma. Squat, lunge, step-up, leg press, calf raise, push press, yerden deadlift. Rower, dışarıda bisiklet, tek ayak denge, GHD, back extension, sit-up, crunch.</span></div>
+    <div class="kv"><b>Var</b><span>Tüm üst vücut tam yük, ayakta strict press dahil. Pull-up projesi kutu ve ayak desteğiyle. RDL 50 kg'da sabit. Leg curl, leg extension, glute bridge. Ski erg diz üstü, salon bisikleti oturarak, battle rope, yürüyüş.</span></div>
+    <div class="kv"><b>Alan</b><span>Önce CF alanı, sonra makina alanı. Süperset sadece aynı istasyonda. Düz sette dinlenme kısalmaz: pres 90 sn, izolasyon 60 sn.</span></div>
+    <div class="kv"><b>Destek</b><span>Salonda hep takılı. Bara ve kutuya önce sağlam ayak.</span></div>
     <div class="kv"><b>Yürüyüş</b><span>Ağrısız 8 dk, 3 gün üst üste. Sonra 10 dk, sonra 15 dk. Hafta sonu uzun yürüyüş ancak ondan sonra.</span></div>
     <div class="kv"><b>Ağrı</b><span>Hangi harekette olursa olsun ağrı olursa set biter. Şişlik ya da ertesi sabah artış olursa haber ver.</span></div>
-    <div class="kv"><b>Sıradaki</b><span>Bu hafta ve gelecek hafta aynı blok. Destek çıkınca 2 hafta bilek geri-yükleme, sonra yüklü bacak. Impact en son.</span></div>
+    <div class="kv"><b>Sıradaki</b><span>Bloğun son haftası. Destek çıkınca 2 hafta bilek geri-yükleme, sonra yüklü bacak. Impact en son.</span></div>
   </details>
 </section>
 
@@ -600,7 +612,7 @@ div.side{cursor:default}
 
 </main>
 
-<footer class="wrap foot">Tikler bu telefonda saklanır ve her gün sıfırlanır. Kayıt alanları hafta boyunca durur. iPhone sessiz moddaysa zil hoparlörden çalmaz, kulaklıkta çalar. Max ile Brain, W40.</footer>
+<footer class="wrap foot">Tikler bu telefonda saklanır ve her gün sıfırlanır. Kayıt alanları hafta boyunca durur. iPhone sessiz moddaysa zil hoparlörden çalmaz, kulaklıkta çalar. Max ile Brain, W41.</footer>
 
 <div class="tbar" id="tbar" hidden role="timer">
   <div class="wrap tbar-in">
@@ -613,7 +625,7 @@ div.side{cursor:default}
 <script>
 (function () {
   'use strict';
-  var WEEK = 'w40', PANES = ['pzt', 'car', 'cum', 'gun', 'ye'];
+  var WEEK = 'w41', PANES = ['sal', 'per', 'cmt', 'gun', 'ye'];
   function pad(n) { return (n < 10 ? '0' : '') + n; }
   function all(sel, root) { return [].slice.call((root || document).querySelectorAll(sel)); }
   var now0 = new Date();
@@ -652,7 +664,8 @@ div.side{cursor:default}
       n.focus(); show(n.getAttribute('data-tab'), false); e.preventDefault();
     });
   });
-  var byDay = { 0: 'ye', 1: 'pzt', 2: 'gun', 3: 'car', 4: 'gun', 5: 'cum', 6: 'ye' };
+  /* W41: Pzt kaçtı → Sal Güç, Per Hacim, Cmt WOD; diğer günler Gün, Pazar Ye */
+  var byDay = { 0: 'ye', 1: 'gun', 2: 'sal', 3: 'gun', 4: 'per', 5: 'gun', 6: 'cmt' };
   var hash = (location.hash || '').slice(1);
   show(PANES.indexOf(hash) >= 0 ? hash : byDay[now0.getDay()], false);
 
@@ -716,7 +729,7 @@ div.side{cursor:default}
     } catch (e) {}
   }
   /* boks zili: metal çubuğun kısmi frekansları (1 : 2.76 : 5.40 : 8.93), temelde hafif detune = zil titreşimi.
-     n vuruş, 0.3 sn arayla: dinlenme sonu 2 (ding-ding), aralık/EMOM tamamen bitince 3. */
+     n vuruş, 0.3 sn arayla: dinlenme sonu 2 (ding-ding), aralık/EMOM/AMRAP tamamen bitince 3. */
   var BELL = [[1, 0.32, 1.8], [1.004, 0.24, 1.8], [2.76, 0.16, 0.9], [5.4, 0.09, 0.45], [8.93, 0.04, 0.25]];
   function bell(n) {
     if (!ac) return;
@@ -755,10 +768,11 @@ div.side{cursor:default}
     } catch (e) {}
   }
 
-  /* alt sayaç çubuğu: dinlenme, aralık, EMOM */
+  /* alt sayaç çubuğu: dinlenme, aralık, EMOM, AMRAP (up = ileri sayar) */
   var bar = document.getElementById('tbar'), tL = document.getElementById('t-l'), tS = document.getElementById('t-s'), tT = document.getElementById('t-t');
   var job = null, iv = null, hideT = null;
   function fmt(s) { s = Math.max(0, Math.ceil(s)); return Math.floor(s / 60) + ':' + pad(s % 60); }
+  function fmtUp(s) { s = Math.max(0, Math.floor(s)); return Math.floor(s / 60) + ':' + pad(s % 60); }
   function end() {
     clearInterval(iv); iv = null; clearTimeout(hideT);
     if (job && job.onStop) job.onStop();
@@ -767,7 +781,7 @@ div.side{cursor:default}
   function finish(label, sub, strikes) {
     clearInterval(iv); iv = null;
     var j = job;
-    tL.textContent = label; tS.textContent = sub; tT.textContent = '0:00'; bar.classList.add('ready');
+    tL.textContent = label; tS.textContent = sub; tT.textContent = j && j.up ? fmtUp(j.seg * j.count) : '0:00'; bar.classList.add('ready');
     bell(strikes || 2); buzz([220, 120, 220]); wake(false);
     if (j && j.onDone) j.onDone();
     clearTimeout(hideT); hideT = setTimeout(function () { if (job === j) end(); }, 6000);
@@ -791,8 +805,9 @@ div.side{cursor:default}
     var t = el - lead, ix = Math.floor(t / job.seg);
     if (ix >= job.count) { finish('Bitti', job.title + ' tamam.', 3); return; }
     if (ix !== job.last) { job.last = ix; beep(ix === 0 ? 2 : 1, 988); buzz(150); if (job.onSeg) job.onSeg(ix); }
-    var info = job.info(ix);
-    tL.textContent = info.l; tS.textContent = info.s; tT.textContent = fmt(job.seg - (t - ix * job.seg));
+    var info = job.info(ix, t);
+    tL.textContent = info.l; tS.textContent = info.s;
+    tT.textContent = job.up ? fmtUp(t) : fmt(job.seg - (t - ix * job.seg));
   }
   function run(j) {
     audio(); clearInterval(iv); clearTimeout(hideT);
@@ -818,15 +833,8 @@ div.side{cursor:default}
   });
 
   var INT = {
-    bike: { title: 'Arms-only bike', seg: 30, count: 12, lead: 5, row: 'pzt-d',
-      info: function (i) { return { l: (i % 2 ? 'Yavaş' : 'Hızlı'), s: 'Tur ' + (Math.floor(i / 2) + 1) + '/6' }; } },
-    /* Cuma WOD: istasyonlar ayrı yerlerde → her blok kendi sayacı, yürüyüş sayılmaz */
-    w1: { title: 'W1 push-up ve ring row', seg: 60, count: 4, lead: 10, row: 'cum-w1',
-      info: function (i) { return { l: 'W1, dakika ' + (i + 1) + '/4', s: '6 push-up ve 6 ring row' }; } },
-    w2: { title: 'W2 ski erg', seg: 60, count: 4, lead: 10, row: 'cum-w2',
-      info: function (i) { return { l: 'W2, dakika ' + (i + 1) + '/4', s: '100 m ski erg, diz üstü' }; } },
-    w3: { title: 'W3 battle rope', seg: 30, count: 8, lead: 10, row: 'cum-w3',
-      info: function (i) { return { l: (i % 2 ? 'Dinlen' : 'Battle rope'), s: 'W3, tur ' + (Math.floor(i / 2) + 1) + '/4' }; } }
+    bike: { title: 'Bike, kol ve ayak', seg: 30, count: 12, lead: 5, row: 'sal-f',
+      info: function (i) { return { l: (i % 2 ? 'Yavaş' : 'Hızlı'), s: 'Tur ' + (Math.floor(i / 2) + 1) + '/6' }; } }
   };
   function mark(listId, k) {
     var ol = document.getElementById(listId);
@@ -884,6 +892,63 @@ div.side{cursor:default}
       else manual();
     });
   });
+
+  /* Cmt AMRAP 12 (retest): saat ileri sayar, her tur ski'de biter → "Tur bitti" = split.
+     Ölçü: 4. tur splitı (W39 ≈ 10:00) + toplam tur; ikisi de kayda kendiliğinden yazılır.
+     30 sn hazırlık = telefon ski'nin yanında, halkalara yürüme süresi (saat dışında). */
+  var AM = { lead: 30, sec: 720, key: 4 };
+  var amGo = document.getElementById('am-go'), amLap = document.getElementById('am-lap'), amUndo = document.getElementById('am-undo'),
+      amList = document.getElementById('am-splits'), amForm = document.querySelector('form[data-log="cmt"]'), sp = [];
+  function toSec(s) { var q = String(s).split(':'); return (parseInt(q[0], 10) || 0) * 60 + (parseInt(q[1], 10) || 0); }
+  function setField(name, val) {
+    var inp = amForm.querySelector('[name="' + name + '"]');
+    if (inp) inp.value = val;
+    logs.cmt[name] = val; save(LKEY, logs);
+  }
+  function amDraw() {
+    amList.innerHTML = '';
+    sp.forEach(function (s, x) {
+      var li = document.createElement('li'), a = document.createElement('span'), b = document.createElement('b');
+      a.textContent = 'Tur ' + (x + 1) + (x + 1 === AM.key ? ', W39 ≈ 10:00' : '');
+      b.textContent = fmtUp(s);
+      if (x + 1 === AM.key) li.className = 'key';
+      li.appendChild(a); li.appendChild(b); amList.appendChild(li);
+    });
+    amUndo.hidden = !sp.length;
+  }
+  function amWrite() {
+    setField('splits', sp.map(fmtUp).join(', '));
+    setField('t4', sp.length >= AM.key ? fmtUp(sp[AM.key - 1]) : '');
+    setField('tur', sp.length ? String(sp.length) : '');
+  }
+  function amState(on) {
+    amGo.hidden = on; amLap.hidden = !on;
+    amGo.textContent = sp.length ? 'Yeniden başlat' : "AMRAP'ı başlat";
+  }
+  if (amGo && amForm) {
+    var saved = (logs.cmt && logs.cmt.splits) || '';
+    sp = saved ? saved.split(', ').map(toSec) : [];
+    amDraw(); amState(false);
+    amGo.addEventListener('click', function () {
+      if (sp.length && !window.confirm('Eski turlar silinsin mi?')) return;
+      sp = []; amDraw(); amWrite();
+      run({ title: 'AMRAP 12', am: true, seg: AM.sec, count: 1, lead: AM.lead, up: true,
+        info: function (x, t) { return { l: 'Tur ' + (sp.length + 1), s: 'AMRAP 12, kalan ' + fmt(AM.sec - t) }; },
+        onDone: function () { tickId('cmt-wod'); amState(false); },
+        onStop: function () { amState(false); } });
+      amState(true);
+    });
+    amLap.addEventListener('click', function () {
+      if (!job || !job.am) return;
+      var t = (Date.now() - job.t0) / 1000 - job.lead;
+      if (t < 5) return;
+      sp.push(t); amDraw(); amWrite(); beep(1, 1320); buzz(60); tick();
+    });
+    amUndo.addEventListener('click', function () {
+      sp.pop(); amDraw(); amWrite();
+      if (job && job.am) tick(); else amState(false);
+    });
+  }
 
   progress();
 })();
