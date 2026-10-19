@@ -439,14 +439,14 @@ div.side{cursor:default}
       <p class="pair-tag">Süperset, aynı makine: A1'den sonra dinlenmeden A2. 4. turda sadece A1.</p>
       <div class="ex" data-id="per-a1">
         <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A1</span></span><span class="txt"><span class="nm">Assisted pull-up</span><span class="cue">Kollar tam açık başla, çene bar üstü. 3 sn iniş.</span></span></button>
-        <div class="side"><span class="load">45<small>kg yardım</small></span><span class="sr">4×5</span><span class="nx">sonra A2</span></div>
+        <div class="side"><span class="load">61<small>kg yardım</small></span><span class="sr">4×3</span><span class="nx">sonra A2</span></div>
       </div>
       <div class="ex" data-id="per-a2">
-        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A2</span></span><span class="txt"><span class="nm">Assisted dip</span><span class="cue">Üst kol yere paralel olunca dön. Omuz önü ağrırsa dur.</span></span></button>
-        <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">50<small>kg yardım</small></span><span class="sr">3×10</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 90 sn</span></button>
+        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A2</span></span><span class="txt"><span class="nm">Assisted dip</span><span class="cue">Üst kol yere paralel olunca dön, üstte dirsek kilitli. Omuz önü ağrırsa dur.</span></span></button>
+        <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">61<small>kg yardım</small></span><span class="sr">3×8</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 90 sn</span></button>
       </div>
     </div>
-    <p class="note">Geçen hafta bulduğun yardımı hatırlıyorsan ondan başla. Yoksa ilk set deneme, 3 tekrar: kolaysa 5 kg az yardım, zorsa 5 kg fazla. Pull-up'ta 5. tekrar zor ama temiz olsun. 4×5 temizse haftaya 2.5–5 kg az yardım.</p>
+    <p class="note">Yardım 61, geçen haftaki gibi. Önce tekrar artar, sonra yardım azalır. Pull-up 4×3 → 4×4 → 4×5; 4×5 temizse bir pim az yardım, 4×3'ten yeniden. Dip 3×8 → 3×10, sonra bir pim az. Tekrar yavaşlayıp takılırsa set orada biter.</p>
 
     <div class="ex" data-id="per-b">
       <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B</span></span><span class="txt"><span class="nm">RDL</span><span class="cue">Rack'ten al. Bar bacağa yakın, pelvis kıvrılınca iniş biter.</span></span></button>
@@ -498,9 +498,10 @@ div.side{cursor:default}
     <p>Doldur, Kopyala'ya bas, Max'e yapıştır.</p>
     <div class="fields">
       <label class="f"><span>Pull-up yardımı</span><input name="pua" data-k="Assisted pull-up yardım" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
-      <label class="f sel"><span>4×5 temiz mi</span><select name="pu45" data-k="Pull-up 4×5 temiz"><option value="">seç</option><option>evet</option><option>hayır</option></select></label>
+      <label class="f"><span>Pull-up tekrarlar</span><input name="pur" data-k="Pull-up tekrarlar" placeholder="3/3/3/3"></label>
       <label class="f"><span>Dip yardımı</span><input name="dpa" data-k="Assisted dip yardım" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
-      <label class="f"><span>Dip tekrarlar</span><input name="dpr" data-k="Dip tekrarlar" placeholder="10/10/10"></label>
+      <label class="f"><span>Dip tekrarlar</span><input name="dpr" data-k="Dip tekrarlar" placeholder="8/8/8"></label>
+      <label class="f"><span>61'in bir alt pimi</span><input name="pim" data-k="61'in bir alt pimi" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
       <label class="f"><span>RDL 50 tekrarlar</span><input name="rdl" data-k="RDL 50 tekrarlar" placeholder="8/8/8/8"></label>
       <label class="f"><span>Leg curl</span><input name="curl" data-k="Leg curl" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
       <label class="f"><span>Abductor</span><input name="abd" data-k="Abductor" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
