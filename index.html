@@ -133,6 +133,8 @@ div.side{cursor:default}
 .st li{display:grid;grid-template-columns:62px minmax(0,1fr);gap:10px;align-items:baseline;padding:11px 8px;border-bottom:1px solid var(--rule);border-radius:10px}
 .st li b{font-family:var(--num);font-weight:800;font-size:17px;color:var(--red);font-variant-numeric:tabular-nums}
 .st li span{font-size:16px;font-weight:500}
+.st li.now{background:var(--redwash)}
+.st li.now span{font-weight:700}
 .go{grid-column:1/-1;-webkit-appearance:none;appearance:none;border:0;border-radius:12px;background:var(--red);color:var(--board);
   font-weight:700;font-size:17px;min-height:52px;cursor:pointer}
 .wod-rule{grid-column:1/-1;font-size:13px;color:var(--ink2);margin-top:10px}
@@ -244,7 +246,7 @@ div.side{cursor:default}
     <div class="ex line" data-id="pzt-t3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Tek ayak calf raise</span><span class="cue">Duvara parmakla dokun. Ağrı 0–1 olmalı.</span></span><span class="dose">15/taraf</span></button></div>
     <div class="ex line" data-id="pzt-t4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Tek ayak sekme, yerinde</span><span class="cue">Sadece ilk üçü ağrısızsa. Küçük, sessiz iniş. Ağrı olursa dur.</span></span><span class="dose">10/taraf</span></button></div>
     <div class="ex line" data-id="pzt-t5"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Air squat</span><span class="cue">Yavaş, bilek ağrısını /10 oku.</span></span><span class="dose">10</span></button></div>
-    <p class="note">Sekme ağrısız ve Salı sabahı temizse W45'ten zıplamalı işler haftada bir açılır: önce ip, sonra ayaklı clean, burpee, koşu.</p>
+    <p class="note">Sekme ağrısız ve Salı sabahı temizse W46'dan zıplamalı işler haftada bir açılır: önce ip, sonra ayaklı clean, burpee, koşu. W45'te önce Salı EMOM'una walking lunge girer.</p>
 
     <div class="zone"><h3>CF alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
     <div class="pair">
@@ -329,7 +331,7 @@ div.side{cursor:default}
 <!-- ================= SAL · PRESS + TEK BACAK ================= -->
 <section class="pane" id="sal" role="tabpanel" aria-label="Salı, Press ve tek bacak">
   <div class="day">
-    <div><h2>Press</h2><p class="lead">Ağır itiş, tek bacak ve hafif menteşe. Sonda AMRAP.</p></div>
+    <div><h2>Press</h2><p class="lead">Ağır itiş, tek bacak ve hafif menteşe. Sonda EMOM.</p></div>
     <div class="facts"><div class="fact"><b>~57</b><span>dk</span></div><div class="fact"><b>7–8</b><span>RPE</span></div></div>
   </div>
   <div class="prog"><div class="track"><div class="fill" id="sal-bar"></div></div><span class="cnt" id="sal-cnt">0/0</span><button class="reset" type="button" data-reset="sal">Sıfırla</button></div>
@@ -348,7 +350,7 @@ div.side{cursor:default}
     <div class="ex line" data-id="sal-k2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Air squat</span><span class="cue">Yavaş, ağrıyı oku.</span></span><span class="dose">10</span></button></div>
     <div class="ex line" data-id="sal-k3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Tek ayak calf raise</span></span><span class="dose">10/taraf</span></button></div>
     <div class="ex line" data-id="sal-k4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Tek ayak denge</span><span class="cue">Önce zayıf taraf. İki tarafı karşılaştır.</span></span><span class="dose">30 sn/taraf</span></button></div>
-    <p class="note">0–2: plan. 3 ya da üstü, şişlik: push press yok, strict press'e 2 set ekle. Lunge yok, AMRAP'ta air squat yerine dead bug 10.</p>
+    <p class="note">0–2: plan. 3 ya da üstü, şişlik: push press yok, strict press'e 2 set ekle. Lunge yok, EMOM'da air squat yerine dead bug 10.</p>
 
     <div class="zone"><h3>CF alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
     <div class="ex" data-id="sal-a">
@@ -388,18 +390,16 @@ div.side{cursor:default}
 
   <div class="z1">
     <div class="ex wod" data-id="sal-e">
-      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>E</span></span><span class="txt"><span class="nm">AMRAP 10</span><span class="cue">Tek istasyon. Sürdürülebilir tempo, RPE 7–8.</span></span></button>
-      <div class="side"><span class="load">10<small>dk</small></span><span class="sr">max tur</span></div>
-      <ol class="st">
-        <li><b>10</b><span>Russian KB swing, 16 kg (KB yoksa dambıl). Kalça patlar, bel değil. KB göz hizasına.</span></li>
-        <li><b>8</b><span>Ring row</span></li>
-        <li><b>10</b><span>Air squat</span></li>
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>E</span></span><span class="txt"><span class="nm">EMOM 12</span><span class="cue">Tek istasyon. Her dakika baştan: tekrarları bitir, kalan süre dinlenme.</span></span></button>
+      <div class="side"><span class="load">12<small>dk</small></span><span class="sr">4 tur</span></div>
+      <ol class="st" id="sal-emom">
+        <li><b>dk 1</b><span>12 Russian KB swing, 16 kg (KB yoksa dambıl). Kalça patlar, bel değil. KB göz hizasına.</span></li>
+        <li><b>dk 2</b><span>8 ring row</span></li>
+        <li><b>dk 3</b><span>10 air squat</span></li>
       </ol>
-      <button class="go" type="button" id="sal-go">AMRAP'ı başlat</button>
-      <button class="lap" type="button" id="sal-lap" hidden>Tur bitti</button>
-      <ol class="splits" id="sal-splits" aria-live="polite"></ol>
-      <button class="undo" type="button" id="sal-undo" hidden>Son turu sil</button>
-      <p class="wod-rule">Başlat'a bas, saat 15 sn sonra başlar. Her tur air squat'la biter, sonra "Tur bitti". 4 hafta aynı AMRAP: ölçü tur sayısı.</p>
+      <button class="go" type="button" data-int="emom">EMOM'u başlat</button>
+      <p class="wod-rule">Saat 10 sn sonra başlar, her dakika başında bip. Hedef: her dakika en az 15–20 sn dinlenmeyle bitsin. Bir dakika iki kez yetişmezse o istasyonda 2 tekrar az.</p>
+      <p class="wod-rule">W45: 3. dakika 10 walking lunge (Salı lunge'ları temiz geçerse). W46: 30 single-under (sekme testi geçtiyse).</p>
     </div>
 
     <div class="sec"><h3>Soğuma</h3><span>4 dk</span></div>
@@ -410,7 +410,7 @@ div.side{cursor:default}
 
   <form class="log" data-log="sal" data-title="W44 Sal (Press + tek bacak)">
     <h3>Kayıt</h3>
-    <p>Tur sayısı AMRAP'tan kendiliğinden gelir. Gerisini doldur, Kopyala'ya bas.</p>
+    <p>Doldur, Kopyala'ya bas, Max'e yapıştır.</p>
     <div class="fields">
       <label class="f"><span>Kontrol ağrısı</span><input name="kapi" data-k="Bilek kontrolü" data-unit="/10" inputmode="numeric" placeholder="0–10"></label>
       <label class="f"><span>Denge, zayıf taraf</span><input name="denge" data-k="Tek ayak denge, zayıf taraf" data-unit="sn" inputmode="decimal" placeholder="sn"></label>
@@ -424,13 +424,13 @@ div.side{cursor:default}
       <label class="f"><span>Lunge yük</span><input name="lunge" data-k="Lunge" data-unit="kg/el" inputmode="decimal" placeholder="kg"></label>
       <label class="f"><span>Tek bacak RDL yük</span><input name="slrdl" data-k="Tek bacak RDL" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
       <label class="f"><span>Swing yük</span><input name="kb" data-k="Swing" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
-      <label class="f"><span>Tamamlanan tur</span><input name="tur" data-k="AMRAP 10 tur" inputmode="numeric" placeholder="tur"></label>
-      <label class="f"><span>Son turda tekrar</span><input name="tek" data-k="Son turda tekrar" inputmode="numeric" placeholder="tekrar"></label>
+      <label class="f sel"><span>EMOM dakikaları</span><select name="emom" data-k="EMOM dakikaları"><option value="">seç</option><option>hepsi yetişti</option><option>1–2 dakika kaçtı</option><option>3+ dakika kaçtı</option></select></label>
+      <label class="f"><span>Dakika sonu dinlenme</span><input name="emomr" data-k="Dakika sonu dinlenme, ort." data-unit="sn" inputmode="numeric" placeholder="sn"></label>
+      <label class="f wide"><span>Zorlanılan istasyon</span><input name="emomz" data-k="Zorlanılan istasyon" placeholder="swing, ring row, air squat ya da yok"></label>
       <label class="f"><span>Bilek</span><input name="bilek" data-k="Bilek" data-unit="/10" inputmode="numeric" placeholder="0–10"></label>
       <label class="f sel"><span>Şişlik</span><select name="sis" data-k="Şişlik"><option value="">seç</option><option>yok</option><option>var</option></select></label>
       <label class="f"><span>Ertesi sabah bilek</span><input name="sabah" data-k="Ertesi sabah bilek" data-unit="/10" inputmode="numeric" placeholder="0–10"></label>
       <label class="f wide"><span>Not</span><input name="not" data-k="Not" placeholder="kısa not"></label>
-      <input type="hidden" name="splits" data-k="Tur splitleri">
     </div>
     <button class="copy" type="button">Kopyala</button>
     <p class="copied" hidden>Kopyalandı. Max'e yapıştır.</p>
@@ -672,15 +672,15 @@ div.side{cursor:default}
 
   <details class="more">
     <summary><span>Blok kuralları <small>W44–W47</small></span></summary>
-    <div class="kv"><b>Hafta</b><span>Pzt back squat · Sal press, tek bacak, AMRAP · Per RDL ve assisted · Cum clean, front squat, bench, Cindy. 4 hafta aynı, haftalık sadece yükler değişir. W48 hafif hafta ve test.</span></div>
+    <div class="kv"><b>Hafta</b><span>Pzt back squat · Sal press, tek bacak, EMOM · Per RDL ve assisted · Cum clean, front squat, bench, Cindy. 4 hafta aynı, haftalık sadece yükler değişir. W48 hafif hafta ve test.</span></div>
     <div class="kv"><b>Yük</b><span>Back squat ve RDL: bütün setler RPE 7 ya da altı ve ertesi sabah temizse +5 kg, RPE 8'se +2.5, RPE 9 ya da kaçan tekrar varsa aynı. Front squat, clean, press'ler, bench, pulldown: bütün setler RPE 8 ya da altıysa +2.5. Assisted ve dip: önce tekrar, sonra bir pim az.</span></div>
-    <div class="kv"><b>Seri</b><span>Şınav 4×5 → 4×8. Knee raise 3×6 → 3×10. Plank 20 → 30 sn. Bike 6 → 8 tur. Rower 4 → 5 tur. Lunge +2.5 kg/el. Swing 16 → 20.</span></div>
-    <div class="kv"><b>Yok</b><span>Koşu, ip, burpee, box jump (sekme testi ve W45'ten haftada bir). Yerden deadlift. Sit-up, crunch, V-up, GHD. Takım sporu.</span></div>
+    <div class="kv"><b>Seri</b><span>Şınav 4×5 → 4×8. Knee raise 3×6 → 3×10. Plank 20 → 30 sn. Bike 6 → 8 tur. Rower 4 → 5 tur. Lunge +2.5 kg/el. Swing 16 → 20. EMOM: her dakika en az 20 sn dinlenmeyle bitiyorsa haftaya istasyon başına +2 tekrar.</span></div>
+    <div class="kv"><b>Yok</b><span>Koşu, ip, burpee, box jump (sekme testi geçince, W46'dan haftada bir). Yerden deadlift. Sit-up, crunch, V-up, GHD. Takım sporu.</span></div>
     <div class="kv"><b>Alan</b><span>CF bloğu, tek geçiş, makina bloğu. Son blok için CF'ye bir kez dönmek serbest. Süperset sadece aynı istasyonda. Düz sette dinlenme kısalmaz.</span></div>
     <div class="kv"><b>Kontrol</b><span>Squat ve push press günlerinde önce diz-duvar, 10 air squat, calf raise. 0–2: plan. 3: daha az derinlik, push press yok. Üstü ya da şişlik: squat yok.</span></div>
     <div class="kv"><b>Oturma</b><span>Uzun oturduysan squat ve RDL'den önce 5 dk yürü, 10 prone press-up.</span></div>
     <div class="kv"><b>Ağrı</b><span>Seansta 3/10'u geçerse set biter. Şişlik, topallama ya da ertesi sabah artış olursa haber ver.</span></div>
-    <div class="kv"><b>Sıradaki</b><span>W45: clean karşılaması tam front squat'ta (hang squat clean), sekme testi geçtiyse Salı AMRAP'ta air squat yerine 30 single-under.</span></div>
+    <div class="kv"><b>Sıradaki</b><span>W45: Salı EMOM'un 3. dakikası 10 walking lunge (Salı lunge'ları temizse), Cuma clean karşılaması tam front squat'ta (hang squat clean). W46: sekme testi geçtiyse 3. dakika 30 single-under.</span></div>
   </details>
 </section>
 
@@ -973,15 +973,25 @@ div.side{cursor:default}
     bike: { title: 'Bike, kol ve ayak', seg: 30, count: 12, lead: 5, row: 'pzt-e',
       info: function (i) { return { l: (i % 2 ? 'Yavaş' : 'Hızlı'), s: 'Tur ' + (Math.floor(i / 2) + 1) + '/6' }; } },
     row: { title: 'Rower, 2 dk / 1 dk', segs: [120, 60, 120, 60, 120, 60, 120], lead: 10, row: 'per-e',
-      info: function (i) { return { l: (i % 2 ? 'Çok kolay' : 'Sert, RPE 7'), s: 'Tur ' + (Math.floor(i / 2) + 1) + '/4. Metreyi aklında tut.' }; } }
+      info: function (i) { return { l: (i % 2 ? 'Çok kolay' : 'Sert, RPE 7'), s: 'Tur ' + (Math.floor(i / 2) + 1) + '/4. Metreyi aklında tut.' }; } },
+    emom: { title: 'EMOM 12', seg: 60, count: 12, lead: 10, row: 'sal-e', list: 'sal-emom',
+      info: function (i) { var n = ['12 KB swing', '8 ring row', '10 air squat']; return { l: n[i % 3], s: 'Dakika ' + (i + 1) + '/12, tur ' + (Math.floor(i / 3) + 1) + '/4' }; } }
   };
+  function mark(listId, k) {
+    var ol = document.getElementById(listId);
+    if (ol) [].slice.call(ol.children).forEach(function (li, x) { li.classList.toggle('now', x === k); });
+  }
   all('[data-int]').forEach(function (b) {
     b.addEventListener('click', function () {
       var c = INT[b.getAttribute('data-int')];
       if (!c) return;
       var j = {};
       for (var key in c) if (Object.prototype.hasOwnProperty.call(c, key)) j[key] = c[key];
-      j.onDone = function () { tickId(c.row); };
+      if (c.list) {
+        j.onSeg = function (x) { mark(c.list, x % 3); };
+        j.onStop = function () { mark(c.list, -1); };
+      }
+      j.onDone = function () { tickId(c.row); mark(c.list, -1); };
       run(j);
     });
   });
@@ -1024,7 +1034,7 @@ div.side{cursor:default}
     });
   });
 
-  /* AMRAP'lar (Sal AMRAP 10, Cum Cindy 12): saat ileri sayar, "Tur bitti" = split.
+  /* AMRAP (Cum Cindy 12; Sal artık EMOM, yukarıda INT.emom): saat ileri sayar, "Tur bitti" = split.
      Tur sayısı ve splitler o günün kaydına kendiliğinden yazılır. */
   function toSec(s) { var q = String(s).split(':'); return (parseInt(q[0], 10) || 0) * 60 + (parseInt(q[1], 10) || 0); }
   function amrap(o) {
@@ -1076,7 +1086,6 @@ div.side{cursor:default}
       if (job && job.am === o.p) tick(); else state(false);
     });
   }
-  amrap({ p: 'sal', sec: 600, title: 'AMRAP 10', row: 'sal-e' });
   amrap({ p: 'cum', sec: 720, title: 'Cindy, AMRAP 12', row: 'cum-wod' });
 
   progress();
