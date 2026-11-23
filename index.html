@@ -782,45 +782,46 @@ div.side{cursor:default}
   </form>
 </section>
 
-<!-- ================= A/B · 2 GÜNLÜK ALTERNATİF (1 Kas) =================
-     Haftada 2 gün: A ve B sırayla, gün kaçmaz, sıra bekler. Bölümler .sub: aba Gün A, abb Gün B, abk Bilek.
-     İlerleme sadece açık bölümü sayar. Açık bölüm gün içinde saklanır (ab-sub); bugün en son A/B açıldıysa yeniden yüklemede A/B açılır.
+<!-- ================= A/B · 2 GÜNLÜK HAFTA (1 Kas; 23 Kas'ta Blok 2 v3'e göre yeniden yazıldı) =================
+     4 gün gidilemeyen haftalar için: 1. gün ve 2. gün sırayla, gün kaçmaz, sıra bekler. Yükler 4 günlük sekmelerle aynı.
+     Bölümler .sub: aba 1. gün, abb 2. gün, abk Bilek. İlerleme sadece açık bölümü sayar.
+     Açık bölüm gün içinde saklanır (ab-sub); bugün en son A/B açıldıysa yeniden yüklemede A/B açılır.
      Kayıt başlığında hafta yok, Kopyala tarihi ekler (data-date). Public-safe: teşhis kelimesi, kilo, kalori yok. -->
-<section class="pane" id="ab" role="tabpanel" aria-label="2 günlük alternatif, A ve B">
+<section class="pane" id="ab" role="tabpanel" aria-label="2 günlük hafta, 1. gün ve 2. gün">
   <div class="day">
-    <div><h2>2 Gün</h2><p class="lead">Alternatif. Haftada 2 gün, A ve B sırayla. Gün kaçmaz, sıra bekler.</p></div>
-    <div class="facts"><div class="fact"><b>~65</b><span>dk A</span></div><div class="fact"><b>~65</b><span>dk B</span></div></div>
+    <div><h2>2 Gün</h2><p class="lead">4 gün gidemediğin haftalarda. Her gün tam vücut, 1. gün ve 2. gün sırayla. Gün kaçmaz, sıra bekler.</p></div>
+    <div class="facts"><div class="fact"><b>~65</b><span>dk</span></div><div class="fact"><b>2–3</b><span>gün</span></div></div>
   </div>
   <div class="seg" role="group" aria-label="2 gün bölümleri">
-    <button class="sg" type="button" data-sub="aba" aria-pressed="true">A: Squat</button>
-    <button class="sg" type="button" data-sub="abb" aria-pressed="false">B: Clean</button>
+    <button class="sg" type="button" data-sub="aba" aria-pressed="true">1. gün</button>
+    <button class="sg" type="button" data-sub="abb" aria-pressed="false">2. gün</button>
     <button class="sg" type="button" data-sub="abk" aria-pressed="false">Bilek</button>
   </div>
   <div class="prog"><div class="track"><div class="fill" id="ab-bar"></div></div><span class="cnt" id="ab-cnt">0/0</span><button class="reset" type="button" data-reset="ab">Sıfırla</button></div>
   <p class="how"><span>Sola dokun: bitti. Sağa dokun: dinlenme başlar.</span><button class="snd" type="button">Sesi dene</button></p>
   <details class="more">
     <summary><span>Nasıl dönüyor <small>sıra, ara, yük</small></span></summary>
-    <div class="kv"><b>2 gün</b><span>A ve B. Örnek: Pzt A, Per B ya da Sal A, Cum B.</span></div>
-    <div class="kv"><b>3 gün</b><span>A, B, A. Sonraki hafta B, A, B. O hafta ev calisthenics yok.</span></div>
-    <div class="kv"><b>Ara</b><span>İki salon günü arasında en az 1 gün boş. A'nın squat'ı ile B'nin RDL'i arasında 48 saat kalsın.</span></div>
+    <div class="kv"><b>Ne zaman</b><span>4 gün gidemediğin haftalarda. Pazartesi kaçarsa Salı 1. günle başla.</span></div>
+    <div class="kv"><b>2 gün</b><span>Sal 1. gün, Per 2. gün. Ya da Pzt 1. gün, Per 2. gün.</span></div>
+    <div class="kv"><b>3 gün</b><span>1, 2, 1. Örnek: Sal, Per, Cmt. Sonraki 3 günlük hafta 2, 1, 2. O hafta ev calisthenics yok.</span></div>
+    <div class="kv"><b>Ara</b><span>İki salon günü arasında en az 1 gün boş. Ağır squat ile RDL arasında 48 saat kalsın. 2. gün Çarşamba'ya düşerse RDL yerine DB RDL 2×16, 3×10.</span></div>
     <div class="kv"><b>Ev</b><span>Calisthenics salon gününün önüne ya da arkasına gelmesin. Mobilite aynı.</span></div>
-    <div class="kv"><b>Yük</b><span>Back squat ve RDL: bütün setler RPE 7 ya da altı ve ertesi sabah temizse +5 kg, RPE 8'se +2.5. Bench, strict ve complex: RPE 8 ya da altıysa +2.5. Assisted ve dip: önce tekrar, sonra bir pim az. Artış o günün bir sonraki seansında.</span></div>
-    <div class="kv"><b>Seri</b><span>Knee raise 3×6 → 3×10. DB row 4×10 → 4×12, sonra +2.5. Ski 6 → 8 tur. Cindy aynı kalır, ölçü tur sayısı.</span></div>
+    <div class="kv"><b>Yük</b><span>Squat: hafif setler 2×8 tuttu, üçlüler RPE 8 ya da altı ve ertesi sabah bilek temizse +5 kg. RDL: 4×8 temiz ve RPE 7 ya da altıysa +5 kg. Bench, strict, pulldown, clean: bütün setler RPE 8 ya da altıysa +2.5. Assisted ve dip: önce tekrar, sonra bir pim az. Artış o günün bir sonraki seansında.</span></div>
+    <div class="kv"><b>Seri</b><span>Knee raise 3×6 → 3×10. Bike 6 → 8 tur. EMOM aynı kalır.</span></div>
     <div class="kv"><b>Vakit</b><span>Daralırsa sondan kes: önce bitirici, sonra aksesuar. Pull-up işi ve ana lift'ler kalır.</span></div>
-    <div class="kv"><b>Blok</b><span>W45–W47 aynı, W48 hafif hafta ve test.</span></div>
+    <div class="kv"><b>Blok</b><span>Blok 2 v3'ün 2 günlük hali. Yükler 4 günlük sekmelerle aynı.</span></div>
   </details>
 
-  <!-- Gün A: negatif, back squat, strict press, knee raise, Cindy. Hepsi CF alanında. -->
-  <div class="sub z1" id="aba" data-sub="aba">
-    <div class="sec"><h3>Isınma</h3><span>6 dk, CF alanında</span></div>
-    <div class="ex line" data-id="aba-i1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Ski erg, ayakta, kolay</span></span><span class="dose">2 dk</span></button></div>
-    <div class="ex line" data-id="aba-i2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Prone press-up</span><span class="cue">Kalça yerde, bel gevşek.</span></span><span class="dose">10</span></button></div>
-    <div class="ex line" data-id="aba-i3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Cat-cow, küçük hareket</span></span><span class="dose">6</span></button></div>
-    <div class="ex line" data-id="aba-i4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Scap pull, barda</span><span class="cue">Kollar düz, sadece kürekler aşağı.</span></span><span class="dose">8</span></button></div>
-    <div class="ex line" data-id="aba-i5"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Dead bug</span></span><span class="dose">6/taraf</span></button></div>
-    <div class="ex line" data-id="aba-k1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Diz-duvar</span><span class="cue">Topuk yerde, diz duvara.</span></span><span class="dose">5/taraf</span></button></div>
-    <div class="ex line" data-id="aba-k2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Air squat</span><span class="cue">Yavaş, bilek ağrısını /10 oku.</span></span><span class="dose">10</span></button></div>
-    <p class="note">0–2: plan. 3 ya da üstü: Bilek bölümündeki seçenekler. İlk A'dan önce oradaki testi bir kez yap.</p>
+  <!-- 1. gün: CF alanında negatif, hang, back squat, knee raise; makina alanında bench, pulldown, bike. Pzt sekmesinin bench'li hali. -->
+  <div class="sub" id="aba" data-sub="aba">
+   <div class="z1">
+    <div class="sec"><h3>Isınma</h3><span>4 dk, sonra rampa setleri</span></div>
+    <div class="ex line" data-id="aba-i1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Kol çevirme</span><span class="cue">Öne 10, arkaya 10.</span></span><span class="dose">10+10</span></button></div>
+    <div class="ex line" data-id="aba-i2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Cat-cow, küçük hareket</span></span><span class="dose">5</span></button></div>
+    <div class="ex line" data-id="aba-i3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Diz-duvar sallanma</span><span class="cue">Topuk yerde, diz duvara git gel. Ağrısız aralıkta.</span></span><span class="dose">10/taraf</span></button></div>
+    <div class="ex line" data-id="aba-i4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Air squat, yavaş</span><span class="cue">Bilek ağrısını /10 oku. Kural squat'ın altında.</span></span><span class="dose">10</span></button></div>
+    <div class="ex line" data-id="aba-i5"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Scap pull, barda</span><span class="cue">Kollar düz, sadece kürekler aşağı.</span></span><span class="dose">8</span></button></div>
+    <p class="note">Uzun oturduysan önce 3 dk bike ve 10 prone press-up. Bilek 3 ya da üstüyse Bilek bölümündeki seçenekler.</p>
 
     <div class="zone"><h3>CF alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
     <div class="pair">
@@ -839,64 +840,72 @@ div.side{cursor:default}
       <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>A3</span></span><span class="txt"><span class="nm">Flexed-arm hang, max</span><span class="cue">Çene bar altına inince dur, saniyeyi yaz.</span></span></button>
       <button class="side" type="button" data-rest="120" aria-label="2 dakika dinlenme sayacını başlat"><span class="load word">max</span><span class="sr">1 set</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 2 dk</span></button>
     </div>
-    <div class="ex" data-id="aba-b">
-      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B</span></span><span class="txt"><span class="nm">Back squat</span><span class="cue">Brace, pelvis kıvrılınca dur. Topuk yerde.</span></span></button>
-      <button class="side" type="button" data-rest="120" aria-label="2 dakika dinlenme sayacını başlat"><span class="load">50<small>kg</small></span><span class="sr">4×5</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 2 dk</span></button>
+    <div class="ex" data-id="aba-b1">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B1</span></span><span class="txt"><span class="nm">Back squat, ağır</span><span class="cue">Paralele kadar, brace. RPE 8'i geçmesin. Güvenlik pinleri paralelin hemen altında. Hafif setler 2×8 tuttu ve üçlüler RPE 8 ya da altıysa sonraki 1. gün 70.</span></span></button>
+      <button class="side" type="button" data-rest="180" aria-label="3 dakika dinlenme sayacını başlat"><span class="load">65<small>kg</small></span><span class="sr">3×3</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 3 dk</span></button>
     </div>
-    <p class="note">Isınma bar×8, 30×5, 40×3. Uzun oturduysan önce 5 dk yürü ve 10 prone press-up.</p>
+    <div class="ex" data-id="aba-b2">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B2</span></span><span class="txt"><span class="nm">Back squat, hafif</span><span class="cue">RPE 7. Yük her zaman ağırın 10 kg altı. 8'i tutana kadar aynı yük (17 Kas: 2×7).</span></span></button>
+      <button class="side" type="button" data-rest="120" aria-label="2 dakika dinlenme sayacını başlat"><span class="load">55<small>kg</small></span><span class="sr">2×8</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 2 dk</span></button>
+    </div>
+    <p class="note">Rampa bar×8, 40×5, 50×3, 60×1. Bilek 0–2: plan. 3: ağır set yok, 50 × 3×5 topuklar plakada. 3'ün üstü ya da şişlik: squat yok, makinada leg extension 3×12 @ 45. Bacağa yayılan his: squat biter. Takılan tekrar seti bitirir.</p>
     <div class="ex" data-id="aba-c">
-      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>C</span></span><span class="txt"><span class="nm">Strict press</span><span class="cue">Diz kilitli, kaburga kapalı, bacak itmez.</span></span></button>
-      <button class="side" type="button" data-rest="120" aria-label="2 dakika dinlenme sayacını başlat"><span class="load">35<small>kg</small></span><span class="sr">4×5</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 2 dk</span></button>
-    </div>
-    <div class="ex" data-id="aba-d">
-      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>D</span></span><span class="txt"><span class="nm">Hanging knee raise<span class="tag">Core</span></span><span class="cue">Bara kutudan çık ve in. Sallanma yok, 2 sn iniş.</span></span></button>
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>C</span></span><span class="txt"><span class="nm">Hanging knee raise<span class="tag">Core</span></span><span class="cue">Bara kutudan çık ve in. Sallanma yok, 2 sn iniş.</span></span></button>
       <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">3×6</span><span class="sr">bw</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
     </div>
 
-    <div class="ex wod" data-id="aba-wod">
-      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>W</span></span><span class="txt"><span class="nm">Cindy, AMRAP 12</span><span class="cue">Ölçekli Cindy. Kutuyu halkaların altına çek, tek istasyon.</span></span></button>
-      <div class="side"><span class="load">12<small>dk</small></span><span class="sr">max tur</span></div>
-      <ol class="st">
-        <li><b>5</b><span>Ring row</span></li>
-        <li><b>10</b><span>Incline push-up, eller kutuda</span></li>
-        <li><b>15</b><span>Air squat</span></li>
-      </ol>
-      <button class="go" type="button" id="aba-go">AMRAP'ı başlat</button>
-      <button class="lap" type="button" id="aba-lap" hidden>Tur bitti</button>
-      <ol class="splits" id="aba-splits" aria-live="polite"></ol>
-      <button class="undo" type="button" id="aba-undo" hidden>Son turu sil</button>
-      <p class="wod-rule">Başlat'a bas, saat 15 sn sonra başlar. Her tur air squat'la biter, sonra "Tur bitti".</p>
-      <p class="wod-rule">İlk 2 tur sakin. Şınav bozulursa kutuyu yükselt, tekrar sayısı aynı kalsın.</p>
+   </div>
+
+    <div class="move"><svg aria-hidden="true"><use href="#i-a"/></svg><div><b>Tek geçiş</b><span>Havlu, su ve telefon yanında. Makina alanına geç, geri dönme.</span></div></div>
+
+   <div class="z2">
+    <div class="zone"><h3>Makina alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
+    <p class="note">Kalabalık: her makinede setleri bitir, sonra diğerine geç. Dinlenmeyi kısaltma.</p>
+    <div class="ex" data-id="aba-d">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>D</span></span><span class="txt"><span class="nm">Bench press</span><span class="cue">Kürek kemikleri sıkışık, ayaklar yerde, göğse dokun. 17 Kas: 55 × 2×5 rahat. Bütün setler RPE 8 ya da altıysa 57.5.</span></span></button>
+      <button class="side" type="button" data-rest="120" aria-label="2 dakika dinlenme sayacını başlat"><span class="load">55<small>kg</small></span><span class="sr">3×5</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 2 dk</span></button>
+    </div>
+    <div class="ex" data-id="aba-e">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>E</span></span><span class="txt"><span class="nm">Lat pulldown</span><span class="cue">Omuz kulağa kalkmaz, bar göğüs üstüne. Bütün setler RPE 8 ya da altı olana kadar 55.</span></span></button>
+      <button class="side" type="button" data-rest="90" aria-label="90 saniye dinlenme sayacını başlat"><span class="load">55<small>kg</small></span><span class="sr">4×8</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 90 sn</span></button>
+    </div>
+    <div class="ex" data-id="aba-f">
+      <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>F</span></span><span class="txt"><span class="nm">Bike, kol ve ayak</span><span class="cue">Sert kısım RPE 8–9, kolay kısım gerçekten kolay.</span></span></button>
+      <button class="side" type="button" data-int="abbike" aria-label="6 turluk 30/30 sayacını başlat"><span class="load">30/30</span><span class="sr">6 tur</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>sayaç</span></button>
     </div>
 
     <div class="sec"><h3>Soğuma</h3><span>4 dk</span></div>
-    <div class="ex line" data-id="aba-s1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Couch stretch</span></span><span class="dose">60 sn/taraf</span></button></div>
-    <div class="ex line" data-id="aba-s2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Göğüs, kapıda</span></span><span class="dose">45 sn/taraf</span></button></div>
-    <div class="ex line" data-id="aba-s3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Duvarda top, kürek altı</span></span><span class="dose">30 sn/taraf</span></button></div>
+    <div class="ex line" data-id="aba-s1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Roller T-spine extension</span></span><span class="dose">8</span></button></div>
+    <div class="ex line" data-id="aba-s2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Open book</span></span><span class="dose">8/taraf</span></button></div>
+    <div class="ex line" data-id="aba-s3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Couch stretch</span></span><span class="dose">60 sn/taraf</span></button></div>
+    <div class="ex line" data-id="aba-s4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Pigeon</span></span><span class="dose">60 sn/taraf</span></button></div>
+   </div>
 
-    <form class="log" data-log="aba" data-date data-title="2 Gün A (Back squat + press)">
+    <form class="log" data-log="aba" data-date data-title="2 Gün, 1. gün (Back squat + bench)">
       <h3>Kayıt</h3>
-      <p>Tur sayısı AMRAP'tan kendiliğinden gelir. Gerisini doldur, Kopyala'ya bas.</p>
+      <p>Doldur, Kopyala'ya bas, Max'e yapıştır.</p>
       <div class="fields">
-        <label class="f"><span>Kontrol ağrısı</span><input name="kapi" data-k="Bilek kontrolü" data-unit="/10" inputmode="numeric" placeholder="0–10"></label>
-        <label class="f sel"><span>Destek</span><select name="destek" data-k="Destek"><option value="">seç</option><option>takılı</option><option>çıkmış</option></select></label>
+        <label class="f"><span>Isınma bilek</span><input name="kapi" data-k="Isınma air squat bilek" data-unit="/10" inputmode="numeric" placeholder="0–10"></label>
         <label class="f"><span>Negatif, 6 sn tutan</span><input name="neg" data-k="Negatif 6 sn tutan" data-unit="/12" inputmode="numeric" placeholder="0–12"></label>
         <label class="f"><span>Hang, 1. set</span><input name="hang" data-k="Hang 1. set" data-unit="sn" inputmode="decimal" placeholder="sn"></label>
         <label class="f"><span>Şınav tekrarlar</span><input name="sinav" data-k="Şınav tekrarlar" placeholder="5/5/5/5"></label>
-        <label class="f"><span>Back squat yük</span><input name="bs" data-k="Back squat" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
-        <label class="f"><span>Back squat tekrarlar</span><input name="bsr" data-k="Back squat tekrarlar" placeholder="5/5/5/5"></label>
-        <label class="f"><span>Back squat RPE</span><input name="bsrpe" data-k="Back squat RPE" inputmode="decimal" placeholder="1–10"></label>
-        <label class="f"><span>Strict press yük</span><input name="sp" data-k="Strict press" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
-        <label class="f"><span>Strict press tekrarlar</span><input name="spr" data-k="Strict press tekrarlar" placeholder="5/5/5/5"></label>
+        <label class="f"><span>Ağır squat yük</span><input name="bs" data-k="Back squat ağır" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
+        <label class="f"><span>Ağır squat tekrarlar</span><input name="bsr" data-k="Back squat ağır tekrarlar" placeholder="3/3/3"></label>
+        <label class="f"><span>Ağır squat RPE</span><input name="bsrpe" data-k="Back squat ağır RPE" inputmode="decimal" placeholder="1–10"></label>
+        <label class="f"><span>Hafif squat yük</span><input name="bsh" data-k="Back squat hafif" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
+        <label class="f"><span>Hafif squat tekrarlar</span><input name="bshr" data-k="Back squat hafif tekrarlar" placeholder="8/8"></label>
+        <label class="f sel"><span>Topuklar plakada</span><select name="plaka" data-k="Topuk plakası"><option value="">seç</option><option>hayır</option><option>evet</option></select></label>
         <label class="f"><span>Knee raise tekrarlar</span><input name="hkr" data-k="Hanging knee raise" placeholder="6/6/6"></label>
-        <label class="f"><span>Kutu yüksekliği</span><input name="kutu" data-k="Şınav kutusu" placeholder="cm ya da bench"></label>
-        <label class="f"><span>Tamamlanan tur</span><input name="tur" data-k="Cindy tur" inputmode="numeric" placeholder="tur"></label>
-        <label class="f"><span>Son turda tekrar</span><input name="tek" data-k="Son turda tekrar" inputmode="numeric" placeholder="tekrar"></label>
+        <label class="f"><span>Bench yük</span><input name="bpkg" data-k="Bench" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
+        <label class="f"><span>Bench tekrarlar</span><input name="bpr" data-k="Bench tekrarlar" placeholder="5/5/5"></label>
+        <label class="f"><span>Bench RPE</span><input name="bprpe" data-k="Bench RPE" inputmode="decimal" placeholder="1–10"></label>
+        <label class="f"><span>Pulldown yük</span><input name="pdkg" data-k="Pulldown" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
+        <label class="f"><span>Pulldown tekrarlar</span><input name="pd" data-k="Pulldown tekrarlar" placeholder="8/8/8/8"></label>
+        <label class="f"><span>Pulldown RPE</span><input name="pdrpe" data-k="Pulldown RPE" inputmode="decimal" placeholder="1–10"></label>
         <label class="f"><span>Bilek</span><input name="bilek" data-k="Bilek" data-unit="/10" inputmode="numeric" placeholder="0–10"></label>
         <label class="f sel"><span>Şişlik</span><select name="sis" data-k="Şişlik"><option value="">seç</option><option>yok</option><option>var</option></select></label>
         <label class="f"><span>Ertesi sabah bilek</span><input name="sabah" data-k="Ertesi sabah bilek" data-unit="/10" inputmode="numeric" placeholder="0–10"></label>
         <label class="f wide"><span>Not</span><input name="not" data-k="Not" placeholder="kısa not"></label>
-        <input type="hidden" name="splits" data-k="Tur splitleri">
       </div>
       <button class="copy" type="button">Kopyala</button>
       <p class="copied" hidden>Kopyalandı. Max'e yapıştır.</p>
@@ -904,20 +913,16 @@ div.side{cursor:default}
     </form>
   </div>
 
-  <!-- Gün B: assisted ve dip, bench ve DB row makina alanında; clean + front squat, RDL ve ski CF alanında. -->
+  <!-- 2. gün: makina alanında assisted ve dip; CF alanında hang power clean, strict press, RDL, EMOM 12. -->
   <div class="sub" id="abb" data-sub="abb" hidden>
     <div class="z2">
-      <div class="sec"><h3>Isınma</h3><span>6 dk, makina alanında</span></div>
-      <div class="ex line" data-id="abb-i1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Bike, kol ve ayak</span><span class="cue">Kolay.</span></span><span class="dose">3 dk</span></button></div>
-      <div class="ex line" data-id="abb-i2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Cat-cow, küçük hareket</span></span><span class="dose">6</span></button></div>
-      <div class="ex line" data-id="abb-i3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Scap push-up</span></span><span class="dose">10</span></button></div>
-      <div class="ex line" data-id="abb-i4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Scap pull, makinede</span><span class="cue">Yüksek yardımla, kollar düz.</span></span><span class="dose">8</span></button></div>
-      <div class="ex line" data-id="abb-i5"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Dead bug</span></span><span class="dose">6/taraf</span></button></div>
-      <div class="ex line" data-id="abb-i6"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Glute bridge</span><span class="cue">Tepede 2 sn.</span></span><span class="dose">10</span></button></div>
-      <div class="ex line" data-id="abb-k1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Diz-duvar</span><span class="cue">Topuk yerde, diz duvara.</span></span><span class="dose">5/taraf</span></button></div>
-      <div class="ex line" data-id="abb-k2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Air squat</span><span class="cue">Yavaş, ağrıyı oku.</span></span><span class="dose">10</span></button></div>
-      <div class="ex line" data-id="abb-k3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Calf raise, çift ayak</span></span><span class="dose">10</span></button></div>
-      <p class="note">0–2: plan. 3: Bilek bölümü. 3'ün üstüyse B tamamen makina alanında: leg extension, glute bridge, bike.</p>
+      <div class="sec"><h3>Isınma</h3><span>4 dk, makina alanında</span></div>
+      <div class="ex line" data-id="abb-i1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Kol çevirme</span><span class="cue">Öne 10, arkaya 10.</span></span><span class="dose">10+10</span></button></div>
+      <div class="ex line" data-id="abb-i2"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Cat-cow, küçük hareket</span></span><span class="dose">5</span></button></div>
+      <div class="ex line" data-id="abb-i3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Diz-duvar sallanma</span><span class="cue">Topuk yerde, diz duvara git gel. Ağrısız aralıkta.</span></span><span class="dose">10/taraf</span></button></div>
+      <div class="ex line" data-id="abb-i4"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Air squat, yavaş</span><span class="cue">Bilek ağrısını /10 oku.</span></span><span class="dose">10</span></button></div>
+      <div class="ex line" data-id="abb-i5"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Scap pull, makinede</span><span class="cue">Yüksek yardımla, kollar düz.</span></span><span class="dose">8</span></button></div>
+      <p class="note">Uzun oturduysan önce 3 dk bike ve 10 prone press-up. Bilek 3 ya da üstüyse Bilek bölümündeki seçenekler.</p>
 
       <div class="zone"><h3>Makina alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
       <p class="note">Kalabalık: her makinede setleri bitir, sonra diğerine geç. Dinlenmeyi kısaltma.</p>
@@ -933,18 +938,6 @@ div.side{cursor:default}
         </div>
       </div>
       <p class="note">Önce tekrar artar, sonra yardım azalır: pull-up 4×3 → 4×4 → 4×5, dip 3×8 → 3×10. Takılan tekrar seti bitirir.</p>
-      <div class="pair">
-        <p class="pair-tag">Süperset, aynı bench, dambılı yanına getir: B1'den sonra B2, sonra dinlen. 4 tur.</p>
-        <div class="ex" data-id="abb-b1">
-          <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B1</span></span><span class="txt"><span class="nm">Bench press</span><span class="cue">Kürekler geride, ayaklar yerde, göğse dokun.</span></span></button>
-          <div class="side"><span class="load">50<small>kg</small></span><span class="sr">4×8</span><span class="nx">sonra B2</span></div>
-        </div>
-        <div class="ex" data-id="abb-b2">
-          <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B2</span></span><span class="txt"><span class="nm">Tek kol DB row</span><span class="cue">Bir el ve diz bench'te. Omuz kulağa kalkmaz.</span></span></button>
-          <button class="side" type="button" data-rest="60" aria-label="60 saniye dinlenme sayacını başlat"><span class="load">20<small>kg</small></span><span class="sr">4×10/kol</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 60 sn</span></button>
-        </div>
-      </div>
-      <p class="note">DB row: ilk seansta RPE 7 olacak dambılı seç, kayda yaz.</p>
     </div>
 
     <div class="move"><svg aria-hidden="true"><use href="#i-a"/></svg><div><b>Tek geçiş: CF alanına</b><span>Havlu, su ve telefon yanında. Gün orada biter.</span></div></div>
@@ -952,21 +945,32 @@ div.side{cursor:default}
     <div class="z1">
       <div class="zone"><h3>CF alanı</h3><svg aria-hidden="true"><use href="#i-u"/></svg></div>
       <div class="ex line" data-id="abb-c0"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Boş bar: hang high pull, muscle clean, front squat</span><span class="cue">Sırayla, yavaş ve temiz.</span></span><span class="dose">5 + 5 + 5</span></button></div>
+      <div class="ex" data-id="abb-b">
+        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>B</span></span><span class="txt"><span class="nm">Hang power clean</span><span class="cue">Diz üstünden, ayaklar yerden kalkmaz. Kalça patlar, dirsekler hızlı öne, çeyrek squat'ta karşıla. Bütün setler hızlı ve temizse sonraki 2. gün 42.5.</span></span></button>
+        <button class="side" type="button" data-rest="120" aria-label="2 dakika dinlenme sayacını başlat"><span class="load">40<small>kg</small></span><span class="sr">5×3</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 2 dk</span></button>
+      </div>
+      <p class="note">Bar rack'ten, yerden alma. Rampa bar×5, 30×3.</p>
       <div class="ex" data-id="abb-c">
-        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>C</span></span><span class="txt"><span class="nm">Hang power clean + front squat</span><span class="cue">3 clean, sonra 2 front squat. Ayaklar yerden kalkmaz.</span></span></button>
-        <button class="side" type="button" data-int="cpx" aria-label="5 set, her 2 dakikada bir sayacı başlat"><span class="load">40<small>kg</small></span><span class="sr">5×(3+2)</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>her 2 dk</span></button>
+        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>C</span></span><span class="txt"><span class="nm">Strict press</span><span class="cue">Diz kilitli, kaburga kapalı, bacak itmez. 20 tekrarın hepsi strict ise sonraki 2. gün 37.5.</span></span></button>
+        <button class="side" type="button" data-rest="120" aria-label="2 dakika dinlenme sayacını başlat"><span class="load">35<small>kg</small></span><span class="sr">4×5</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 2 dk</span></button>
       </div>
-      <p class="note">Bar rack'ten, yerden alma. Saat her 2 dk'da bip çalar: seti yap, kalan süre dinlenme. Son clean'den sonra nefes al, sonra 2 front squat.</p>
       <div class="ex" data-id="abb-d">
-        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>D</span></span><span class="txt"><span class="nm">RDL</span><span class="cue">Rack'ten al. Bar bacağa yakın, pelvis kıvrılınca iniş biter.</span></span></button>
-        <button class="side" type="button" data-rest="120" aria-label="2 dakika dinlenme sayacını başlat"><span class="load">50<small>kg</small></span><span class="sr">4×8</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 2 dk</span></button>
+        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>D</span></span><span class="txt"><span class="nm">RDL</span><span class="cue">Rack'ten al. Bar bacağa yakın, pelvis kıvrılınca iniş biter. 4×8 temiz ve RPE 7 ya da altıysa sonraki 2. gün 60.</span></span></button>
+        <button class="side" type="button" data-rest="120" aria-label="2 dakika dinlenme sayacını başlat"><span class="load">55<small>kg</small></span><span class="sr">4×8</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>dinlen 2 dk</span></button>
       </div>
-      <p class="note">Isınma bar×8, 40×5. Bel yorgun hissediyorsa 3 set.</p>
-      <div class="ex" data-id="abb-e">
-        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>E</span></span><span class="txt"><span class="nm">Ski erg, 30/30</span><span class="cue">Kalçadan menteşe, belden kıvrılma yok. Doluysa bike.</span></span></button>
-        <button class="side" type="button" data-int="ski" aria-label="6 turluk 30/30 sayacını başlat"><span class="load">30/30</span><span class="sr">6 tur</span><span class="rt"><svg aria-hidden="true"><use href="#i-t"/></svg>sayaç</span></button>
+      <p class="note">Rampa bar×8, 40×5, 50×3. Bel yorgunsa 3 set. Uzun oturduysan önce 5 dk yürü ve 10 prone press-up. 2. gün Çarşamba'ya düştüyse RDL yerine DB RDL 2×16, 3×10.</p>
+      <div class="ex wod" data-id="abb-e">
+        <button class="tgl" type="button" aria-pressed="false"><span class="code"><span>E</span></span><span class="txt"><span class="nm">EMOM 12</span><span class="cue">Tek istasyon, KB'yi halkaların yanına getir. Her dakika baştan: tekrarları bitir, kalan süre dinlenme.</span></span></button>
+        <div class="side"><span class="load">12<small>dk</small></span><span class="sr">4 tur</span></div>
+        <ol class="st" id="abb-emom">
+          <li><b>dk 1</b><span>12 Russian KB swing, 16 kg (KB yoksa dambıl). Kalça patlar, bel değil. KB göz hizasına.</span></li>
+          <li><b>dk 2</b><span>8 ring row</span></li>
+          <li><b>dk 3</b><span>10 KB sumo deadlift high pull (SDHP), 16 kg. Geniş duruş, kalça önce iter, dirsekler yukarı ve dışa, KB çene altına. Bel yuvarlanırsa 12 kg.</span></li>
+        </ol>
+        <button class="go" type="button" data-int="abemom">EMOM'u başlat</button>
+        <p class="wod-rule">Saat 10 sn sonra başlar, her dakika başında bip. Hedef: her dakika en az 15–20 sn dinlenmeyle bitsin. Bir dakika iki kez yetişmezse o istasyonda 2 tekrar az.</p>
+        <p class="wod-rule">Bel RDL'den yorgunsa KB 12 kg. Air squat dönüşü: o haftanın sabahları bilek 0–1 ise 3. dakika 10 air squat, kutuya dokunarak, paralelde.</p>
       </div>
-      <p class="note">Bel yorgunsa ski yerine bike, makina alanında.</p>
 
       <div class="sec"><h3>Soğuma</h3><span>4 dk</span></div>
       <div class="ex line" data-id="abb-s1"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Couch stretch</span></span><span class="dose">60 sn/taraf</span></button></div>
@@ -974,27 +978,24 @@ div.side{cursor:default}
       <div class="ex line" data-id="abb-s3"><button class="tgl" type="button" aria-pressed="false"><span class="mk"></span><span class="txt"><span class="nm">Open book</span></span><span class="dose">8/taraf</span></button></div>
     </div>
 
-    <form class="log" data-log="abb" data-date data-title="2 Gün B (Clean + RDL + bench)">
+    <form class="log" data-log="abb" data-date data-title="2 Gün, 2. gün (Clean + RDL + EMOM)">
       <h3>Kayıt</h3>
       <p>Doldur, Kopyala'ya bas, Max'e yapıştır.</p>
       <div class="fields">
-        <label class="f"><span>Kontrol ağrısı</span><input name="kapi" data-k="Bilek kontrolü" data-unit="/10" inputmode="numeric" placeholder="0–10"></label>
-        <label class="f sel"><span>Destek</span><select name="destek" data-k="Destek"><option value="">seç</option><option>takılı</option><option>çıkmış</option></select></label>
+        <label class="f"><span>Isınma bilek</span><input name="kapi" data-k="Isınma air squat bilek" data-unit="/10" inputmode="numeric" placeholder="0–10"></label>
         <label class="f"><span>Pull-up yardımı</span><input name="pua" data-k="Assisted pull-up yardım" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
         <label class="f"><span>Pull-up tekrarlar</span><input name="pur" data-k="Pull-up tekrarlar" placeholder="3/3/3/3"></label>
-        <label class="f"><span>61'in bir alt pimi</span><input name="pim" data-k="61'in bir alt pimi" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
         <label class="f"><span>Dip tekrarlar</span><input name="dpr" data-k="Dip tekrarlar" placeholder="8/8/8"></label>
-        <label class="f"><span>Bench yük</span><input name="bkg" data-k="Bench" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
-        <label class="f"><span>Bench tekrarlar</span><input name="bench" data-k="Bench tekrarlar" placeholder="8/8/8/8"></label>
-        <label class="f"><span>Bench RPE</span><input name="benchrpe" data-k="Bench RPE" inputmode="decimal" placeholder="1–10"></label>
-        <label class="f"><span>DB row yük</span><input name="row" data-k="DB row" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
-        <label class="f"><span>DB row tekrarlar</span><input name="rowr" data-k="DB row tekrarlar" placeholder="10/10/10/10"></label>
-        <label class="f"><span>Complex yük</span><input name="cx" data-k="Clean + front squat" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
-        <label class="f wide"><span>Complex nasıl</span><input name="cxnot" data-k="Complex nasıl" placeholder="hızlı mı, karşılama temiz mi"></label>
+        <label class="f"><span>Clean yük</span><input name="hpc" data-k="Hang power clean" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
+        <label class="f wide"><span>Clean nasıl</span><input name="hpcnot" data-k="Clean nasıl" placeholder="hızlı mı, karşılama temiz mi"></label>
+        <label class="f"><span>Strict press yük</span><input name="sp" data-k="Strict press" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
+        <label class="f"><span>Strict press tekrarlar</span><input name="spr" data-k="Strict press tekrarlar" placeholder="5/5/5/5"></label>
         <label class="f"><span>RDL yük</span><input name="rdlkg" data-k="RDL" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
         <label class="f"><span>RDL tekrarlar</span><input name="rdl" data-k="RDL tekrarlar" placeholder="8/8/8/8"></label>
         <label class="f"><span>RDL RPE</span><input name="rdlrpe" data-k="RDL RPE" inputmode="decimal" placeholder="1–10"></label>
-        <label class="f sel"><span>Bitirici</span><select name="bit" data-k="Bitirici"><option value="">seç</option><option>ski</option><option>bike</option></select></label>
+        <label class="f"><span>Swing yük</span><input name="kb" data-k="Swing" data-unit="kg" inputmode="decimal" placeholder="kg"></label>
+        <label class="f sel"><span>EMOM dakikaları</span><select name="emom" data-k="EMOM dakikaları"><option value="">seç</option><option>hepsi yetişti</option><option>1–2 dakika kaçtı</option><option>3+ dakika kaçtı</option></select></label>
+        <label class="f wide"><span>Zorlanılan istasyon</span><input name="emomz" data-k="Zorlanılan istasyon" placeholder="swing, ring row, SDHP ya da yok"></label>
         <label class="f"><span>Bilek</span><input name="bilek" data-k="Bilek" data-unit="/10" inputmode="numeric" placeholder="0–10"></label>
         <label class="f sel"><span>Şişlik</span><select name="sis" data-k="Şişlik"><option value="">seç</option><option>yok</option><option>var</option></select></label>
         <label class="f"><span>Ertesi sabah bilek</span><input name="sabah" data-k="Ertesi sabah bilek" data-unit="/10" inputmode="numeric" placeholder="0–10"></label>
@@ -1017,28 +1018,27 @@ div.side{cursor:default}
     <div class="kv"><b>Dokun-kalk</b><span>Otur-kalk değil. Kalça bench'e hafifçe değer, oturma, gevşeme, hemen kalk. Bench yoksa ilk ısınma setini yandan çek, derinliği gör.</span></div>
     <div class="kv"><b>Çıkarma</b><span>Diz-duvar farkı 2 cm ya da az ve sabahlar 0–2 olunca salonda da çıkar.</span></div>
 
-    <div class="sec"><h3>Test</h3><span>ilk A'dan önce bir kez, 3 dk</span></div>
+    <div class="sec"><h3>Test</h3><span>bir kez, evde de olur, 3 dk</span></div>
     <div class="ex line" data-id="abk-t1"><button class="tgl" type="button" aria-pressed="false"><span class="mk">1</span><span class="txt"><span class="nm">Diz-duvar</span><span class="cue">Topuk yerde, diz duvara. İki tarafı ölç.</span></span><span class="dose">cm/taraf</span></button></div>
     <div class="ex line" data-id="abk-t2"><button class="tgl" type="button" aria-pressed="false"><span class="mk">2</span><span class="txt"><span class="nm">Tek ayak denge</span><span class="cue">Önce zayıf taraf. İki tarafı karşılaştır.</span></span><span class="dose">30 sn/taraf</span></button></div>
     <div class="ex line" data-id="abk-t3"><button class="tgl" type="button" aria-pressed="false"><span class="mk">3</span><span class="txt"><span class="nm">Tek ayak calf raise</span><span class="cue">Duvara parmakla dokun. Ağrı 0–1 olmalı.</span></span><span class="dose">15/taraf</span></button></div>
     <div class="ex line" data-id="abk-t4"><button class="tgl" type="button" aria-pressed="false"><span class="mk">4</span><span class="txt"><span class="nm">Tek ayak sekme, yerinde</span><span class="cue">Sadece ilk üçü ağrısızsa. Küçük, sessiz iniş.</span></span><span class="dose">10/taraf</span></button></div>
-    <p class="note">Denge iki tarafta eşitse A'da Cindy'den önce reverse lunge 2×8/bacak açılır. Sekme ağrısız ve ertesi sabah temizse W46'dan B ısınmasına 2 dk ip girer.</p>
+    <p class="note">Sırayla git, biri geçmezse orada dur. Sonucu Max'e yaz: denge iki tarafta eşitse lunge, sekme ağrısız ve ertesi sabah temizse ip açılır (haftada bir, 30 single-under).</p>
 
     <div class="sec"><h3>Ağrı 3/10</h3><span>0–2 ise plan aynen</span></div>
-    <div class="kv"><b>Back squat</b><span>Bench'e dokun-kalk, paralel, topuklar plakada. Aynı yük, 3×5.</span></div>
-    <div class="kv"><b>Air squat</b><span>Cindy'de şınav kutusuna dokun-kalk, 15.</span></div>
-    <div class="kv"><b>Clean</b><span>Clean yok, tepede topuk kalkıyor. Front squat kutuya, 4×5, aynı yük.</span></div>
+    <div class="kv"><b>Back squat</b><span>Ağır set yok. 50 × 3×5, paralel, topuklar plakada.</span></div>
+    <div class="kv"><b>Clean</b><span>Aynen. Ayaklar yerden kalkmaz.</span></div>
     <div class="kv"><b>RDL</b><span>Aynen. Bilek sabit, kaval dik.</span></div>
-    <div class="kv"><b>Ski</b><span>Bike 30/30.</span></div>
+    <div class="kv"><b>EMOM</b><span>Aynen. Swing ve SDHP'de kaval dik. Air squat yok.</span></div>
     <div class="kv"><b>Kutu</b><span>İnerken önce sağlam ayak, yavaş.</span></div>
 
     <div class="sec"><h3>3'ün üstü</h3><span>ya da şişlik, topallama</span></div>
-    <div class="kv"><b>Back squat</b><span>Leg extension 3×12, 45 kg. A'da en sona, makina alanında.</span></div>
-    <div class="kv"><b>Air squat</b><span>Cindy'de 10 glute bridge, yerde.</span></div>
-    <div class="kv"><b>Clean</b><span>Clean ve front squat yok. Leg extension 3×12, 45 kg.</span></div>
+    <div class="kv"><b>Back squat</b><span>Leg extension 3×12, 45 kg, makina alanında.</span></div>
+    <div class="kv"><b>Clean</b><span>Clean yok. Leg extension 3×12, 45 kg.</span></div>
     <div class="kv"><b>RDL</b><span>Glute bridge, dambıl kalçada, 20 kg, 4×10.</span></div>
-    <div class="kv"><b>Ski</b><span>Bike. Pedalda ağrı artıyorsa sadece kol.</span></div>
-    <div class="kv"><b>Üst vücut</b><span>Aynen: pull-up işi, press, bench, dip, row.</span></div>
+    <div class="kv"><b>EMOM</b><span>Yerine bike 30/30, 6 tur. Pedalda ağrı artıyorsa sadece kol.</span></div>
+    <div class="kv"><b>Bike</b><span>Pedalda ağrı artıyorsa sadece kol.</span></div>
+    <div class="kv"><b>Üst vücut</b><span>Aynen: pull-up işi, press, bench, dip, pulldown.</span></div>
 
     <div class="sec"><h3>Kural</h3><span>her seans</span></div>
     <div class="kv"><b>Seansta</b><span>Ağrı 3'ü geçerse o hareket "3'ün üstü" seçeneğine geçer.</span></div>
@@ -1406,7 +1406,7 @@ div.side{cursor:default}
       n.focus(); show(n.getAttribute('data-tab'), false); keepTab(n.getAttribute('data-tab')); e.preventDefault();
     });
   });
-  /* Bölümlü sekmeler: Ev (28 Eki: evc Calisthenics, evm Mobilite, evt Test) ve A/B (1 Kas: aba Gün A, abb Gün B, abk Bilek).
+  /* Bölümlü sekmeler: Ev (28 Eki: evc Calisthenics, evm Mobilite, evt Test) ve A/B (1 Kas, 23 Kas'ta yenilendi: aba 1. gün, abb 2. gün, abk Bilek).
      Her sekme kendi düğmelerini ve bölümlerini yönetir. İlerleme ve Sıfırla sadece açık bölümü sayar. A/B'nin açık bölümü gün içinde saklanır. */
   var sgs = all('.sg');
   function sub(name) {
@@ -1631,11 +1631,11 @@ div.side{cursor:default}
       info: function (i) { return { l: (i % 2 ? 'Çok kolay' : 'Sert, RPE 7'), s: 'Tur ' + (Math.floor(i / 2) + 1) + '/4. Metreyi aklında tut.' }; } },
     emom: { title: 'EMOM 12', seg: 60, count: 12, lead: 10, row: 'sal-e', list: 'sal-emom',
       info: function (i) { var n = ['12 KB swing', '8 ring row', '10 SDHP']; return { l: n[i % 3], s: 'Dakika ' + (i + 1) + '/12, tur ' + (Math.floor(i / 3) + 1) + '/4' }; } },
-    /* A/B, Gün B: clean + front squat her 2 dk'da bir set, sonda ski 30/30 */
-    cpx: { title: 'Clean + front squat', seg: 120, count: 5, lead: 10, row: 'abb-c',
-      info: function (i) { return { l: 'Set ' + (i + 1) + '/5', s: '3 clean, 2 front squat. Kalan süre dinlenme.' }; } },
-    ski: { title: 'Ski erg 30/30', seg: 30, count: 12, lead: 5, row: 'abb-e',
-      info: function (i) { return { l: (i % 2 ? 'Kolay' : 'Hızlı'), s: 'Tur ' + (Math.floor(i / 2) + 1) + '/6' }; } }
+    /* A/B (23 Kas): 1. gün sonda bike 30/30, 2. gün sonda EMOM 12 */
+    abbike: { title: 'Bike, kol ve ayak', seg: 30, count: 12, lead: 5, row: 'aba-f',
+      info: function (i) { return { l: (i % 2 ? 'Yavaş' : 'Hızlı'), s: 'Tur ' + (Math.floor(i / 2) + 1) + '/6' }; } },
+    abemom: { title: 'EMOM 12', seg: 60, count: 12, lead: 10, row: 'abb-e', list: 'abb-emom',
+      info: function (i) { var n = ['12 KB swing', '8 ring row', '10 SDHP']; return { l: n[i % 3], s: 'Dakika ' + (i + 1) + '/12, tur ' + (Math.floor(i / 3) + 1) + '/4' }; } }
   };
   function mark(listId, k) {
     var ol = document.getElementById(listId);
@@ -1789,7 +1789,6 @@ div.side{cursor:default}
   }
   amrap({ p: 'cum', sec: 720, title: 'AMRAP 12', row: 'cum-wod' });
   amrap({ p: 'onu', sec: 720, title: 'AMRAP 12', row: 'onu-e' });
-  amrap({ p: 'aba', sec: 720, title: 'Cindy, AMRAP 12', row: 'aba-wod' });
 
   progress();
 })();
